@@ -53,29 +53,30 @@ public class LoginController {
 		}
 	}
 
-	/*@RequestMapping(value = "dang-nhap", method = RequestMethod.POST)
+	@RequestMapping(value = "dang-nhap", method = RequestMethod.POST)
 	protected void doPost (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");
-		String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
+	
 		if (action != null && action.equals("login")) {
 			
 				UserModel model = FormUtil.toModel(UserModel.class, request);
-				model = userService.findByUserNameAndPasswordAndStatus(model.getUserName(), model.getPasswd(), 1);
+				//model = userService.findByUserNameAndPasswordAndStatus(model.getUserName(), model.getPasswd(), 1);
 
-				if (model != null) {
+				if (model != null && false ) {
 					SessionUtil.getInstance().putValue(request, "USERMODEL", model);
-					NhanVienModel nv = nhanVienService.findOne(model.getID());
-					SessionUtil.getInstance().putValue(request, "NHANVIEN", nv);
-					if (model.getRoleID() == 1) {
+					/*NhanVienModel nv = nhanVienService.findOne(model.getID());
+					SessionUtil.getInstance().putValue(request, "NHANVIEN", nv);*/
+					
+					/*if (model.getRoleID() == 1) {
 						response.sendRedirect(request.getContextPath() + "/admin-home/index.htm");
 					} else if (model.getRoleID() != null) {
 						response.sendRedirect(request.getContextPath() + "/trang-chu.htm");
-					}
+					}*/
 				} else {
 					response.sendRedirect(request.getContextPath()
 							+ "/dang-nhap.htm?action=login&message=username_password_invalid&alert=danger");
 				}
 			
 		}
-	}*/
+	}
 }

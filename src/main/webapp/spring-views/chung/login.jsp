@@ -5,14 +5,12 @@
 <html>
 <head>
 <title><dec:title default="Đăng nhập" /></title>
+<link rel="stylesheet" href="style.css" />
 
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<link rel="shortcut icon" type="image/png"
-	href="https://www.logo.wine/a/logo/Costa_Coffee/Costa_Coffee-Logo.wine.svg" />
-
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -22,9 +20,8 @@
 	rel="stylesheet" type="text/css" media="all" />
 
 <style type="text/css">
-.errors {
-	color: red;
-	font-style: italic;
+	 .errors{
+     color:red; font-style: italic;
 }
 </style>
 
@@ -34,6 +31,11 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Đăng nhập</title>
+<style type="text/css">
+	 .errors{
+     color:red; font-style: italic;
+}
+</style>
 </head>
 <body>
 
@@ -44,14 +46,14 @@
 		<form action="" method="post">
 			<div class="card">
 				<div class="card-header">
-					<img style="height: 50px; width: 50px;"
-						src="<c:url value='/common/images/logo_highland.png'/>"
-						alt="highland"> Login to HIGHLAND
+					<h4 class="fa fa-window-maximize"> Login </h4>
 				</div>
 				<c:if test="${not empty message}">
 					<div class="alert alert-${alert}">${message}</div>
 				</c:if>
 				<div class="card-body">
+					
+					
 					<div class="form-group">
 						<label for="username">User name</label> <input type="text"
 							class="form-control" name="userName" id="userName"
@@ -68,21 +70,23 @@
 							id="passwordHid" class="form-text text-muted">Password is
 							invalid</small> -->
 					</div>
-
-					<div class="form-group">
-						<div class="g-recaptcha"
-							data-sitekey="6Ld1TpAfAAAAAOR_gKzy4BMOirgICntMGSp-XR5B"></div>
+					<div class="form-group"> 
+						<label for="username">Chi Nhánh</label>
+						<br>
+						<select class="selectpicker">
+							<option data-icon="fa-heart">Chi Nhánh 1</option>
+							<option data-icon="fa-address-card">Chi Nhánh 2</option>
+						</select>
+						<!-- <small
+							id="usernameHid" class="form-text text-muted">Username is
+							invalid</small> -->
 					</div>
-					<label class="mb-1">
-						<h6 class="mb-0 text-sm errors">${reCaptra}</h6>
-					</label> <input type="hidden" value="login" name="action" />
+
 
 
 				</div>
 				<div class="card-footer text-muted">
 					<button type="submit" class="btn btn-primary">Login</button>
-					<button class="btn btn-secondary" type="reset">Reset</button>
-					<a href="mailer/form.htm" class="btn btn-primary">Forgotpassword</a>
 				</div>
 			</div>
 		</form>
