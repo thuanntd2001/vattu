@@ -1,5 +1,6 @@
 package quanlyvattu.controller.chung;
 
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javax.servlet.ServletContext;
@@ -8,9 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import quanlyvattu.dao.impl.DSPMDAO;
+import quanlyvattu.model.DSPMModel;
 import quanlyvattu.model.UserModel;
 import quanlyvattu.service.ICheckService;
 import quanlyvattu.service.INhanVienService;
@@ -24,11 +28,18 @@ public class LoginController {
 	@Autowired
 	ServletContext session;
 	ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
+	DSPMDAO dspmDAO=new DSPMDAO();
 
 	private ICheckService ck = new CheckService();
 
 	@RequestMapping(value = "dang-nhap", method = RequestMethod.GET)
-	private String doGet(HttpServletRequest request, HttpServletResponse response) {
+	private String doGet(ModelMap model, HttpServletRequest request, HttpServletResponse response) {
+		List<DSPMModel> DSPMs=dspmDAO.findAll();
+		for (DSPMModel md : DSPMs) {
+			System.out.print(md.getTenCN()+md.getTenServer()+"\n");
+			
+		}
+		model.addAttribute("DSPMs", DSPMs);
 		String action = request.getParameter("action");
 		if (action != null && action.equals("login")) {
 			String alert = request.getParameter("alert");

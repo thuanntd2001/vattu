@@ -4,7 +4,7 @@ public class InfoConnection {
 	private static String chiNhanh;
 	private static String userName="sa";
 	private static String passWord="1234";
-	private static String url="jdbc:sqlserver://TBTUONGLAI1\\SQLSV1; Database=QLVT_DATHANG";
+	private static String url="jdbc:sqlserver://TBTUONGLAI1; Database=QLVT_DATHANG";
 	private static String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	public static String getChiNhanh() {
 		return chiNhanh;

@@ -74,12 +74,11 @@
 						<label for="username">Chi Nhánh</label>
 						<br>
 						<select class="selectpicker">
-							<option data-icon="fa-heart">Chi Nhánh 1</option>
-							<option data-icon="fa-address-card">Chi Nhánh 2</option>
+						<c:forEach items="${DSPMs }" var="pm">
+							<option value="${pm.tenServer}"> ${pm.tenCN} </option>
+						</c:forEach>
 						</select>
-						<!-- <small
-							id="usernameHid" class="form-text text-muted">Username is
-							invalid</small> -->
+						
 					</div>
 
 

@@ -46,7 +46,7 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
 		try {
-			connection = getConnection("","");
+			connection = getConnection(InfoConnection.getUserName(),InfoConnection.getPassWord());
 			statement = connection.prepareStatement(sql);
 			setParameter(statement, parameters);
 			resultSet = statement.executeQuery();
@@ -55,6 +55,7 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 			}
 			return results;
 		} catch (SQLException e) {
+			e.printStackTrace();
 			return null;
 		} finally {
 			try {
@@ -68,6 +69,7 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 					resultSet.close();
 				}
 			} catch (SQLException e) {
+				e.printStackTrace();
 				return null;
 			}
 		}
