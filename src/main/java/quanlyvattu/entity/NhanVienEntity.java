@@ -55,19 +55,12 @@ public class NhanVienEntity {
 	@Column(name="DANGHI")
 	private Boolean daNghi;
 	
-	@OneToMany(mappedBy="hdnv", fetch = FetchType.EAGER)
-	private Collection<HoaDonEntity> hoadon;
+
 	
-	@OneToMany(mappedBy="dbnv", fetch = FetchType.EAGER)
-	private Collection<DatBanEntity> datBan;
+
+
 	
-	@OneToMany(mappedBy="cpnv", fetch = FetchType.EAGER)
-	private Collection<ChiPhiEntity> chiPhi;
-	
-	@OneToMany(mappedBy="usernv", fetch = FetchType.EAGER)
-	private Collection<UserTBEntity> userTB;
-	
-	
+
 	public NhanVienEntity() {
 		super();
 	}
@@ -152,37 +145,13 @@ public class NhanVienEntity {
 		this.daNghi = daNghi;
 	}
 
-	public Collection<HoaDonEntity> getHoadon() {
-		return hoadon;
-	}
 
-	public void setHoadon(Collection<HoaDonEntity> hoadon) {
-		this.hoadon = hoadon;
-	}
 
-	public Collection<DatBanEntity> getDatBan() {
-		return datBan;
-	}
 
-	public void setDatBan(Collection<DatBanEntity> datBan) {
-		this.datBan = datBan;
-	}
 
-	public Collection<ChiPhiEntity> getChiPhi() {
-		return chiPhi;
-	}
 
-	public void setChiPhi(Collection<ChiPhiEntity> chiPhi) {
-		this.chiPhi = chiPhi;
-	}
 
-	public Collection<UserTBEntity> getUserTB() {
-		return userTB;
-	}
 
-	public void setUserTB(Collection<UserTBEntity> userTB) {
-		this.userTB = userTB;
-	}
 	
 	
 }

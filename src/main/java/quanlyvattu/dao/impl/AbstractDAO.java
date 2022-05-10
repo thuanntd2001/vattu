@@ -9,7 +9,6 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 import quanlyvattu.dao.IGenericDAO;
 import quanlyvattu.mapper.RowMapper;
@@ -17,7 +16,7 @@ import quanlyvattu.statics.InfoConnection;
 
 public class AbstractDAO<T> implements IGenericDAO<T>{
 	
-	ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
+
 	public Connection getConnection(String rUser,String rPassword) {
 		try {
 			Class.forName(InfoConnection.getDriver());
@@ -29,7 +28,7 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				System.out.print("ket noi that bai "+"user "+rUser+"  pass "+rPassword);
+				System.out.print("ket noi that bai "+"user "+rUser+"  pass "+rPassword +InfoConnection.getUrl());
 				return null;
 			}
 		} catch (ClassNotFoundException e) {

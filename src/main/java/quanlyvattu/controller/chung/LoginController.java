@@ -1,10 +1,8 @@
 package quanlyvattu.controller.chung;
 
-import java.io.IOException;
 import java.util.ResourceBundle;
 
 import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,10 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import quanlyvattu.model.UserModel;
 import quanlyvattu.service.ICheckService;
 import quanlyvattu.service.INhanVienService;
-import quanlyvattu.service.IUserService;
 import quanlyvattu.service.impl.CheckService;
 import quanlyvattu.service.impl.NhanVienService;
-
 import quanlyvattu.utils.FormUtil;
 import quanlyvattu.utils.SessionUtil;
 
@@ -28,7 +24,6 @@ public class LoginController {
 	@Autowired
 	ServletContext session;
 	ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
-	private INhanVienService nhanVienService = new NhanVienService();
 
 	private ICheckService ck = new CheckService();
 
@@ -71,16 +66,13 @@ public class LoginController {
 					return "redirect:dang-nhap.htm?action=login";
 				}
 
-			} else {
-				System.out.print("ket noi that bai " + "user " + model.getUserName() + "pass " + model.getPasswd());
-				return "redirect:dang-nhap.htm?action=login&message=username_password_invalid&alert=danger";
 			}
-			
+			System.out.print("ket noi that bai " + "user " + model.getUserName() + "pass " + model.getPasswd());
 
 		}
+
+		return "redirect:dang-nhap.htm?action=login&message=username_password_invalid&alert=danger";
 		
-			
-			return "redirect:dang-nhap.htm?action=logout";
-	
+
 	}
 }
