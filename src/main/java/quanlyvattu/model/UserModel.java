@@ -1,9 +1,9 @@
 package quanlyvattu.model;
 
-import quanlyvattu.entity.UserTBEntity;
+import quanlyvattu.entity.NhanVienEntity;
 
 
-public class UserModel extends UserTBEntity{
+public class UserModel {
 
 	
 	public UserModel() {
@@ -11,25 +11,55 @@ public class UserModel extends UserTBEntity{
 		// TODO Auto-generated constructor stub
 	}
 
-	private Long ID;
+
+	private String userName;
 	
-	private Long roleID;
 
-	public Long getID() {
-		return ID;
+	private NhanVienEntity usernv;
+	
+	private int roleID;
+
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setID(Long iD) {
-		this.ID = iD;
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-	public Long getRoleID() {
+
+	public NhanVienEntity getUsernv() {
+		return usernv;
+	}
+
+
+	public void setUsernv(NhanVienEntity usernv) {
+		this.usernv = usernv;
+	}
+
+
+	public String getPasswd() {
+		return passwd;
+	}
+
+
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
+	}
+
+
+	public int getRoleID() {
 		return roleID;
 	}
 
-	public void setRoleID(Long roleID) {
+
+	public void setRoleID(int roleID) {
 		this.roleID = roleID;
 	}
+
+
+	private String passwd;
 
 
 	

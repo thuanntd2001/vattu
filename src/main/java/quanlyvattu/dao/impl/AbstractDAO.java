@@ -13,22 +13,23 @@ import java.util.ResourceBundle;
 
 import quanlyvattu.dao.IGenericDAO;
 import quanlyvattu.mapper.RowMapper;
+import quanlyvattu.statics.InfoConnection;
 
 public class AbstractDAO<T> implements IGenericDAO<T>{
 	
 	ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
-	public Connection getConnection() {
+	public Connection getConnection(String rUser,String rPassword) {
 		try {
-			Class.forName(resourceBundle.getString("driverName"));
-			String url = resourceBundle.getString("url");
-			String user = resourceBundle.getString("user");;
-			String password = resourceBundle.getString("password");
+			Class.forName(InfoConnection.getDriver());
+			String url = InfoConnection.getUrl();
+			String user = rUser;
+			String password = rPassword;
 			try {
 				return DriverManager.getConnection(url, user, password);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-
+				System.out.print("ket noi that bai "+"user "+rUser+"  pass "+rPassword);
 				return null;
 			}
 		} catch (ClassNotFoundException e) {
@@ -46,7 +47,7 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
 		try {
-			connection = getConnection();
+			connection = getConnection("","");
 			statement = connection.prepareStatement(sql);
 			setParameter(statement, parameters);
 			resultSet = statement.executeQuery();
@@ -98,7 +99,7 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 		Connection connection = null;
 		PreparedStatement statement = null;
 		try {
-			connection = getConnection();
+			connection = getConnection("","");
 			connection.setAutoCommit(false);
 			statement = connection.prepareStatement(sql);
 			setParameter(statement, parameters);
@@ -133,7 +134,7 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 		ResultSet resultSet = null;
 		try {
 			Long id =  null;
-			connection = getConnection();
+			connection = getConnection("","");
 			connection.setAutoCommit(false);
 			statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			setParameter(statement, parameters);
@@ -177,7 +178,7 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 		ResultSet resultSet = null;
 		try {
 			int count = 0;
-			connection = getConnection();
+			connection = getConnection("","");
 			statement = connection.prepareStatement(sql);
 			setParameter(statement, parameters);
 			resultSet = statement.executeQuery();

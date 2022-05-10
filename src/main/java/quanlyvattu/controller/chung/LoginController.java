@@ -3,38 +3,37 @@ package quanlyvattu.controller.chung;
 import java.io.IOException;
 import java.util.ResourceBundle;
 
-import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import quanlyvattu.model.NhanVienModel;
 import quanlyvattu.model.UserModel;
+import quanlyvattu.service.ICheckService;
 import quanlyvattu.service.INhanVienService;
 import quanlyvattu.service.IUserService;
+import quanlyvattu.service.impl.CheckService;
 import quanlyvattu.service.impl.NhanVienService;
-import quanlyvattu.service.impl.UserService;
+
 import quanlyvattu.utils.FormUtil;
 import quanlyvattu.utils.SessionUtil;
 
-
 @Controller
 public class LoginController {
-	private static final long serialVersionUID = 1L;
+	@Autowired
+	ServletContext session;
 	ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
 	private INhanVienService nhanVienService = new NhanVienService();
-	private IUserService userService = new UserService();
-	
-	
+
+	private ICheckService ck = new CheckService();
+
 	@RequestMapping(value = "dang-nhap", method = RequestMethod.GET)
-	protected String doGet (HttpServletRequest request, HttpServletResponse response)  {
+	private String doGet(HttpServletRequest request, HttpServletResponse response) {
 		String action = request.getParameter("action");
 		if (action != null && action.equals("login")) {
 			String alert = request.getParameter("alert");
@@ -43,7 +42,7 @@ public class LoginController {
 				request.setAttribute("message", resourceBundle.getString(message));
 				request.setAttribute("alert", alert);
 			}
-			
+
 			return "chung/login";
 		} else if (action != null && action.equals("logout")) {
 			SessionUtil.getInstance().removeValue(request, "USERMODEL");
@@ -54,29 +53,34 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "dang-nhap", method = RequestMethod.POST)
-	protected void doPost (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private String doPost(HttpServletRequest request, HttpServletResponse response) {
 		String action = request.getParameter("action");
-	
-		if (action != null && action.equals("login")) {
-			
-				UserModel model = FormUtil.toModel(UserModel.class, request);
-				//model = userService.findByUserNameAndPasswordAndStatus(model.getUserName(), model.getPasswd(), 1);
 
-				if (model != null && false ) {
-					SessionUtil.getInstance().putValue(request, "USERMODEL", model);
-					/*NhanVienModel nv = nhanVienService.findOne(model.getID());
-					SessionUtil.getInstance().putValue(request, "NHANVIEN", nv);*/
-					
-					/*if (model.getRoleID() == 1) {
-						response.sendRedirect(request.getContextPath() + "/admin-home/index.htm");
-					} else if (model.getRoleID() != null) {
-						response.sendRedirect(request.getContextPath() + "/trang-chu.htm");
-					}*/
-				} else {
-					response.sendRedirect(request.getContextPath()
-							+ "/dang-nhap.htm?action=login&message=username_password_invalid&alert=danger");
+		if (action != null && action.equals("login")) {
+
+			UserModel model = FormUtil.toModel(UserModel.class, request);
+
+			if (model != null) {
+				boolean flag = false;
+
+				flag = ck.ckUserPassword(model.getUserName(), model.getPasswd());
+
+				if (flag) {
+					System.out.print("thanh cong ket noi");
+					session.setAttribute("USERMODEL", model);
+					return "redirect:dang-nhap.htm?action=login";
 				}
+
+			} else {
+				System.out.print("ket noi that bai " + "user " + model.getUserName() + "pass " + model.getPasswd());
+				return "redirect:dang-nhap.htm?action=login&message=username_password_invalid&alert=danger";
+			}
 			
+
 		}
+		
+			
+			return "redirect:dang-nhap.htm?action=logout";
+	
 	}
 }

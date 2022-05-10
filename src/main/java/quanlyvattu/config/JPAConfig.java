@@ -16,6 +16,8 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import quanlyvattu.statics.InfoConnection;
+
 @Configuration
 
 @EnableTransactionManagement
@@ -47,10 +49,10 @@ public class JPAConfig {
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/springmvcbasicfree");
-		dataSource.setUsername("root");
-		dataSource.setPassword("1234");
+		dataSource.setDriverClassName(InfoConnection.getDriver());
+		dataSource.setUrl(InfoConnection.getUrl());
+		dataSource.setUsername(InfoConnection.getUserName());
+		dataSource.setPassword(InfoConnection.getPassWord());
 		return dataSource;
 	}
 	
