@@ -1,6 +1,6 @@
 package quanlyvattu.model;
 
-import quanlyvattu.entity.NhanVienEntity;
+
 
 
 public class UserModel {
@@ -15,28 +15,57 @@ public class UserModel {
 	private String userName;
 	
 
-	private NhanVienEntity usernv;
+
 	
-	private int roleID;
+	private String roleID;
+	
+	private String hoTen;
+	
+	private int maNV;
+	
+	public String getHoTen() {
+		return hoTen;
+	}
+
+
+
+	public void setHoTen(String hoTen) {
+		this.hoTen = hoTen;
+	}
+
+
+
+	public int getMaNV() {
+		return maNV;
+	}
+
+
+
+	public void setMaNV(int maNV) {
+		this.maNV = maNV;
+	}
+
+
+
+
+
+	private String chiNhanh;
 
 	public String getUserName() {
 		return userName;
 	}
-
+	
+	
 
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 
 
-	public NhanVienEntity getUsernv() {
-		return usernv;
-	}
 
 
-	public void setUsernv(NhanVienEntity usernv) {
-		this.usernv = usernv;
-	}
+
+
 
 
 	public String getPasswd() {
@@ -49,13 +78,23 @@ public class UserModel {
 	}
 
 
-	public int getRoleID() {
+	public String getRoleID() {
 		return roleID;
 	}
 
 
-	public void setRoleID(int roleID) {
+	public void setRoleID(String roleID) {
 		this.roleID = roleID;
+	}
+
+
+	public String getChiNhanh() {
+		return chiNhanh;
+	}
+
+
+	public void setChiNhanh(String chiNhanh) {
+		this.chiNhanh = chiNhanh;
 	}
 
 

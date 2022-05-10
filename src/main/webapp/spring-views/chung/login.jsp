@@ -73,7 +73,7 @@
 					<div class="form-group"> 
 						<label for="username">Chi Nhánh</label>
 						<br>
-						<select class="selectpicker">
+						<select class="selectpicker" name="chiNhanh">
 						<c:forEach items="${DSPMs }" var="pm">
 							<option value="${pm.tenServer}"> ${pm.tenCN} </option>
 						</c:forEach>

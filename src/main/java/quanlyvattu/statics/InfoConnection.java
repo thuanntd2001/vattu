@@ -1,17 +1,12 @@
 package quanlyvattu.statics;
 
 public class InfoConnection {
-	private static String chiNhanh;
+
 	private static String userName="sa";
 	private static String passWord="1234";
 	private static String url="jdbc:sqlserver://TBTUONGLAI1; Database=QLVT_DATHANG";
 	private static String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-	public static String getChiNhanh() {
-		return chiNhanh;
-	}
-	public static void setChiNhanh(String chiNhanh) {
-		InfoConnection.chiNhanh = chiNhanh;
-	}
+
 	public static String getUserName() {
 		return userName;
 	}
@@ -28,7 +23,7 @@ public class InfoConnection {
 		return url;
 	}
 	public static void setUrl(String url) {
-		InfoConnection.url = url;
+		InfoConnection.url = "jdbc:sqlserver://"+url+"; Database=QLVT_DATHANG";
 	}
 	public static String getDriver() {
 		return driver;
