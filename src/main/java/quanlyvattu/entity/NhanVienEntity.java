@@ -31,7 +31,6 @@ public class NhanVienEntity {
 	private float luong;
 	
 	@ManyToOne
-	
 	@JoinColumn(name="MACN")
 	private ChiNhanhEntity chiNhanh;
 	public String getMaNV() {
