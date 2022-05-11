@@ -100,7 +100,7 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 		Connection connection = null;
 		PreparedStatement statement = null;
 		try {
-			connection = getConnection("","");
+			connection = getConnection(InfoConnection.getUserName(),InfoConnection.getPassWord());
 			connection.setAutoCommit(false);
 			statement = connection.prepareStatement(sql);
 			setParameter(statement, parameters);
@@ -135,7 +135,7 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 		ResultSet resultSet = null;
 		try {
 			Long id =  null;
-			connection = getConnection("","");
+			connection = getConnection(InfoConnection.getUserName(),InfoConnection.getPassWord());
 			connection.setAutoCommit(false);
 			statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			setParameter(statement, parameters);
@@ -179,7 +179,7 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 		ResultSet resultSet = null;
 		try {
 			int count = 0;
-			connection = getConnection("","");
+			connection = getConnection(InfoConnection.getUserName(),InfoConnection.getPassWord());
 			statement = connection.prepareStatement(sql);
 			setParameter(statement, parameters);
 			resultSet = statement.executeQuery();

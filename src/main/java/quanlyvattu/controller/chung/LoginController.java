@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import quanlyvattu.dao.impl.DSPMDAO;
 import quanlyvattu.dao.impl.NhanVienDAO;
 import quanlyvattu.model.DSPMModel;
-import quanlyvattu.model.NhanVienModel;
+import quanlyvattu.model.NhanVienLoginModel;
 import quanlyvattu.model.UserModel;
 import quanlyvattu.service.ICheckService;
 import quanlyvattu.service.impl.CheckService;
@@ -89,7 +89,7 @@ public class LoginController {
 					InfoConnection.setPassWord(model.getPasswd());
 					InfoConnection.setUserName(model.getUserName());
 
-					NhanVienModel login = nvdao.login(model.getUserName());
+					NhanVienLoginModel login = nvdao.login(model.getUserName());
 
 					model.setMaNV(login.getMaNV());
 					model.setHoTen(login.getHoTen());

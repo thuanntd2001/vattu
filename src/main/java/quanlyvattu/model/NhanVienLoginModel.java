@@ -2,7 +2,7 @@ package quanlyvattu.model;
 
 import java.sql.Date;
 
-public class NhanVienModel {
+public class NhanVienLoginModel {
 	private int maNV;
 	private String hoTen;
 	private String tenNhom;

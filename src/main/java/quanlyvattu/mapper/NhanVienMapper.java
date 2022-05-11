@@ -3,13 +3,13 @@ package quanlyvattu.mapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import quanlyvattu.model.NhanVienModel;
+import quanlyvattu.model.NhanVienLoginModel;
 
-public class NhanVienMapper implements RowMapper<NhanVienModel>{
+public class NhanVienMapper implements RowMapper<NhanVienLoginModel>{
 	@Override
-	public NhanVienModel mapRow(ResultSet resultSet) {
+	public NhanVienLoginModel mapRow(ResultSet resultSet) {
 		try {
-			NhanVienModel nhanVien = new NhanVienModel();
+			NhanVienLoginModel nhanVien = new NhanVienLoginModel();
 			nhanVien.setMaNV(resultSet.getInt("MANV"));
 			nhanVien.setHoTen(resultSet.getString("HOTEN"));
 			nhanVien.setTenNhom(resultSet.getString("TENNHOM"));

@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import quanlyvattu.model.DSPMModel;
-import quanlyvattu.model.NhanVienModel;
+import quanlyvattu.model.NhanVienLoginModel;
 
 public class DSPMMapper implements RowMapper<DSPMModel>{
 	@Override

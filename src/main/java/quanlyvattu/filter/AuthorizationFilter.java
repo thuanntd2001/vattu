@@ -25,12 +25,13 @@ public class AuthorizationFilter implements Filter {
 		HttpServletResponse response = (HttpServletResponse) servletResponse;
 		String url = request.getRequestURI();
 		UserModel model = (UserModel) SessionUtil.getInstance().getValue(request, "USERMODEL");
-		//neu la dang nhap thi cho qua 
+		// neu la dang nhap thi cho qua
 		if (url.indexOf("/dang-nhap") != -1 || url.equals("/CNPM/")) {
 			filterChain.doFilter(servletRequest, servletResponse);
 		}
-		
-		//neu ko phai dang nhap, co ten nhom thi chi nhom do dc qua, ko co ten nhom thi nhom nao cung co the qua nhung phai dang nhap
+
+		// neu ko phai dang nhap, co ten nhom thi chi nhom do dc qua, ko co ten nhom thi
+		// nhom nao cung co the qua nhung phai dang nhap
 		else {
 			if (url.indexOf("/congty") != -1) {
 
@@ -54,7 +55,7 @@ public class AuthorizationFilter implements Filter {
 				}
 			}
 
-			if (url.indexOf("/chinhanh") != -1) {
+			else if (url.indexOf("/chinhanh") != -1) {
 
 				if (model != null) {
 
@@ -76,7 +77,7 @@ public class AuthorizationFilter implements Filter {
 				}
 			}
 
-			if (url.indexOf("/user") != -1) {
+			else if (url.indexOf("/user") != -1) {
 
 				if (model != null) {
 
@@ -98,14 +99,13 @@ public class AuthorizationFilter implements Filter {
 				}
 			}
 
-			else {
-				if (model == null) {
-					response.sendRedirect(
-							request.getContextPath() + "/dang-nhap.htm?action=login&message=not_login&alert=danger");
-				} else
-					filterChain.doFilter(servletRequest, servletResponse);
-			}
+			else if (model == null) {
+				response.sendRedirect(
+						request.getContextPath() + "/dang-nhap.htm?action=login&message=not_login&alert=danger");
+			} else
+				filterChain.doFilter(servletRequest, servletResponse);
 		}
+
 	}
 
 	@Override

@@ -2,8 +2,8 @@ package quanlyvattu.dao;
 
 import java.util.List;
 
-import quanlyvattu.model.NhanVienModel;
+import quanlyvattu.model.NhanVienLoginModel;
 
 public interface INhanVienDAO {
-	public NhanVienModel login(String userName);
+	public NhanVienLoginModel login(String userName);
 }
