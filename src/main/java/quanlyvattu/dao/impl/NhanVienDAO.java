@@ -2,17 +2,31 @@ package quanlyvattu.dao.impl;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+
 import quanlyvattu.dao.INhanVienDAO;
+import quanlyvattu.entity.NhanVienEntity;
 import quanlyvattu.mapper.NhanVienMapper;
 import quanlyvattu.model.NhanVienLoginModel;
 
 public class NhanVienDAO extends AbstractDAO<NhanVienLoginModel> implements INhanVienDAO{
-/*	public List<NhanVienLoginModel> findAll(){
-		String sql = "SELECT * FROM dbo.NHANVIEN";
-		return query(sql,new NhanVienMapper());
-	}
+/*	@PersistenceContext
+	EntityManager entityManager;
 
-	public NhanVienLoginModel findOne(long id) {
+	public List<NhanVienEntity> findAll(){
+		
+		String hql = "FROM NhanVienEntity ";
+		
+		return entityManager
+			     .createQuery(hql, NhanVienEntity.class)
+			     .getResultList();
+	}*/
+
+	/*public NhanVienLoginModel findOne(long id) {
 		String sql = "SELECT * FROM dbo.NHANVIEN NV WHERE MANV=?";
 		List<NhanVienLoginModel> nv= query(sql,new NhanVienMapper(),id);
 		return nv.isEmpty()?null:nv.get(0);

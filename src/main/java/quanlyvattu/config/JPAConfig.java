@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
-
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import quanlyvattu.statics.InfoConnection;
 
 @Configuration
-
+@EnableJpaRepositories(basePackages= {"quanlyvattu.repository"})
 @EnableTransactionManagement
 public class JPAConfig {
 	
@@ -58,8 +58,8 @@ public class JPAConfig {
 	
 	Properties additionalProperties() {
 		Properties properties = new Properties();
-		properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
-		//properties.setProperty("hibernate.hbm2ddl.auto", "none");
+		/*properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");*/
+		properties.setProperty("hibernate.hbm2ddl.auto", "none");
 		return properties;
 	}
 }

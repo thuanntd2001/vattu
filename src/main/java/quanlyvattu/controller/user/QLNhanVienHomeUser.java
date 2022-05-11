@@ -1,69 +1,55 @@
-/*package quanlyvattu.controller.chinhanh;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
+package quanlyvattu.controller.user;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 
-import org.apache.commons.lang.time.DateUtils;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.ServletRequestUtils;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import spring.entity.NhanVienEntity;
-import spring.entity.UserTBEntity;
-import spring.controller.admin.QLTaiKhoan;
+import quanlyvattu.dao.impl.NhanVienDAO;
+import quanlyvattu.entity.NhanVienEntity;
+
+
 @Transactional
 @Controller
-@RequestMapping(value = "/admin-home/" )
-public class QLNhanVienHome {
-	@Autowired
-	SessionFactory factory;
+public class QLNhanVienHomeUser {
+
+NhanVienDAO nvdao=new NhanVienDAO();
 	// CONTROLLER
-	@RequestMapping(value = "index", method = RequestMethod.GET)
-	public <E> String index(HttpServletRequest request,ModelMap model){	
-		@SuppressWarnings("unchecked")
-		PagedListHolder<E> pagedListHolder = new PagedListHolder<E>((List<E>) this.getNhanVien());
+	@RequestMapping(value = "user-home", method = RequestMethod.GET)
+	public <E> String userhome(HttpServletRequest request,ModelMap model){	
+/*		@SuppressWarnings("unchecked")
+		PagedListHolder<E> pagedListHolder = new PagedListHolder<E>((List<E>) nvdao.findAll());
 		int page = ServletRequestUtils.getIntParameter(request, "p", 0);
 		pagedListHolder.setPage(page);
 		pagedListHolder.setMaxLinkedPages(10);
 	
 		pagedListHolder.setPageSize(5);
-		model.addAttribute("pagedListHolder", pagedListHolder);
-		return "admin/QLNV";
+		model.addAttribute("pagedListHolder", pagedListHolder);*/
+		return "user/userhome";
 	}
 	
-	hiển thị form
+/*	//hiển thị form
 	@RequestMapping(value="form", method = RequestMethod.GET) 
     public String index_form(ModelMap model) {
 		model.addAttribute("nv",new NhanVienEntity());
           return "admin/form/inputNV";
-    }
+    }*/
 	
-	public List<NhanVienEntity> getNhanVien(){
+/*	public List<NhanVienEntity> getNhanVien(){
 		Session session = factory.getCurrentSession();
 		String hql = "FROM NhanVienEntity where daNghi = false";
 		Query query = session.createQuery(hql);
 		List<NhanVienEntity> list = query.list();
 		return list;
-	}
-	thêm nhân viên
+	}*/
+}	
+	/*//thêm nhân viên
 	@RequestMapping(value = "form",params = "Insert", method = RequestMethod.POST )
 	public <E> String addUser(HttpServletRequest request, ModelMap model,@ModelAttribute("nv") NhanVienEntity nv) {
 		
@@ -131,7 +117,7 @@ public class QLNhanVienHome {
 		return 1;
 	} 
 	
-	 phần chỉnh sửa 
+	// phần chỉnh sửa 
 	
 	@RequestMapping(value = "form", params = "linkEdit" )
 	public String editNV_showform (HttpServletRequest request, ModelMap model) {
@@ -216,7 +202,7 @@ public class QLNhanVienHome {
 		}
 		return 1;
 	}
-	 end phần chỉnh sửa 
+	// end phần chỉnh sửa 
 	
 	public List<UserTBEntity> getTaiKhoans() {
 		Session session = factory.getCurrentSession();
