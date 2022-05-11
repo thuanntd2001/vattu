@@ -14,8 +14,10 @@ public class UserModel {
 
 	private String userName;
 	
+	private String passwd;
 
 
+	private String chiNhanh;
 	
 	private String roleID;
 	
@@ -49,7 +51,6 @@ public class UserModel {
 
 
 
-	private String chiNhanh;
 
 	public String getUserName() {
 		return userName;
@@ -98,7 +99,6 @@ public class UserModel {
 	}
 
 
-	private String passwd;
 
 
 	
