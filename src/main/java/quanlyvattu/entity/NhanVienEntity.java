@@ -1,12 +1,16 @@
 package quanlyvattu.entity;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -33,6 +37,16 @@ public class NhanVienEntity {
 	@ManyToOne
 	@JoinColumn(name="MACN")
 	private ChiNhanhEntity chiNhanh;
+	
+	@OneToMany(mappedBy = "nhanVien", fetch = FetchType.EAGER)
+	List<DatHangEntity> DatHangs = new ArrayList<DatHangEntity>();
+	
+	@OneToMany(mappedBy = "nhanVien", fetch = FetchType.EAGER)
+	List<PhieuNhapEntity> PhieuNhaps = new ArrayList<PhieuNhapEntity>();
+	
+	@OneToMany(mappedBy = "nhanVien", fetch = FetchType.EAGER)
+	List<PhieuXuatEntity> PhieuXuats = new ArrayList<PhieuXuatEntity>();
+	
 	public String getMaNV() {
 		return maNV;
 	}

@@ -6,22 +6,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-@RequestMapping(value = "quanlynhanvien")
-public class QLNhanVienHomeChiNhanh {
+@RequestMapping(value = "quanlykho")
+public class QLKhoController {
 	@RequestMapping(value = "xem/chinhanh", method = RequestMethod.GET)
-	public String getNVCN(){	
+	public String getKhoCN(){	
 
-		return "chinhanh/chinhanhqldh";
+		return "chinhanh/chinhanhqlkho";
 	}
 	@RequestMapping(value = "xem/congty", method = RequestMethod.GET)
-	public String getNVCT(){	
+	public String getKhoCT(){	
 
-		return "chinhanh/congtyqldh";
+		return "chinhanh/congtyqlkho";
 	}
 	
 	@RequestMapping(value = "xem/user", method = RequestMethod.GET)
-	public String getNVU(){	
+	public String getKhoU(){	
 
-		return "chinhanh/userqldh";
+		return "chinhanh/userqlkho";
 	}
 }

@@ -1,13 +1,9 @@
 package quanlyvattu.controller.chinhanh;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-
-
-@Controller
-@RequestMapping(value = "quanlynhanvien")
-public class QLNhanVienHomeChiNhanh {
+@RequestMapping(value = "quanlydondathang")
+public class QLDonDatHangController {
 	@RequestMapping(value = "xem/chinhanh", method = RequestMethod.GET)
 	public String getNVCN(){	
 
@@ -25,3 +21,5 @@ public class QLNhanVienHomeChiNhanh {
 		return "chinhanh/userqldh";
 	}
 }
+
+
