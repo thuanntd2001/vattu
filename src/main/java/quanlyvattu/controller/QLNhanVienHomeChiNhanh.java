@@ -24,4 +24,19 @@ public class QLNhanVienHomeChiNhanh {
 
 		return "user/qlnhanvien";
 	}
+	@RequestMapping(value = "chinhanh/add", method = RequestMethod.GET)
+	public String addDDHCN(){	
+
+		return "chinhanh/form/add-nhanvien";
+	}
+	@RequestMapping(value = "congty/add", method = RequestMethod.GET)
+	public String addDDHCT(){	
+
+		return "congty/form/add-nhanvien";
+	}
+	@RequestMapping(value = "user/add", method = RequestMethod.GET)
+	public String addDDHU(){	
+
+		return "user/form/add-nhanvien";
+	}
 }

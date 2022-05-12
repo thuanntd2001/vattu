@@ -25,6 +25,21 @@ public class QLDonDatHangController {
 
 		return "user/qldondathang";
 	}
+	@RequestMapping(value = "chinhanh/add", method = RequestMethod.GET)
+	public String addDDHCN(){	
+
+		return "chinhanh/form/add-dondathang";
+	}
+	@RequestMapping(value = "congty/add", method = RequestMethod.GET)
+	public String addDDHCT(){	
+
+		return "congty/form/add-dondathang";
+	}
+	@RequestMapping(value = "user/add", method = RequestMethod.GET)
+	public String addDDHU(){	
+
+		return "user/form/add-dondathang";
+	}
 }
 
 

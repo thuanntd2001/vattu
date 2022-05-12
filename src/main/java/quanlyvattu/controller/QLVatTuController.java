@@ -24,4 +24,19 @@ public class QLVatTuController {
 
 		return "user/qlvattu";
 	}
+	@RequestMapping(value = "chinhanh/add", method = RequestMethod.GET)
+	public String addDDHCN(){	
+
+		return "chinhanh/form/add-vattu";
+	}
+	@RequestMapping(value = "congty/add", method = RequestMethod.GET)
+	public String addDDHCT(){	
+
+		return "congty/form/add-vattu";
+	}
+	@RequestMapping(value = "user/add", method = RequestMethod.GET)
+	public String addDDHU(){	
+
+		return "congty/form/add-vattu";
+	}
 }
