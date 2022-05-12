@@ -11,17 +11,17 @@ public class QLPhieuXuatController {
 	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
 	public String getPXCN(){	
 
-		return "chinhanh/qlpx";
+		return "chinhanh/qlphieuxuat";
 	}
 	@RequestMapping(value = "congty", method = RequestMethod.GET)
 	public String getPXCT(){	
 
-		return "congty/qlpx";
+		return "congty/qlphieuxuat";
 	}
 	
 	@RequestMapping(value = "user", method = RequestMethod.GET)
 	public String getPXU(){	
 
-		return "user/qlpx";
+		return "user/qlphieuxuat";
 	}
 }

@@ -27,9 +27,9 @@
          Xin chào {user.ten}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">Thông tin</a>
+          <a class="dropdown-item" href="#">Công cụ</a>
+          <a class="dropdown-item" href="#">Đăng xuất</a>
         </div>
       </li>
     </ul>

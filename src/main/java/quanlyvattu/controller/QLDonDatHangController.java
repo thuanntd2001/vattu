@@ -1,7 +1,12 @@
 package quanlyvattu.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+
+
+@Controller
 @RequestMapping(value = "quanlydondathang")
 public class QLDonDatHangController {
 	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
