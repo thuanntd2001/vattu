@@ -101,13 +101,13 @@ public class LoginController {
 					// tra ra view
 					if (model.getRoleID().equals("CONGTY"))
 
-						return "redirect:congty-home.htm";
+						return "redirect:quanlynhanvien/congty.htm";
 					if (model.getRoleID().equals("CHINHANH"))
 
-						return "redirect:chinhanh-home.htm";
+						return "redirect:quanlynhanvien/chinhanh.htm";
 					if (model.getRoleID().equals("USER"))
 
-						return "redirect:user-home.htm";
+						return "redirect:quanlynhanvien/user.htm";
 				}
 
 			}
