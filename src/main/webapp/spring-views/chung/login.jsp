@@ -4,7 +4,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title><dec:title default="Đăng nhập" /></title>
 <link rel="stylesheet" href="style.css" />
 
 <link rel="stylesheet"
@@ -20,8 +19,9 @@
 	rel="stylesheet" type="text/css" media="all" />
 
 <style type="text/css">
-	 .errors{
-     color:red; font-style: italic;
+.errors {
+	color: red;
+	font-style: italic;
 }
 </style>
 
@@ -32,8 +32,9 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Đăng nhập</title>
 <style type="text/css">
-	 .errors{
-     color:red; font-style: italic;
+.errors {
+	color: red;
+	font-style: italic;
 }
 </style>
 </head>
@@ -45,15 +46,25 @@
 	<div class="col-6 offset-3 mt-5 ">
 		<form action="" method="post">
 			<div class="card">
+
 				<div class="card-header">
-					<h4 class="fa fa-window-maximize"> Login </h4>
+					<h4 >  Đăng nhập</h4>
 				</div>
 				<c:if test="${not empty message}">
 					<div class="alert alert-${alert}">${message}</div>
 				</c:if>
 				<div class="card-body">
-					
-					
+					<div class="form-group">
+						<label for="username">Chi Nhánh</label> <br> <select
+							class="selectpicker" name="chiNhanh">
+							<c:forEach items="${DSPMs }" var="pm">
+								<option value="${pm.tenServer}">${pm.tenCN}</option>
+							</c:forEach>
+						</select>
+
+					</div>
+
+
 					<div class="form-group">
 						<label for="username">User name</label> <input type="text"
 							class="form-control" name="userName" id="userName"
@@ -63,22 +74,12 @@
 							invalid</small> -->
 					</div>
 					<div class="form-group">
-						<label for="password">Password</label> <input type="password"
+						<label for="password">Mật Khẩu</label> <input type="password"
 							class="form-control" name="passwd" id="passwd"
-							aria-describedby="helpId" placeholder="Password">
+							aria-describedby="helpId" placeholder="Mật Khẩu">
 						<!-- <small
 							id="passwordHid" class="form-text text-muted">Password is
 							invalid</small> -->
-					</div>
-					<div class="form-group"> 
-						<label for="username">Chi Nhánh</label>
-						<br>
-						<select class="selectpicker" name="chiNhanh">
-						<c:forEach items="${DSPMs }" var="pm">
-							<option value="${pm.tenServer}"> ${pm.tenCN} </option>
-						</c:forEach>
-						</select>
-						
 					</div>
 
 

@@ -36,7 +36,7 @@ public class PhieuXuatEntity {
 	
 	@ManyToOne
 	@JoinColumn(name="MAKHO")
-	private KhoEntity Kho;
+	private KhoEntity kho;
 	
 	public String getMaPX() {
 		return maPX;

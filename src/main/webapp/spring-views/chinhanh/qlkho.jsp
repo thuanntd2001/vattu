@@ -57,9 +57,9 @@
 									<td>Đồng Nai</td>
 									<td>Đồng Nai</td>
 									<td>01</td>
-									<td><a href="Donhang.html" class="fa fa-file-text-o"></a>
-										<a href="PhieunhapnoDDH.html" class="fa fa-list"></a> <a
-										href="Phieuxuat.html" class="fa fa-outdent"></a></td>
+									<td><a href="Donhang.html" class="fa fa-file-text-o"> Đơn đặt hàng</a>
+										<a href="PhieunhapnoDDH.html" class="fa fa-list"> Phiếu nhập</a> <a
+										href="Phieuxuat.html" class="fa fa-outdent">Phiếu xuất</a></td>
 							</tbody>
 						</table>
 						<!-- End Primary Color Bordered Table -->

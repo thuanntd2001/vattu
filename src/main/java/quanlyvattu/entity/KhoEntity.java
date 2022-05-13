@@ -29,10 +29,10 @@ public class KhoEntity {
 	@Column(name="MACN")
 	private String maCN;
 	
-	@OneToMany(mappedBy = "Kho", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "kho", fetch = FetchType.EAGER)
 	List<PhieuNhapEntity> phieuNhaps = new ArrayList<PhieuNhapEntity>();
 	
-	@OneToMany(mappedBy = "Kho", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "kho", fetch = FetchType.EAGER)
 	List<PhieuXuatEntity> phieuXuats = new ArrayList<PhieuXuatEntity>();
 	
 	public String getMaKho() {

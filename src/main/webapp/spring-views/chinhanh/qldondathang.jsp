@@ -79,7 +79,7 @@
                   
                 </tbody>
               </table>
-              <a href="add-DDH.html" class="fa fa-plus"></a>
+              <a href="quanlydondathang/chinhanh/add.htm" class="fa fa-plus"></a>
             </div>
           </div>
 

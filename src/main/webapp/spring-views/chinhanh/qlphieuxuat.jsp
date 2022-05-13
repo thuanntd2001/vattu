@@ -72,7 +72,7 @@
                   </tr>                  
                 </tbody>
               </table>
-              <a href="add-PX1.html" class="fa fa-plus"></a>
+              <a href="quanlyphieuxuat/chinhanh/add.htm" class="fa fa-plus"></a>
             </div>
           </div>
 

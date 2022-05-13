@@ -69,7 +69,7 @@
 							</tbody>
 						</table>
 						<!-- End Table with stripped rows -->
-						<a href="add-nhanvien.html" class="fa fa-plus"></a>
+						<a href="quanlynhanvien/chinhanh/add.htm" class="fa fa-plus"></a>
 					</div>
 				</div>
 

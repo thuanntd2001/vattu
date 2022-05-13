@@ -29,8 +29,8 @@ public class DatHangEntity {
 	@Column(name="NHACC")
 	private String nhaCC;
 
-	@Column(name="MAKHO")
-	private String maKho;
+	@Column(name="KHO")
+	private String kho;
 	
 	@ManyToOne
 	@JoinColumn(name="MANV")
@@ -59,10 +59,10 @@ public class DatHangEntity {
 	}
 
 	public String getMaKho() {
-		return maKho;
+		return kho;
 	}
 	public void setMaKho(String maKho) {
-		this.maKho = maKho;
+		this.kho = maKho;
 	}
 	
 	
