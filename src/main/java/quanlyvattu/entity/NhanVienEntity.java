@@ -37,14 +37,14 @@ public class NhanVienEntity {
 	@JoinColumn(name="MACN")
 	private ChiNhanhEntity chiNhanh;
 	
-	@OneToMany(mappedBy = "nhanVien", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "nhanVien", fetch = FetchType.LAZY)
 	List<DatHangEntity> DatHangs = new ArrayList<DatHangEntity>();
 	
-/*	@OneToMany(mappedBy = "nhanVien", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "nhanVien", fetch = FetchType.LAZY)
 	List<PhieuNhapEntity> PhieuNhaps = new ArrayList<PhieuNhapEntity>();
 	
-	@OneToMany(mappedBy = "nhanVien", fetch = FetchType.EAGER)
-	List<PhieuXuatEntity> PhieuXuats = new ArrayList<PhieuXuatEntity>();*/
+	@OneToMany(mappedBy = "nhanVien", fetch = FetchType.LAZY)
+	List<PhieuXuatEntity> PhieuXuats = new ArrayList<PhieuXuatEntity>();
 	
 	public String getMaNV() {
 		return maNV;

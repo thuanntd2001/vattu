@@ -37,8 +37,8 @@ public class DatHangEntity {
 	@JoinColumn(name="MANV")
 	private NhanVienEntity nhanVien;
 	
-/*	@OneToMany(mappedBy = "datHang", fetch = FetchType.EAGER)
-	List<PhieuNhapEntity> phieuNhaps = new ArrayList<PhieuNhapEntity>();*/
+//	@OneToMany(mappedBy = "datHang", fetch = FetchType.EAGER)
+//	List<PhieuNhapEntity> phieuNhaps = new ArrayList<PhieuNhapEntity>();
 	
 	public String getMaSoDDH() {
 		return maSoDDH;

@@ -31,14 +31,14 @@ public class KhoEntity {
 	@JoinColumn(name = "MACN")
 	private ChiNhanhEntity chiNhanh;
 
-	@OneToMany(mappedBy = "kho", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "kho", fetch = FetchType.LAZY)
 	List<DatHangEntity> datHangs = new ArrayList<DatHangEntity>();
 
-/*	@OneToMany(mappedBy = "kho", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "kho", fetch = FetchType.LAZY)
 	List<PhieuNhapEntity> phieuNhaps = new ArrayList<PhieuNhapEntity>();
 
-	@OneToMany(mappedBy = "kho", fetch = FetchType.EAGER)
-	List<PhieuXuatEntity> phieuXuats = new ArrayList<PhieuXuatEntity>();*/
+	@OneToMany(mappedBy = "kho", fetch = FetchType.LAZY)
+	List<PhieuXuatEntity> phieuXuats = new ArrayList<PhieuXuatEntity>();
 
 	public ChiNhanhEntity getChiNhanh() {
 		return chiNhanh;

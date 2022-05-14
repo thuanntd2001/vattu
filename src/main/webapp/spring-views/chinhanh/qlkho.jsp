@@ -63,9 +63,9 @@
 											<td>${k.chiNhanh.maCN}</td>
 
 											<td><a href="quanlydondathang/chinhanh.htm?idkho=${k.maKho}" class="fa fa-file-text-o">
-													Đơn đặt hàng</a> <a href="PhieunhapnoDDH.html"
-												class="fa fa-list"> Phiếu nhập</a> <a href="Phieuxuat.html"
-												class="fa fa-outdent">Phiếu xuất</a></td>
+													<br>Đơn đặt hàng</a> <a href="PhieunhapnoDDH.html"
+												class="fa fa-list"><br> Phiếu nhập</a> <a href="Phieuxuat.html"
+												class="fa fa-outdent"><br>Phiếu xuất</a></td>
 										</tr>
 									</c:forEach>
 							</tbody>
