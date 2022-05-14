@@ -2,8 +2,8 @@ package quanlyvattu.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import quanlyvattu.entity.VatTuEntity;
+import quanlyvattu.entity.PhieuXuatEntity;
 
-public interface VatTuRepository extends JpaRepository<VatTuEntity, String> {
+public interface VatTuRepository extends JpaRepository<PhieuXuatEntity, String> {
 
 }

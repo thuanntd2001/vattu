@@ -44,6 +44,18 @@ public class PhieuXuatEntity {
 	public void setMaPX(String maPX) {
 		this.maPX = maPX;
 	}	
+	public NhanVienEntity getNhanVien() {
+		return nhanVien;
+	}
+	public void setNhanVien(NhanVienEntity nhanVien) {
+		this.nhanVien = nhanVien;
+	}
+	public KhoEntity getKho() {
+		return kho;
+	}
+	public void setKho(KhoEntity kho) {
+		this.kho = kho;
+	}
 	public Timestamp getNgay() {
 		return ngay;
 	}
