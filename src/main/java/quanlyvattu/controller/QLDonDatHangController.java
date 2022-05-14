@@ -1,6 +1,9 @@
 package quanlyvattu.controller;
 
+import java.util.List;
+
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -9,6 +12,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import quanlyvattu.entity.DatHangEntity;
 import quanlyvattu.repository.ChiNhanhRepository;
 import quanlyvattu.repository.DatHangRepository;
 import quanlyvattu.repository.NhanVienRepository;
@@ -25,10 +29,21 @@ public class QLDonDatHangController {
 	ServletContext session;
 	
 	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
-	public String getDDHCN(ModelMap model){	
-		Sort sort = new Sort(Sort.Direction.DESC, "maSoDDH");;
-		model.addAttribute("ddhs",dhrepo.findAll(sort));
-		return "chinhanh/qldondathang";
+	public String getDDHCN(ModelMap model, HttpServletRequest request){	
+		String idKho= (String) request.getParameter("idkho");
+		if(idKho != "" && idKho != null ) {
+			Sort sort = new Sort(Sort.Direction.DESC, "maSoDDH");
+			List<DatHangEntity> dhs=(List<DatHangEntity>) dhrepo.findByKho(idKho);
+			model.addAttribute("ddhs",dhs);
+			for (DatHangEntity dh:dhs) System.out.print(dh.getKho());
+			return "chinhanh/qldondathang";
+		}else {
+			System.out.print("khong co ma kho");
+			Sort sort = new Sort(Sort.Direction.DESC, "maSoDDH");
+			model.addAttribute("ddhs",dhrepo.findAll(sort));
+			return "chinhanh/qldondathang";
+		}
+		
 	}
 
 
