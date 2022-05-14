@@ -51,19 +51,23 @@
 						<!-- Multi Columns Form -->
 						<form:form action="quanlynhanvien/chinhanh/add.xml" method="post"
 							modelAttribute="nv" class="row g-3">
-							<div class="col-md-2">
+							<%-- <div class="col-md-2">
 								<label for="inputState" class="form-label">Chi Nhánh</label>
-								<form:select id="inputState" class="form-select" path="listOfDates">
-									<form:options items="${chiNhanhs}"></form:options>
+								<form:select path="chiNhanh">
+									 
+										 <form:options value="${chiNhanhHT}" label="${chiNhanhHT.chiNhanh} "></form:options> 
+										 <form:input path="chiNhanh" value="${chiNhanhHT}" label="${chiNhanhHT.chiNhanh} "  />
 								</form:select>
+							</div> --%>
+							<div class="col-md-5">
+								<label for="inputEmail5" class="form-label">Họ</label> 
+								<form:input
+									type="text" class="form-control" id="inputEmail5" path="ho"/>
 							</div>
 							<div class="col-md-5">
-								<label for="inputEmail5" class="form-label">Họ</label> <input
-									type="email" class="form-control" id="inputEmail5">
-							</div>
-							<div class="col-md-5">
-								<label for="inputPassword5" class="form-label">Tên</label> <input
-									type="password" class="form-control" id="inputPassword5">
+								<label for="inputPassword5" class="form-label">Tên</label> 
+								<form:input
+									type="text" class="form-control" id="inputPassword5" path="ten"/>
 							</div>
 							<div class="col-md-7">
 								<label for="inputDate" class="col-sm-2 col-form-label">Ngày
@@ -73,13 +77,15 @@
 								</div>
 							</div>
 							<div class="col-md-4">
-								<label for="inputCity" class="form-label">Lương</label> <input
-									type="text" class="form-control" id="inputCity">
+								<label for="inputCity" class="form-label">Lương</label> 
+								<form:input
+									type="number" class="form-control" id="inputCity" path="luong"/>
 							</div>
 							<div class="col-md-12">
-								<label for="inputAddress5" class="form-label">Đia Chỉ</label> <input
+								<label for="inputAddress5" class="form-label">Đia Chỉ</label> 
+								<form:input
 									type="text" class="form-control" id="inputAddres5s"
-									placeholder="TPHCM">
+									placeholder="TPHCM" path="diaChi"/>
 							</div>
 
 							<div class="text-center">

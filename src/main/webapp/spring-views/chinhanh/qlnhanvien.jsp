@@ -54,18 +54,20 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<th scope="row">001</th>
-									<td>Phạmđạkhạhjkshfhdshfhdskfhjkdshfdhjkfhkjdhkjsdhkj</td>
-									<td>Phương</td>
-									<td>TP.HCM</td>
-									<td>01-01-2001</td>
-									<td>1 USD</td>
-									<td><a href="edit-nhanvien.html"
-										class="fa fa-pencil-square-o"></a> <a href="#"
-										class="fa fa-times-circle"></a>
-								</tr>
+								<c:forEach items="${nvs }" var="nv">
+									<tr>
 
+										<th scope="row">${nv.maNV}</th>
+										<td>${nv.ho}</td>
+										<td>${nv.ten}</td>
+										<td>${nv.diaChi}</td>
+										<td>${nv.ngaySinh}</td>
+										<td>${nv.luong}VND</td>
+										<td><a href="/quanlynhanvien/chinhanh/edit.htm?id=${nv.maNV} "
+											class="fa fa-pencil-square-o"></a> <a href="#"
+											class="fa fa-times-circle"></a>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 						<!-- End Table with stripped rows -->

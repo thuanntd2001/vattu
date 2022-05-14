@@ -52,14 +52,22 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<th scope="row">001</th>
-									<td>Đồng Nai</td>
-									<td>Đồng Nai</td>
-									<td>01</td>
-									<td><a href="Donhang.html" class="fa fa-file-text-o"> Đơn đặt hàng</a>
-										<a href="PhieunhapnoDDH.html" class="fa fa-list"> Phiếu nhập</a> <a
-										href="Phieuxuat.html" class="fa fa-outdent">Phiếu xuất</a></td>
+						
+
+									<c:forEach items="${ks }" var="k">
+										<tr>
+
+											<th scope="row">${k.maKho}</th>
+											<td>${k.tenKho}</td>
+											<td>${k.diaChi}</td>
+											<td>${k.chiNhanh.maCN}</td>
+
+											<td><a href="quanlydondathang/chinhanh.htm" class="fa fa-file-text-o">
+													Đơn đặt hàng</a> <a href="PhieunhapnoDDH.html"
+												class="fa fa-list"> Phiếu nhập</a> <a href="Phieuxuat.html"
+												class="fa fa-outdent">Phiếu xuất</a></td>
+										</tr>
+									</c:forEach>
 							</tbody>
 						</table>
 						<!-- End Primary Color Bordered Table -->

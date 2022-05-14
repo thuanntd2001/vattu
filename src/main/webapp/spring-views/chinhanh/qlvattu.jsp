@@ -53,7 +53,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
+						<!-- 		<tr>
 									<th scope="row">M01</th>
 									<td>Máy giặt</td>
 									<td>Cái</td>
@@ -62,8 +62,20 @@
 										class="fa fa-pencil-square-o"></a> <a href="#"
 										class="fa fa-times-circle"></a></td>
 
-								</tr>
+								</tr> -->
+								<c:forEach items="${vts }" var="nv">
+									<tr>
 
+										<th scope="row">${nv.maVT}</th>
+										<td>${nv.tenVT}</td>
+										<td>${nv.donViTinh}</td>
+										<td>${nv.soLuongTon}</td>
+
+										<td><a href="edit-vattu.html"
+											class="fa fa-pencil-square-o"></a> <a href="#"
+											class="fa fa-times-circle"></a></td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 						<!-- End Table with stripped rows -->

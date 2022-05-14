@@ -20,23 +20,30 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class VatTuEntity {
 	@Id
-
 	@Column(name="MAVT")
 	private String maVT;
 	@Column(name="TENVT")
 	private String tenVT;
-	@Column(name="DONVITINH")
+	@Column(name="DVT")
 	private String donViTinh;
+	@Column(name="SOLUONGTON")
+	private String soLuongTon;
 	
-	@OneToMany(mappedBy = "vatTu", fetch = FetchType.EAGER)
+/*	@OneToMany(mappedBy = "vatTu", fetch = FetchType.EAGER)
 	List<CTDDHEntity> CTDDHs = new ArrayList<CTDDHEntity>();
 	
 	@OneToMany(mappedBy = "vatTu", fetch = FetchType.EAGER)
 	List<CTPNEntity> CTPNs = new ArrayList<CTPNEntity>();
 	
 	@OneToMany(mappedBy = "vatTu", fetch = FetchType.EAGER)
-	List<CTPXEntity> CTPXs = new ArrayList<CTPXEntity>();
+	List<CTPXEntity> CTPXs = new ArrayList<CTPXEntity>();*/
 	
+	public String getSoLuongTon() {
+		return soLuongTon;
+	}
+	public void setSoLuongTon(String soLuongTon) {
+		this.soLuongTon = soLuongTon;
+	}
 	public String getMaVT() {
 		return maVT;
 	}

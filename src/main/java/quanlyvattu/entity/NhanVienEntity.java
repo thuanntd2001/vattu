@@ -19,7 +19,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name="NhanVien")
 public class NhanVienEntity {
 	@Id
-
 	@Column(name="MANV")
 	private String maNV;
 	@Column(name="HO")
@@ -41,11 +40,11 @@ public class NhanVienEntity {
 	@OneToMany(mappedBy = "nhanVien", fetch = FetchType.EAGER)
 	List<DatHangEntity> DatHangs = new ArrayList<DatHangEntity>();
 	
-	@OneToMany(mappedBy = "nhanVien", fetch = FetchType.EAGER)
+/*	@OneToMany(mappedBy = "nhanVien", fetch = FetchType.EAGER)
 	List<PhieuNhapEntity> PhieuNhaps = new ArrayList<PhieuNhapEntity>();
 	
 	@OneToMany(mappedBy = "nhanVien", fetch = FetchType.EAGER)
-	List<PhieuXuatEntity> PhieuXuats = new ArrayList<PhieuXuatEntity>();
+	List<PhieuXuatEntity> PhieuXuats = new ArrayList<PhieuXuatEntity>();*/
 	
 	public String getMaNV() {
 		return maNV;

@@ -15,7 +15,6 @@ import javax.persistence.Table;
 @Table(name="ChiNhanh")
 public class ChiNhanhEntity {
 	@Id
-
 	@Column(name="MACN")
 	private String maCN;
 	@Column(name="ChiNhanh")
@@ -29,7 +28,8 @@ public class ChiNhanhEntity {
 	}
 	@OneToMany(mappedBy = "chiNhanh", fetch = FetchType.EAGER)
 	List<NhanVienEntity> nhanViens = new ArrayList<NhanVienEntity>();
-	
+	@OneToMany(mappedBy = "chiNhanh", fetch = FetchType.EAGER)
+	List<KhoEntity> khos = new ArrayList<KhoEntity>();
 	
 	public void setMaCN(String maCN) {
 		this.maCN = maCN;

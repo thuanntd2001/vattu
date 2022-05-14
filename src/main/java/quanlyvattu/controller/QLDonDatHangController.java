@@ -1,30 +1,37 @@
 package quanlyvattu.controller;
 
+import javax.servlet.ServletContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import quanlyvattu.repository.ChiNhanhRepository;
+import quanlyvattu.repository.DatHangRepository;
+import quanlyvattu.repository.NhanVienRepository;
 
 
 
 @Controller
 @RequestMapping(value = "quanlydondathang")
 public class QLDonDatHangController {
-	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
-	public String getDDHCN(){	
+	@Autowired
+	DatHangRepository dhrepo;
 
+	@Autowired
+	ServletContext session;
+	
+	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
+	public String getDDHCN(ModelMap model){	
+		Sort sort = new Sort(Sort.Direction.DESC, "maSoDDH");;
+		model.addAttribute("ddhs",dhrepo.findAll(sort));
 		return "chinhanh/qldondathang";
 	}
-	@RequestMapping(value = "congty", method = RequestMethod.GET)
-	public String getDDHCT(){	
 
-		return "congty/qldondathang";
-	}
-	
-	@RequestMapping(value = "user", method = RequestMethod.GET)
-	public String getDDHU(){	
 
-		return "user/qldondathang";
-	}
 	@RequestMapping(value = "chinhanh/add", method = RequestMethod.GET)
 	public String addDDHCN(){	
 

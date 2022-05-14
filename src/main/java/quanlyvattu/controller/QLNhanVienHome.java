@@ -1,4 +1,6 @@
 package quanlyvattu.controller;
+import javax.servlet.ServletContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import quanlyvattu.entity.NhanVienEntity;
+import quanlyvattu.model.UserModel;
 import quanlyvattu.repository.ChiNhanhRepository;
 import quanlyvattu.repository.NhanVienRepository;
 
@@ -14,12 +17,13 @@ import quanlyvattu.repository.NhanVienRepository;
 
 @Controller
 @RequestMapping(value = "quanlynhanvien")
-public class QLNhanVienHomeChiNhanh {
+public class QLNhanVienHome {
 	@Autowired
 	NhanVienRepository nvrepo;
 	@Autowired
 	ChiNhanhRepository cnrepo;
-	
+	@Autowired
+	ServletContext session;
 	
 	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
 	public String getNVCN(ModelMap model){	
@@ -32,8 +36,9 @@ public class QLNhanVienHomeChiNhanh {
 	@RequestMapping(value = "chinhanh/add", method = RequestMethod.GET)
 	public String addDDHCN(ModelMap model){	
 		model.addAttribute("nv", new NhanVienEntity());
-		Sort sort = new Sort(Sort.Direction.ASC, "id");;
-		model.addAttribute("chiNhanhs", cnrepo.findAll(sort));
+		
+		UserModel user=(UserModel) session.getAttribute("USERMODEL");
+		model.addAttribute("chiNhanhHT", cnrepo.findOne(user.getChiNhanh()));
 		return "chinhanh/form/add-nhanvien";
 	}
 	

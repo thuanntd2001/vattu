@@ -16,49 +16,60 @@ import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="Kho")
+@Table(name = "Kho")
 public class KhoEntity {
 	@Id
 
-	@Column(name="MAKHO")
+	@Column(name = "MAKHO")
 	private String maKho;
-	@Column(name="TENKHO")
+	@Column(name = "TENKHO")
 	private String tenKho;
-	@Column(name="DIACHI")
+	@Column(name = "DIACHI")
 	private String diaChi;
-	@Column(name="MACN")
-	private String maCN;
-	
+
+	@ManyToOne
+	@JoinColumn(name = "MACN")
+	private ChiNhanhEntity chiNhanh;
+
 	@OneToMany(mappedBy = "kho", fetch = FetchType.EAGER)
+	List<DatHangEntity> datHangs = new ArrayList<DatHangEntity>();
+
+/*	@OneToMany(mappedBy = "kho", fetch = FetchType.EAGER)
 	List<PhieuNhapEntity> phieuNhaps = new ArrayList<PhieuNhapEntity>();
-	
+
 	@OneToMany(mappedBy = "kho", fetch = FetchType.EAGER)
-	List<PhieuXuatEntity> phieuXuats = new ArrayList<PhieuXuatEntity>();
-	
+	List<PhieuXuatEntity> phieuXuats = new ArrayList<PhieuXuatEntity>();*/
+
+	public ChiNhanhEntity getChiNhanh() {
+		return chiNhanh;
+	}
+
+	public void setChiNhanh(ChiNhanhEntity chiNhanh) {
+		this.chiNhanh = chiNhanh;
+	}
+
 	public String getMaKho() {
 		return maKho;
 	}
+
 	public void setMaKho(String maKho) {
 		this.maKho = maKho;
 	}
+
 	public String getTenKho() {
 		return tenKho;
 	}
+
 	public void setTenKho(String tenKho) {
 		this.tenKho = tenKho;
 	}
+
 	public String getDiaChi() {
 		return diaChi;
 	}
+
 	public void setDiaChi(String diaChi) {
 		this.diaChi = diaChi;
 	}
-	public String getMaCN() {
-		return maCN;
-	}
-	public void setMaCN(String maCN) {
-		this.maCN = maCN;
-	}
-	
 
 }

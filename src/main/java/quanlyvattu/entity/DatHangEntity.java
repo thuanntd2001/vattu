@@ -29,18 +29,26 @@ public class DatHangEntity {
 	@Column(name="NHACC")
 	private String nhaCC;
 
-	@Column(name="KHO")
-	private String kho;
+	@ManyToOne
+	@JoinColumn(name="KHO")
+	private KhoEntity kho;
 	
 	@ManyToOne
 	@JoinColumn(name="MANV")
 	private NhanVienEntity nhanVien;
 	
-	@OneToMany(mappedBy = "datHang", fetch = FetchType.EAGER)
-	List<PhieuNhapEntity> phieuNhaps = new ArrayList<PhieuNhapEntity>();
+/*	@OneToMany(mappedBy = "datHang", fetch = FetchType.EAGER)
+	List<PhieuNhapEntity> phieuNhaps = new ArrayList<PhieuNhapEntity>();*/
 	
 	public String getMaSoDDH() {
 		return maSoDDH;
+	}
+
+	public NhanVienEntity getNhanVien() {
+		return nhanVien;
+	}
+	public void setNhanVien(NhanVienEntity nhanVien) {
+		this.nhanVien = nhanVien;
 	}
 	public void setMaSoDDH(String maSoDDH) {
 		this.maSoDDH = maSoDDH;
@@ -58,12 +66,15 @@ public class DatHangEntity {
 		this.nhaCC = nhaCC;
 	}
 
-	public String getMaKho() {
+	public KhoEntity getKho() {
 		return kho;
 	}
-	public void setMaKho(String maKho) {
-		this.kho = maKho;
+
+	public void setKho(KhoEntity kho) {
+		this.kho = kho;
 	}
+
+
 	
 	
 }
