@@ -40,6 +40,9 @@ public class DatHangEntity {
 //	@OneToMany(mappedBy = "datHang", fetch = FetchType.EAGER)
 //	List<PhieuNhapEntity> phieuNhaps = new ArrayList<PhieuNhapEntity>();
 	
+	@OneToMany(mappedBy = "datHang", fetch = FetchType.EAGER)
+	List<CTDDHEntity> phieuNhaps = new ArrayList<CTDDHEntity>();
+	
 	public String getMaSoDDH() {
 		return maSoDDH;
 	}

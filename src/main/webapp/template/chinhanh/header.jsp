@@ -17,12 +17,12 @@
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#"
 				id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false">	 Xin chào {user.ten}
+				aria-haspopup="true" aria-expanded="false">	 Xin chào ${USERMODEL.hoTen}
 			</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<a class="dropdown-item" href="#">Thông tin</a> <a
 						class="dropdown-item" href="#">Công cụ</a> <a
-						class="dropdown-item" href="#">Đăng xuất</a>
+						class="dropdown-item" href="http://localhost:8080/CNPM/dang-nhap.htm?action=logout">Đăng xuất</a>
 				</div></li>
 			<li class="nav-item active"><a class="nav-link" href="#">
 					<span class="sr-only">(current)</span>

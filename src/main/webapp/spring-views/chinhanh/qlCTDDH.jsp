@@ -31,55 +31,60 @@
 	<main id="main" class="main">
 
 	<div class="pagetitle">
-		<h1>Vật tư</h1>
+		<h1>Nhân viên</h1>
+		<nav>
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="Kho.html">Kho</a></li>
+				<li class="breadcrumb-item"><a href="Donhang.html">Đơn hàng</a></li>
+				<li class="breadcrumb-item active">Chi tiết đơn đặt hàng</li>
+			</ol>
+		</nav>
 	</div>
-	<!-- End Page Title -->
-
 	<section class="section">
 		<div class="row">
-			<div class="col-lg-12">
+			<div class="col-lg-10">
+
 				<div class="card">
 					<div class="card-body">
+						<h5 class="card-title">Chi tiết đơn đặt hàng</h5>
 
-						<!-- Bordered Table -->
 						<table class="table table-bordered">
 							<thead>
-								<tr>
-									<th scope="col">Mã vật tư</th>
-									<th scope="col">Tên vật tư</th>
-									<th scope="col">Đơn vị tính</th>
-									<th scope="col">Số lượng tồn</th>
+								<tr class="table-secondary">
+									<th scope="col">Mã số DDH</th>
+									<th scope="col">Mã VT</th>
+									<th scope="col">Số lượng</th>
+									<th scope="col">Đơn giá</th>
 									<th scope="col">Thao tác</th>
 								</tr>
 							</thead>
 							<tbody>
-								<!-- 		<tr>
-									<th scope="row">M01</th>
-									<td>Máy giặt</td>
-									<td>Cái</td>
-									<td>40</td>
-									<td><a href="edit-vattu.html"
-										class="fa fa-pencil-square-o"></a> <a href="#"
-										class="fa fa-times-circle"></a></td>
+								<tr>
+									<th scope="row">001</th>
+									<td>001</td>
+									<td>10</td>
+									<td>20000 VNĐ</td>
+								</tr>
 
-								</tr> -->
-								<c:forEach items="${vts }" var="nv">
+
+
+								<c:forEach items="${ddhs }" var="k">
 									<tr>
 
-										<th scope="row">${nv.maVT}</th>
-										<td>${nv.tenVT}</td>
-										<td>${nv.donViTinh}</td>
-										<td>${nv.soLuongTon}</td>
+										<th scope="row">${k.datHang.maSoDDH}</th>
+										<td>${k.vatTu.maVT}</td>
+										<td>${k.soLuong}</td>
 
-										<td><a href="edit-vattu.html"
-											class="fa fa-pencil-square-o"></a> <a href="#"
-											class="fa fa-times-circle"></a></td>
+										<td>${k.donGia}</td>
+										<td><a href="#}" class="fa fa-pencil-square-o"></a></td>
 									</tr>
 								</c:forEach>
+
 							</tbody>
 						</table>
-						<!-- End Table with stripped rows -->
-						<a href="quanlyvattu/chinhanh/add.htm" class="fa fa-plus"></a>
+
+
+
 					</div>
 				</div>
 
@@ -89,6 +94,7 @@
 
 	</main>
 	<!-- End #main -->
+
 	<jsp:include page="/template/chinhanh/footer.jsp" />
 
 

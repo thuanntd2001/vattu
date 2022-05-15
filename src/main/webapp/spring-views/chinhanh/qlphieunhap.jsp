@@ -11,79 +11,82 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 <title>QLVT</title>
-	<!-- ======= Head ======= -->
-   <jsp:include page="/template/chinhanh/head.jsp" /> 
+<!-- ======= Head ======= -->
+<jsp:include page="/template/chinhanh/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/chinhanh/header.jsp" /> 
+	<jsp:include page="/template/chinhanh/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-		<jsp:include page="/template/chinhanh/sidebar.jsp" />
+	<jsp:include page="/template/chinhanh/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
-	
-  <main id="main" class="main">
 
-    <div class="pagetitle">
-      <h1>Phiếu nhập</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="Kho.html">Kho</a></li>
-          <li class="breadcrumb-item"><a href="Donhang.html">Đơn hàng</a></li>
-          <li class="breadcrumb-item active">Phiếu nhập</li>
-        </ol>
-      </nav>
-    </div><!-- End Page Title -->
+	<main id="main" class="main">
 
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="card">
-            <div class="card-body">
-              
-              <!-- Bordered Table -->
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th scope="col">Mã PN</th>
-                    <th scope="col">Ngày</th>
-                    <th scope="col">Mã số DDH</th>
-                    <th scope="col">Mã NV</th>
-                    <th scope="col">Mã Kho</th>
-                    <th scope="col">Thao tác</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">001</th>
-                    <td>10-10-2010</td>
-                    <td>DH-Food</td>
-                    <td>001</td>
-                    <td>001</td>
-                    <td>
-                      <a href="CTPN.html" class="fa fa-eye"></a>
-                    </td>
-                  </tr>                  
-                </tbody>
-              </table>
-            </div>
-          </div>
+	<div class="pagetitle">
+		<h1>Phiếu nhập</h1>
+		<nav>
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="Kho.html">Kho</a></li>
+				<li class="breadcrumb-item"><a href="Donhang.html">Đơn hàng</a></li>
+				<li class="breadcrumb-item active">Phiếu nhập</li>
+			</ol>
+		</nav>
+	</div>
+	<!-- End Page Title -->
 
-        </div>
-      </div>
-    </section>
+	<section class="section">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="card">
+					<div class="card-body">
 
-  </main><!-- End #main -->
+						<!-- Bordered Table -->
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th scope="col">Mã PN</th>
+									<th scope="col">Ngày</th>
+									<th scope="col">Mã số DDH</th>
+									<th scope="col">Mã NV</th>
+									<th scope="col">Mã Kho</th>
+									<th scope="col">Thao tác</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${ddhs }" var="k">
+									<tr>
+
+										<th scope="row">${k.maPN}</th>
+										<td>${k.ngay}</td>
+										<td>${k.datHang.maSoDDH}</td> 
+										<td>${k.nhanVien.maNV}</td>
+										<td>${k.kho.maKho}</td>
+										<td><a href="CTPX.html" class="fa fa-eye"></a></td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	</main>
+	<!-- End #main -->
 
 	<!-- End #main -->
 
-<jsp:include page="/template/chinhanh/footer.jsp" />
+	<jsp:include page="/template/chinhanh/footer.jsp" />
 </body>
 
 </html>

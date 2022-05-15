@@ -29,10 +29,10 @@ public class VatTuEntity {
 	@Column(name="SOLUONGTON")
 	private String soLuongTon;
 	
-/*	@OneToMany(mappedBy = "vatTu", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "vatTu", fetch = FetchType.EAGER)
 	List<CTDDHEntity> CTDDHs = new ArrayList<CTDDHEntity>();
 	
-	@OneToMany(mappedBy = "vatTu", fetch = FetchType.EAGER)
+	/*@OneToMany(mappedBy = "vatTu", fetch = FetchType.EAGER)
 	List<CTPNEntity> CTPNs = new ArrayList<CTPNEntity>();
 	
 	@OneToMany(mappedBy = "vatTu", fetch = FetchType.EAGER)

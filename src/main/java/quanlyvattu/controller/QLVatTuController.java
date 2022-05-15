@@ -22,8 +22,8 @@ public class QLVatTuController {
 
 	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
 	public String getVTCN(ModelMap model){	
-		Sort sort = new Sort(Sort.Direction.ASC, "maVT");;
-		model.addAttribute("vts",vtrepo.findAll(sort));
+/*		Sort sort = new Sort(Sort.Direction.ASC, "maVT");;
+*/		model.addAttribute("vts",vtrepo.findAll());
 		return "chinhanh/qlvattu";
 	}
 	@RequestMapping(value = "chinhanh/add", method = RequestMethod.GET)

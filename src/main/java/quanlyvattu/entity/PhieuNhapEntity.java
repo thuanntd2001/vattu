@@ -32,6 +32,24 @@ public class PhieuNhapEntity {
 	@JoinColumn(name="MASODDH")
 	private DatHangEntity datHang;
 	
+	public DatHangEntity getDatHang() {
+		return datHang;
+	}
+	public void setDatHang(DatHangEntity datHang) {
+		this.datHang = datHang;
+	}
+	public NhanVienEntity getNhanVien() {
+		return nhanVien;
+	}
+	public void setNhanVien(NhanVienEntity nhanVien) {
+		this.nhanVien = nhanVien;
+	}
+	public KhoEntity getKho() {
+		return kho;
+	}
+	public void setKho(KhoEntity kho) {
+		this.kho = kho;
+	}
 	@ManyToOne
 	@JoinColumn(name="MANV")
 	private NhanVienEntity nhanVien;

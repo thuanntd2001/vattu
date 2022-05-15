@@ -60,20 +60,21 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${ddhs }"
-											var="k">
-											<tr>
+								<c:forEach items="${ddhs }" var="k">
+									<tr>
 
-												<th scope="row">${k.maSoDDH}</th>
-												<td>${k.ngay}</td>
-												<td>${k.nhaCC}</td>
-												<td>${k.nhanVien.maNV}</td>
-												<td>${k.kho.maKho}</td>
-												<td><a href="CTDDH.html" class="fa fa-eye"></a> <a
-													href="Phieunhap.html" class="fa fa-indent"></a> <a
-													href="edit-Donhang.html" class="fa fa-pencil-square-o"></a></td>
-											</tr>
-										</c:forEach>
+										<th scope="row">${k.maSoDDH}</th>
+										<td>${k.ngay}</td>
+										<td>${k.nhaCC}</td>
+										<td>${k.nhanVien.maNV}</td>
+										<td>${k.kho.maKho}</td>
+										<td><a href="quanlychitietdondathang/chinhanh.htm?idddh=${k.maSoDDH}" class="fa fa-eye"><br>Chi Tiết
+												DDH<br>
+										</a> <a href="quanlyphieunhap/chinhanh.htm?idDDH=${k.maSoDDH}" class="fa fa-indent">
+										<br>Xem phiếu nhập<br></a> <a
+											href="#}"class="fa fa-pencil-square-o"></a></td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 						<a href="quanlydondathang/chinhanh/add.htm" class="fa fa-plus"></a>
