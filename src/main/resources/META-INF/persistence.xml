@@ -9,7 +9,8 @@
 		<class>quanlyvattu.entity.KhoEntity</class>
 
 		<class>quanlyvattu.entity.CTDDHEntity</class>
-		<!--<class>quanlyvattu.entity.CTPNEntity</class> <class>quanlyvattu.entity.CTPXEntity</class> -->
+		<class>quanlyvattu.entity.CTPNEntity</class>  
+		<class>quanlyvattu.entity.CTPXEntity</class>
 		<class>quanlyvattu.entity.DatHangEntity</class>
 		<class>quanlyvattu.entity.PhieuXuatEntity</class>
 		<class>quanlyvattu.entity.VatTuEntity</class>

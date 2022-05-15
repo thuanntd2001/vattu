@@ -69,7 +69,7 @@
 										<td>${k.datHang.maSoDDH}</td> 
 										<td>${k.nhanVien.maNV}</td>
 										<td>${k.kho.maKho}</td>
-										<td><a href="CTPX.html" class="fa fa-eye"></a></td>
+										<td><a href="quanlychitietphieunhap/chinhanh.htm?idpx=${k.maPN}" class="fa fa-eye"></a></td>
 									</tr>
 								</c:forEach>
 							</tbody>

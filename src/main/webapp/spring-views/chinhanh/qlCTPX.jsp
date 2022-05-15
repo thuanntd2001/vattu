@@ -36,7 +36,9 @@
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="Kho.html">Kho</a></li>
 				<li class="breadcrumb-item"><a href="Donhang.html">Đơn hàng</a></li>
-				<li class="breadcrumb-item active">Phiếu xuất</li>
+				<li class="breadcrumb-item"><a href="Phieuxuat.html">Phiếu
+						Xuất</a></li>
+				<li class="breadcrumb-item active">Chi tiết phiếu xuất</li>
 			</ol>
 		</nav>
 	</div>
@@ -53,29 +55,30 @@
 							<thead>
 								<tr>
 									<th scope="col">Mã PX</th>
-									<th scope="col">Ngày</th>
-									<th scope="col">Họ tên KH</th>
-									<th scope="col">Mã NV</th>
-									<th scope="col">Mã Kho</th>
+									<th scope="col">Mã VT</th>
+									<th scope="col">Số Lượng</th>
+									<th scope="col">Đơn giá</th>
 									<th scope="col">Thao tác</th>
 								</tr>
 							</thead>
 							<tbody>
 
+
 								<c:forEach items="${ddhs }" var="k">
 									<tr>
 
-										<th scope="row">${k.maPX}</th>
-										<td>${k.ngay}</td>
-										<td>${k.hoTenKH}</td>
-										<td>${k.nhanVien.maNV}</td>
-										<td>${k.kho.maKho}</td>
-										<td><a href="quanlychitietphieuxuat/chinhanh.htm?idpx=${k.maPX}" class="fa fa-eye"></a></td>
+										<th scope="row">${k.phieuXuat.maPX}</th>
+										<td>${k.vatTu.maVT}</td>
+										<td>${k.soLuong}</td>
+										<td>${k.donGia}VNĐ</td>
+
+										<td><a href="edit-PX.html" class="fa fa-pencil-square-o"></a>
 									</tr>
 								</c:forEach>
+
+								</tr>
 							</tbody>
 						</table>
-						<a href="quanlyphieuxuat/chinhanh/add.htm" class="fa fa-plus"></a>
 					</div>
 				</div>
 
@@ -85,6 +88,7 @@
 
 	</main>
 	<!-- End #main -->
+
 	<jsp:include page="/template/chinhanh/footer.jsp" />
 
 
