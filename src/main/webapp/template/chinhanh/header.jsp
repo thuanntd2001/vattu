@@ -30,7 +30,7 @@
 			<li class="nav-item"><a class="nav-link" href="#">Chuyển chi nhánh</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Xem báo
 					cáo</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Tạo Login cho hệ thống</a></li>
+			<li class="nav-item"><a class="nav-link" href="taologin/chinhanh.htm">Tạo Login cho hệ thống</a></li>
 
 		</ul>
 	</div>
