@@ -6,4 +6,5 @@ import quanlyvattu.model.NhanVienLoginModel;
 
 public interface INhanVienDAO {
 	public NhanVienLoginModel login(String userName);
+
 }

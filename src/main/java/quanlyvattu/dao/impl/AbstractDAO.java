@@ -75,6 +75,11 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 		}
 	}
 
+	
+	
+	
+	
+	
 	private void setParameter(PreparedStatement statement, Object... parameters) {
 		try {
 			for (int i = 0; i < parameters.length; i++) {

@@ -20,7 +20,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class NhanVienEntity {
 	@Id
 	@Column(name="MANV")
-	private String maNV;
+	private int maNV;
 	@Column(name="HO")
 	private String ho;
 	@Column(name="TEN")
@@ -46,10 +46,10 @@ public class NhanVienEntity {
 	@OneToMany(mappedBy = "nhanVien", fetch = FetchType.LAZY)
 	List<PhieuXuatEntity> PhieuXuats = new ArrayList<PhieuXuatEntity>();
 	
-	public String getMaNV() {
+	public int getMaNV() {
 		return maNV;
 	}
-	public void setMaNV(String maNV) {
+	public void setMaNV(int maNV) {
 		this.maNV = maNV;
 	}
 	public String getHo() {

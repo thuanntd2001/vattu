@@ -47,9 +47,9 @@
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title">Thông tin nhân viên</h5>
-
+						${message}
 						<!-- Multi Columns Form -->
-						<form:form action="quanlynhanvien/chinhanh/add.xml" method="post"
+						<form:form action="quanlynhanvien/chinhanh/add.htm" method="post"
 							modelAttribute="nv" class="row g-3">
 							<%-- <div class="col-md-2">
 								<label for="inputState" class="form-label">Chi Nhánh</label>
