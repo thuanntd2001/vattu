@@ -11,17 +11,18 @@ import org.springframework.stereotype.Repository;
 
 import quanlyvattu.dao.INhanVienDAO;
 import quanlyvattu.entity.NhanVienEntity;
-import quanlyvattu.mapper.NhanVienMapper;
+import quanlyvattu.mapper.NhanVienLoginMapper;
 import quanlyvattu.model.NhanVienLoginModel;
 
 @Repository
 public class NhanVienDAO extends AbstractDAO<NhanVienLoginModel> implements INhanVienDAO{
 
-	public NhanVienLoginModel login(String userName){
+	public NhanVienLoginModel login(String userName,String passWord){
 		String sql = "EXEC	sp_DangNhap ?";
-		List<NhanVienLoginModel> nv =query(sql,new NhanVienMapper(),userName);
+		List<NhanVienLoginModel> nv =queryPM(userName,passWord,sql,new NhanVienLoginMapper(),userName);
 		return nv==null? null:nv.get(0);
 	}
+
 
 
 }

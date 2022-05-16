@@ -80,16 +80,18 @@ public class LoginController {
 				// kt nv co tk trong sqlserver ko
 				boolean flag = false;
 				//set server ma nv chon de thu ket noi
-				InfoConnection.setUrl(model.getChiNhanh());
+				InfoConnection.setUrlPM(model.getChiNhanh());
 				flag = ck.ckUserPassword(model.getUserName(), model.getPasswd());
 				// neu ket noi dc setup thuoc tinh cho nhan vien sap dang nhap
 				if (flag) {
-					InfoConnection.setUrl(model.getChiNhanh());
-					System.out.print("thanh cong ket noi " + InfoConnection.getUrl());
-					InfoConnection.setPassWord(model.getPasswd());
-					InfoConnection.setUserName(model.getUserName());
-
-					NhanVienLoginModel login = nvdao.login(model.getUserName());
+					InfoConnection.setUrlPM(model.getChiNhanh());
+					
+					InfoConnection.setPassWordPM(model.getPasswd());
+					InfoConnection.setUserNamePM(model.getUserName());
+					
+					System.out.print("thanh cong ket noi " + InfoConnection.getUrlPM());
+					
+					NhanVienLoginModel login = nvdao.login(model.getUserName(),model.getPasswd());
 
 					model.setMaNV(login.getMaNV());
 					model.setHoTen(login.getHoTen());

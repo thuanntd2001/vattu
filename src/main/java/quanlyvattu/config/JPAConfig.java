@@ -49,10 +49,10 @@ public class JPAConfig {
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName(InfoConnection.getDriver());
-		dataSource.setUrl(InfoConnection.getUrl());
-		dataSource.setUsername(InfoConnection.getUserName());
-		dataSource.setPassword(InfoConnection.getPassWord());
+		dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		dataSource.setUrl("jdbc:sqlserver://TBTUONGLAI1\\SQLSV1; Database=QLVT_DATHANG");
+		dataSource.setUsername("sa");
+		dataSource.setPassword("1234");
 		return dataSource;
 	}
 	

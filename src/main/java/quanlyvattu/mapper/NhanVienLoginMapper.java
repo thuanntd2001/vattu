@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import quanlyvattu.model.NhanVienLoginModel;
 
-public class NhanVienMapper implements RowMapper<NhanVienLoginModel>{
+public class NhanVienLoginMapper implements RowMapper<NhanVienLoginModel>{
 	@Override
 	public NhanVienLoginModel mapRow(ResultSet resultSet) {
 		try {

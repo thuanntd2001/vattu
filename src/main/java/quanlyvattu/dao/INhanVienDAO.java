@@ -5,6 +5,6 @@ import java.util.List;
 import quanlyvattu.model.NhanVienLoginModel;
 
 public interface INhanVienDAO {
-	public NhanVienLoginModel login(String userName);
+	public NhanVienLoginModel login(String userName,String passWord);
 
 }

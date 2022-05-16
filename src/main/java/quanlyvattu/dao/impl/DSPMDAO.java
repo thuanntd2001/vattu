@@ -8,6 +8,6 @@ import quanlyvattu.model.DSPMModel;
 public class DSPMDAO extends AbstractDAO<DSPMModel> {
 	public List<DSPMModel> findAll() {
 		String sql = "SELECT * from dbo.view_DanhSachPhanManh";
-		return query(sql, new DSPMMapper());
+		return queryChu(sql, new DSPMMapper());
 	}
 }
