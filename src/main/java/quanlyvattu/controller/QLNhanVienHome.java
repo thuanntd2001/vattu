@@ -45,11 +45,12 @@ public class QLNhanVienHome {
 	@RequestMapping(value = "chinhanh/add", method = RequestMethod.POST)
 	public String addDDHCN2(ModelMap model, @ModelAttribute("nv") NhanVienEntity nv) {
 		model.addAttribute("nv", new NhanVienEntity());
-		int idMoi=-1;
+		UserModel user=(UserModel) session.getAttribute("USERMODEL");
+		Integer idMoi= null;
 		 idMoi=nvrepo.TimMaNV();
 		System.out.print(idMoi);
 		nv.setMaNV(idMoi);
-		if (idMoi!=-1) {
+		nv.setChiNhanh(cnrepo.findOne(user.getChiNhanh()));
 			NhanVienEntity nvsave = null;
 		
 			try {
@@ -63,10 +64,7 @@ public class QLNhanVienHome {
 				model.addAttribute("message", "thêm nhân viên thành công");
 				System.out.print("thêm nhân viên thành công");
 			}
-		} else {
-			model.addAttribute("message", "không có nv");
-			System.out.print("ko có nv");
-		}
+
 
 		return "chinhanh/form/add-nhanvien";
 	}
