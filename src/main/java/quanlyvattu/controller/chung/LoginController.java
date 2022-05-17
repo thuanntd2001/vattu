@@ -42,10 +42,7 @@ public class LoginController {
 		if (application.getAttribute("DSPM") == null) {
 			List<DSPMModel> DSPMs = dspmDAO.findAll();
 			if (DSPMs != null) {
-				for (DSPMModel md : DSPMs) {
-					System.out.print(md.getTenCN() + md.getTenServer() + "\n");
 
-				}
 				application.setAttribute("DSPMs", DSPMs);
 			}
 		}
@@ -99,6 +96,11 @@ public class LoginController {
 
 					SessionUtil.getInstance().putValue(request, "USERMODEL", model);
 					session.setAttribute("USERMODEL", model);
+					
+					if (model.getChiNhanh().equals("CN1"))
+						session.setAttribute("keyDS", "CN1_CN_DS");
+					else if(model.getChiNhanh().equals("CN1"))
+						session.setAttribute("keyDS", "CN2_CN_DS");
 
 					// tra ra view
 					if (model.getRoleID().equals("CONGTY"))

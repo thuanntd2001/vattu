@@ -46,7 +46,7 @@ public class ApplicationContextConfig {
 	// Returns Routing DataSource (MyRoutingDataSource)
 	@Autowired
 	@Bean(name = "dataSource")
-	public DataSource getDataSource(DataSource dataSource1, DataSource dataSource2,DataSource dataSource3) {
+	public DataSource getDataSource() {
 
 		System.out.println("## Create DataSource from dataSource1 & dataSource2");
 
@@ -56,9 +56,18 @@ public class ApplicationContextConfig {
 		/*dsMap.put("PUBLISHER_DS", dataSource1);
 		dsMap.put("ADVERTISER_DS", dataSource2);*/
 		
-		dsMap.put("CN1_CN_DS", dataSource1);
-		dsMap.put("CN1_CT_DS", dataSource2);
-		dsMap.put("CN1_U_DS", dataSource3);
+		
+		try {
+			dsMap.put("CN1_CN_DS", getDataSource1());
+			dsMap.put("CN1_CT_DS", getDataSource2());
+			dsMap.put("CN1_U_DS",getDataSource3());
+			dsMap.put("CN2_CN_DS", getDataSource4());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("## loi put ds");
+		}
+		
 		dataSource.setTargetDataSources(dsMap);
 
 		return dataSource;
@@ -108,6 +117,20 @@ public class ApplicationContextConfig {
 		return dataSource;
 	}
 
+	@Bean(name = "dataSource4")
+	public DataSource getDataSource4() throws SQLException {
+		BasicDataSource dataSource = new BasicDataSource();
+
+		// See: datasouce-cfg.properties
+		dataSource.setDriverClassName(env.getProperty("ds.database-driver4"));
+		dataSource.setUrl(env.getProperty("ds.url4"));
+		dataSource.setUsername(env.getProperty("ds.username4"));
+		dataSource.setPassword(env.getProperty("ds.password4"));
+
+		System.out.println("## getDataSource4: " + dataSource);
+
+		return dataSource;
+	}
 	@Autowired
 	@Bean(name = "transactionManager")
 	public DataSourceTransactionManager getTransactionManager(DataSource dataSource) {

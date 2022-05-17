@@ -35,6 +35,18 @@ public class JPAConfig {
 	}
 	
 	@Bean
+	public LocalContainerEntityManagerFactoryBean entityManagerFactory2() {
+		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+		em.setDataSource(dataSource());
+		em.setPersistenceUnitName("persistence-data");
+		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+		em.setJpaVendorAdapter(vendorAdapter);
+		em.setJpaProperties(additionalProperties());
+		return em;
+	}
+	
+	
+	@Bean
 	JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
 		JpaTransactionManager transactionManager = new JpaTransactionManager();
 		transactionManager.setEntityManagerFactory(entityManagerFactory);
@@ -51,6 +63,16 @@ public class JPAConfig {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		dataSource.setUrl("jdbc:sqlserver://TBTUONGLAI1\\SQLSV1; Database=QLVT_DATHANG");
+		dataSource.setUsername("sa");
+		dataSource.setPassword("1234");
+		return dataSource;
+	}
+	
+	@Bean
+	public DataSource dataSource2() {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		dataSource.setUrl("jdbc:sqlserver://TBTUONGLAI1\\SQLSV2; Database=QLVT_DATHANG");
 		dataSource.setUsername("sa");
 		dataSource.setPassword("1234");
 		return dataSource;

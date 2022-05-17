@@ -11,21 +11,24 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class DataDAO extends JdbcDaoSupport {
 
-	@Autowired
-	public DataDAO(DataSource dataSource) {
+	@Autowired DataSource dataSource;
+
+	public DataDAO() {
+
 		this.setDataSource(dataSource);
+		System.out.print(dataSource);
 	}
 
 	public List<String> queryPublishers() {
 		String sql = "Select ten from nhanvien";
-
+		System.out.print("query Pub");
 		List<String> list = this.getJdbcTemplate().queryForList(sql, String.class);
 		return list;
 	}
 
 	public List<String> queryAdvertisers() {
 		String sql = "Select ten from nhanvien";
-
+		System.out.print("query adv");
 		List<String> list = this.getJdbcTemplate().queryForList(sql, String.class);
 		return list;
 	}
