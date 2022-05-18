@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/chinhanh/head.jsp" />
+<jsp:include page="/template/cn1/chinhanh/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/chinhanh/header.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/chinhanh/sidebar.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -68,16 +68,16 @@
 										<td>${k.nhaCC}</td>
 										<td>${k.nhanVien.maNV}</td>
 										<td>${k.kho.maKho}</td>
-										<td><a href="quanlychitietdondathang/chinhanh.htm?idddh=${k.maSoDDH}" class="fa fa-eye"><br>Chi Tiết
+										<td><a href="quanlychitietdondathang/cn1/chinhanh.htm?idddh=${k.maSoDDH}" class="fa fa-eye"><br>Chi Tiết
 												DDH<br>
-										</a> <a href="quanlyphieunhap/chinhanh.htm?idDDH=${k.maSoDDH}" class="fa fa-indent">
+										</a> <a href="quanlyphieunhap/cn1/chinhanh.htm?idDDH=${k.maSoDDH}" class="fa fa-indent">
 										<br>Xem phiếu nhập<br></a> <a
 											href="#}"class="fa fa-pencil-square-o"></a></td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
-						<a href="quanlydondathang/chinhanh/add.htm" class="fa fa-plus"></a>
+						<a href="quanlydondathang/cn1/chinhanh/add.htm" class="fa fa-plus"></a>
 					</div>
 				</div>
 
@@ -87,7 +87,7 @@
 
 	</main>
 	<!-- End #main -->
-	<jsp:include page="/template/chinhanh/footer.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
 
 
 </body>

@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/chinhanh/head.jsp" />
+<jsp:include page="/template/cn1/chinhanh/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/chinhanh/header.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/chinhanh/sidebar.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -63,7 +63,7 @@
 										<td>${nv.diaChi}</td>
 										<td>${nv.ngaySinh}</td>
 										<td>${nv.luong}VND</td>
-										<td><a href="/quanlynhanvien/chinhanh/edit.htm?id=${nv.maNV} "
+										<td><a href="/quanlynhanvien/cn1/chinhanh/edit.htm?id=${nv.maNV} "
 											class="fa fa-pencil-square-o"></a> <a href="#"
 											class="fa fa-times-circle"></a>
 									</tr>
@@ -71,7 +71,7 @@
 							</tbody>
 						</table>
 						<!-- End Table with stripped rows -->
-						<a href="quanlynhanvien/chinhanh/add.htm" class="fa fa-plus"></a>
+						<a href="quanlynhanvien/cn1/chinhanh/add.htm" class="fa fa-plus"></a>
 					</div>
 				</div>
 
@@ -82,7 +82,7 @@
 	</main>
 	<!-- End #main -->
 
-	<jsp:include page="/template/chinhanh/footer.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
 </body>
 
 </html>

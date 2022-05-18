@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/chinhanh/head.jsp" />
+<jsp:include page="/template/cn1/chinhanh/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/chinhanh/header.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/chinhanh/sidebar.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -104,7 +104,7 @@
 
 	</main>
 	<!-- End #main -->
-	<jsp:include page="/template/chinhanh/footer.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
 
 
 </body>

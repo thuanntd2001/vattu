@@ -7,7 +7,6 @@ import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -16,13 +15,11 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import quanlyvattu.statics.InfoConnection;
-
 @Configuration
-@EnableJpaRepositories(basePackages= {"quanlyvattu.repository"})
+@EnableJpaRepositories(basePackages = { "quanlyvattu.repositoryCN1" })
 @EnableTransactionManagement
 public class JPAConfig {
-	
+
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
@@ -33,31 +30,19 @@ public class JPAConfig {
 		em.setJpaProperties(additionalProperties());
 		return em;
 	}
-	
-	@Bean
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory2() {
-		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-		em.setDataSource(dataSource());
-		em.setPersistenceUnitName("persistence-data");
-		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-		em.setJpaVendorAdapter(vendorAdapter);
-		em.setJpaProperties(additionalProperties());
-		return em;
-	}
-	
-	
+
 	@Bean
 	JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
 		JpaTransactionManager transactionManager = new JpaTransactionManager();
 		transactionManager.setEntityManagerFactory(entityManagerFactory);
 		return transactionManager;
 	}
-	
-	@Bean
-	public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
-		return new PersistenceExceptionTranslationPostProcessor();
-	}
-	
+
+//	@Bean
+//	public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
+//		return new PersistenceExceptionTranslationPostProcessor();
+//	}
+
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -65,23 +50,26 @@ public class JPAConfig {
 		dataSource.setUrl("jdbc:sqlserver://TBTUONGLAI1\\SQLSV1; Database=QLVT_DATHANG");
 		dataSource.setUsername("sa");
 		dataSource.setPassword("1234");
+
 		return dataSource;
 	}
-	
-	@Bean
-	public DataSource dataSource2() {
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-		dataSource.setUrl("jdbc:sqlserver://TBTUONGLAI1\\SQLSV2; Database=QLVT_DATHANG");
-		dataSource.setUsername("sa");
-		dataSource.setPassword("1234");
-		return dataSource;
-	}
-	
+
+
+
 	Properties additionalProperties() {
 		Properties properties = new Properties();
-		/*properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");*/
+		/* properties.setProperty("hibernate.hbm2ddl.auto", "create-drop"); */
 		properties.setProperty("hibernate.hbm2ddl.auto", "none");
 		return properties;
 	}
+
+/*	@Autowired
+	@Bean(name = "transactionManager")
+	public DataSourceTransactionManager getTransactionManager(DataSource dataSource) {
+		DataSourceTransactionManager txManager = new DataSourceTransactionManager();
+
+		txManager.setDataSource(dataSource);
+
+		return txManager;
+	}*/
 }

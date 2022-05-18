@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/chinhanh/head.jsp" />
+<jsp:include page="/template/cn1/chinhanh/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/chinhanh/header.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/chinhanh/sidebar.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -62,8 +62,8 @@
 											<td>${k.diaChi}</td>
 											<td>${k.chiNhanh.maCN}</td>
 
-											<td><a href="quanlydondathang/chinhanh.htm?idkho=${k.maKho}" class="fa fa-file-text-o">
-													<br>Đơn đặt hàng</a>  <a href="quanlyphieuxuat/chinhanh.htm?idkho=${k.maKho}"
+											<td><a href="quanlydondathang/cn1/chinhanh.htm?idkho=${k.maKho}" class="fa fa-file-text-o">
+													<br>Đơn đặt hàng</a>  <a href="quanlyphieuxuat/cn1/chinhanh.htm?idkho=${k.maKho}"
 												class="fa fa-outdent"><br>Phiếu xuất</a></td>
 										</tr>
 									</c:forEach>
@@ -79,7 +79,7 @@
 
 	</main>
 	<!-- End #main -->
-	<jsp:include page="/template/chinhanh/footer.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
 	<!-- End #main -->
 
 

@@ -76,19 +76,19 @@ public class LoginController {
 			if (model != null) {
 				// kt nv co tk trong sqlserver ko
 				boolean flag = false;
-				//set server ma nv chon de thu ket noi
+				// set server ma nv chon de thu ket noi
 				InfoConnection.setUrlPM(model.getChiNhanh());
 				flag = ck.ckUserPassword(model.getUserName(), model.getPasswd());
 				// neu ket noi dc setup thuoc tinh cho nhan vien sap dang nhap
 				if (flag) {
 					InfoConnection.setUrlPM(model.getChiNhanh());
-					
+
 					InfoConnection.setPassWordPM(model.getPasswd());
 					InfoConnection.setUserNamePM(model.getUserName());
-					
+
 					System.out.print("thanh cong ket noi " + InfoConnection.getUrlPM());
-					
-					NhanVienLoginModel login = nvdao.login(model.getUserName(),model.getPasswd());
+
+					NhanVienLoginModel login = nvdao.login(model.getUserName(), model.getPasswd());
 
 					model.setMaNV(login.getMaNV());
 					model.setHoTen(login.getHoTen());
@@ -96,22 +96,32 @@ public class LoginController {
 
 					SessionUtil.getInstance().putValue(request, "USERMODEL", model);
 					session.setAttribute("USERMODEL", model);
-					
-					if (model.getChiNhanh().equals("CN1"))
-						session.setAttribute("keyDS", "CN1_CN_DS");
-					else if(model.getChiNhanh().equals("CN1"))
-						session.setAttribute("keyDS", "CN2_CN_DS");
 
-					// tra ra view
-					if (model.getRoleID().equals("CONGTY"))
+					if (model.getChiNhanh().equals("TBTUONGLAI1\\SQLSV1")) {
+						if (model.getRoleID().equals("CONGTY"))
 
-						return "redirect:quanlynhanvien/congty.htm";
-					if (model.getRoleID().equals("CHINHANH"))
+							return "redirect:quanlynhanvien/cn1/congty.htm";
+						if (model.getRoleID().equals("CHINHANH"))
 
-						return "redirect:quanlynhanvien/chinhanh.htm";
-					if (model.getRoleID().equals("USER"))
+							return "redirect:quanlynhanvien/cn1/chinhanh.htm";
+						if (model.getRoleID().equals("USER"))
 
-						return "redirect:quanlynhanvien/user.htm";
+							return "redirect:quanlynhanvien/cn1/user.htm";
+					}
+
+					else if (model.getChiNhanh().equals("TBTUONGLAI1\\SQLSV2"))
+					{
+						// tra ra view
+						if (model.getRoleID().equals("CONGTY"))
+
+							return "redirect:quanlynhanvien/cn2/congty.htm";
+						if (model.getRoleID().equals("CHINHANH"))
+
+							return "redirect:quanlynhanvien/cn2/chinhanh.htm";
+						if (model.getRoleID().equals("USER"))
+
+							return "redirect:quanlynhanvien/cn2/user.htm";
+					}
 				}
 
 			}
