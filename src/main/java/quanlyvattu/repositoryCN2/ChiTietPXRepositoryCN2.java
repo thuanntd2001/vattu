@@ -11,7 +11,7 @@ import quanlyvattu.entity.CTPXEntity;
 
 
 
-public interface ChiTietPXRepository extends JpaRepository<CTPXEntity, String> {
+public interface ChiTietPXRepositoryCN2 extends JpaRepository<CTPXEntity, String> {
 
 	@Query("select ctPhieuxuat from CTPXEntity ctPhieuxuat where ctPhieuxuat.phieuXuat.maPX = ?1")
 	List<CTPXEntity> findByMaSoPX(String maSoDDH);

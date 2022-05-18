@@ -98,6 +98,7 @@ public class LoginController {
 					session.setAttribute("USERMODEL", model);
 
 					if (model.getChiNhanh().equals("TBTUONGLAI1\\SQLSV1")) {
+						model.setMaChiNhanh("CN1");
 						if (model.getRoleID().equals("CONGTY"))
 
 							return "redirect:quanlynhanvien/cn1/congty.htm";
@@ -111,6 +112,7 @@ public class LoginController {
 
 					else if (model.getChiNhanh().equals("TBTUONGLAI1\\SQLSV2"))
 					{
+						model.setMaChiNhanh("CN2");
 						// tra ra view
 						if (model.getRoleID().equals("CONGTY"))
 

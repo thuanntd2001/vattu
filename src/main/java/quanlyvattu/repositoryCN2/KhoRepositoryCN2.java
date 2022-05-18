@@ -8,6 +8,6 @@ import quanlyvattu.entity.NhanVienEntity;
 
 
 
-public interface KhoRepository extends JpaRepository<KhoEntity, String> {
+public interface KhoRepositoryCN2 extends JpaRepository<KhoEntity, String> {
 	
 }

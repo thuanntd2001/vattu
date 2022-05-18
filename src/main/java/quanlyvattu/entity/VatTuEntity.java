@@ -27,7 +27,7 @@ public class VatTuEntity {
 	@Column(name="DVT")
 	private String donViTinh;
 	@Column(name="SOLUONGTON")
-	private String soLuongTon;
+	private int soLuongTon;
 	
 	@OneToMany(mappedBy = "vatTu", fetch = FetchType.EAGER)
 	List<CTDDHEntity> CTDDHs = new ArrayList<CTDDHEntity>();
@@ -38,10 +38,10 @@ public class VatTuEntity {
 	@OneToMany(mappedBy = "vatTu", fetch = FetchType.EAGER)
 	List<CTPXEntity> CTPXs = new ArrayList<CTPXEntity>();*/
 	
-	public String getSoLuongTon() {
+	public int getSoLuongTon() {
 		return soLuongTon;
 	}
-	public void setSoLuongTon(String soLuongTon) {
+	public void setSoLuongTon(int soLuongTon) {
 		this.soLuongTon = soLuongTon;
 	}
 	public String getMaVT() {

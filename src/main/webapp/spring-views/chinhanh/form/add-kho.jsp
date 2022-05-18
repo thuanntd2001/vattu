@@ -49,45 +49,20 @@
 						<h5 class="card-title">Thông tin nhân viên</h5>
 						${message}
 						<!-- Multi Columns Form -->
-						<form:form action="quanlynhanvien/cn1/chinhanh/add.htm"
-							method="post" modelAttribute="nv" class="row g-3">
+						<form:form action="quanlykho/cn1/chinhanh/add.htm"
+							method="post" modelAttribute="k" class="row g-3">
 					
 							<div class="col-md-5">
-								<label for="inputEmail5" class="form-label">Họ</label>
-								<form:input type="text" class="form-control" id="inputEmail5"
-									path="ho" />
+								<label for="inputEmail5" class="form-label">Mã Kho</label>
+								<form:input type="text" class="form-control" id="inputEmail5" path="maKho" />
 							</div>
 							<div class="col-md-5">
-								<label for="inputPassword5" class="form-label">Tên</label>
+								<label for="inputPassword5" class="form-label">Tên Kho</label>
 								<form:input type="text" class="form-control" id="inputPassword5"
-									path="ten" />
+									path="tenKho" />
 							</div>
-
-
-
-
-							<!-- 	<div class="col-md-7">
-								<label for="inputDate" class="col-sm-2 col-form-label">Ngày
-									sinh</label>
-								<div class="col-md-10">
-									<input type="date" class="form-control">
-								</div>
-							</div>
-							 -->
+							
 							 <br>
-							<div class="col-md-7">
-								<label for="set-date" style="margin-right: 33px;">Ngày
-									sinh:</label> <input type="datetime-local" id="set-date" name="tg">
-							</div>
-
-
-
-
-							<div class="col-md-4">
-								<label for="inputCity" class="form-label">Lương</label>
-								<form:input type="number" class="form-control" id="inputCity"
-									path="luong" />
-							</div>
 							<div class="col-md-12">
 								<label for="inputAddress5" class="form-label">Đia Chỉ</label>
 								<form:input type="text" class="form-control" id="inputAddres5s"

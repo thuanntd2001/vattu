@@ -9,7 +9,7 @@ import quanlyvattu.entity.DatHangEntity;
 import quanlyvattu.entity.PhieuXuatEntity;
 import quanlyvattu.entity.VatTuEntity;
 
-public interface PhieuXuatRepository extends JpaRepository<PhieuXuatEntity, String> {
+public interface PhieuXuatRepositoryCN2 extends JpaRepository<PhieuXuatEntity, String> {
 	@Query("select phieuXuat from PhieuXuatEntity phieuXuat where phieuXuat.kho.maKho = ?1")
 	List<PhieuXuatEntity> findByKho(String maKho);
 

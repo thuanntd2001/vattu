@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import quanlyvattu.entity.PhieuNhapEntity;
 
 
-public interface PhieuNhapRepository extends JpaRepository<PhieuNhapEntity, String> {
+public interface PhieuNhapRepositoryCN2 extends JpaRepository<PhieuNhapEntity, String> {
 	@Query("select phieuNhap from PhieuNhapEntity phieuNhap where phieuNhap.datHang.maSoDDH = ?1")
 	List<PhieuNhapEntity> findByDDH(String maSoDDH);
 

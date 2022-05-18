@@ -63,8 +63,8 @@
 										<td>${nv.diaChi}</td>
 										<td>${nv.ngaySinh}</td>
 										<td>${nv.luong}VND</td>
-										<td><a href="/quanlynhanvien/cn1/chinhanh/edit.htm?id=${nv.maNV} "
-											class="fa fa-pencil-square-o"></a> <a href="#"
+										<td><a href="quanlynhanvien/cn1/chinhanh/edit.htm?id=${nv.maNV} "
+											class="fa fa-pencil-square-o"></a> <a href="quanlynhanvien/cn1/chinhanh/xoa.htm?id=${nv.maNV} "
 											class="fa fa-times-circle"></a>
 									</tr>
 								</c:forEach>

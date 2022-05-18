@@ -9,10 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import quanlyvattu.entity.DatHangEntity;
+import quanlyvattu.entity.KhoEntity;
 import quanlyvattu.repositoryCN1.ChiNhanhRepositoryCN1;
 import quanlyvattu.repositoryCN1.DatHangRepositoryCN1;
 import quanlyvattu.repositoryCN1.NhanVienRepositoryCN1;
@@ -47,20 +49,46 @@ public class QLDonDatHangController {
 	}
 
 
+/*	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
+	public String getDDHCN(ModelMap model){	
+		Sort sort = new Sort(Sort.Direction.ASC, "maKho");;
+		model.addAttribute("dh",dhrepo.findAll(sort));
+		return "chinhanh/qldh";
+	}*/
 	@RequestMapping(value = "chinhanh/add", method = RequestMethod.GET)
-	public String addDDHCN(){	
-
-		return "chinhanh/form/add-dondathang";
+	public String addDDHCN(ModelMap model){	
+		model.addAttribute("dh", new DatHangEntity());
+		
+	
+		return "chinhanh/form/add-donhang";
 	}
-	@RequestMapping(value = "congty/add", method = RequestMethod.GET)
-	public String addDDHCT(){	
+	
+	@RequestMapping(value = "chinhanh/add", method = RequestMethod.POST)
+	public String addDHCN1(ModelMap model, @ModelAttribute("dh") DatHangEntity dh, HttpServletRequest request) {
+		
+	
+		if (dhrepo.findOne(dh.getMaSoDDH())==null) {
+			DatHangEntity nvsave = null;
 
-		return "congty/form/add-dondathang";
-	}
-	@RequestMapping(value = "user/add", method = RequestMethod.GET)
-	public String addDDHU(){	
+			try {
+				nvsave = dhrepo.save(dh);
+			} catch (Exception e) {
+				e.printStackTrace();
+				model.addAttribute("message", "thêm đơn hàng thất bại");
+				System.out.print("thêm đơn hàng thất bại");
+			}
+			if (nvsave != null) {
+				model.addAttribute("message", "thêm đơn hàng thành công");
+				System.out.print("thêm đơn hàng thành công");
+			}
+		}
+		else {
+			model.addAttribute("message", "thêm đơn hàng thất bại, mã đơn hàng đã tồn tại");
+			System.out.print("thêm đơn hàng thất bại");
+		}
+		
 
-		return "user/form/add-dondathang";
+		return "redirect:/quanlydonhang/cn1/chinhanh/add.htm";
 	}
 }
 

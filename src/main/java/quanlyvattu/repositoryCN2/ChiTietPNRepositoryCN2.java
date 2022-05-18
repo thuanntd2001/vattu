@@ -12,7 +12,7 @@ import quanlyvattu.entity.CTPNEntity;
 
 
 
-public interface ChiTietPNRepository extends JpaRepository<CTPNEntity, String> {
+public interface ChiTietPNRepositoryCN2 extends JpaRepository<CTPNEntity, String> {
 
 	@Query("select ctPhieunhap from CTPNEntity ctPhieunhap where ctPhieunhap.phieuNhap.maPN = ?1")
 	List<CTPNEntity> findByMaSoPN(String maSoDDH);

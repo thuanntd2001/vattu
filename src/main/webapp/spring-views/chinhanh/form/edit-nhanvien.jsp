@@ -49,9 +49,21 @@
 						<h5 class="card-title">Thông tin nhân viên</h5>
 						${message}
 						<!-- Multi Columns Form -->
-						<form:form action="quanlynhanvien/cn1/chinhanh/add.htm"
+						<form:form action="quanlynhanvien/cn1/chinhanh/edit.htm"
 							method="post" modelAttribute="nv" class="row g-3">
-					
+							<%-- <div class="col-md-2">
+								<label for="inputState" class="form-label">Chi Nhánh</label>
+								<form:select path="chiNhanh">
+									 
+										 <form:options value="${chiNhanhHT}" label="${chiNhanhHT.chiNhanh} "></form:options> 
+										 <form:input path="chiNhanh" value="${chiNhanhHT}" label="${chiNhanhHT.chiNhanh} "  />
+								</form:select>
+							</div> --%>
+							<div class="col-md-5">
+								
+								<form:input type="hidden" class="form-control" id="inputEmail5"
+									path="maNV" />
+							</div>
 							<div class="col-md-5">
 								<label for="inputEmail5" class="form-label">Họ</label>
 								<form:input type="text" class="form-control" id="inputEmail5"
@@ -75,11 +87,7 @@
 							</div>
 							 -->
 							 <br>
-							<div class="col-md-7">
-								<label for="set-date" style="margin-right: 33px;">Ngày
-									sinh:</label> <input type="datetime-local" id="set-date" name="tg">
-							</div>
-
+							
 
 
 
@@ -95,7 +103,7 @@
 							</div>
 
 							<div class="text-center">
-								<button type="submit" class="btn btn-primary">Tạo</button>
+								<button type="submit" class="btn btn-primary">Sửa</button>
 								<button type="reset" class="btn btn-secondary">Reset</button>
 							</div>
 						</form:form>

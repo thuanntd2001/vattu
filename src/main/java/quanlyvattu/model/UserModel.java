@@ -19,6 +19,8 @@ public class UserModel {
 
 	private String chiNhanh;
 	
+	private String maChiNhanh;
+	
 	private String roleID;
 	
 	private String hoTen;
@@ -96,6 +98,18 @@ public class UserModel {
 
 	public void setChiNhanh(String chiNhanh) {
 		this.chiNhanh = chiNhanh;
+	}
+
+
+
+	public String getMaChiNhanh() {
+		return maChiNhanh;
+	}
+
+
+
+	public void setMaChiNhanh(String maChiNhanh) {
+		this.maChiNhanh = maChiNhanh;
 	}
 
 

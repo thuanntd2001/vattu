@@ -89,13 +89,13 @@ public class NhanVienEntity {
 		this.chiNhanh = chiNhanh;
 	}
 	public int getTrangThaiXoa() {
-		return TrangThaiXoa;
+		return trangThaiXoa;
 	}
 	public void setTrangThaiXoa(int trangThaiXoa) {
-		TrangThaiXoa = trangThaiXoa;
+		trangThaiXoa = trangThaiXoa;
 	}
 	@Column(name="TRANGTHAIXOA")
-	private int TrangThaiXoa;
+	private int trangThaiXoa;
 
 }
 

@@ -70,7 +70,7 @@
 							</tbody>
 						</table>
 						<!-- End Primary Color Bordered Table -->
-
+						<a href="quanlykho/cn1/chinhanh/add.htm" class="fa fa-plus"></a>
 					</div>
 				</div>
 			</div>

@@ -23,13 +23,14 @@ import quanlyvattu.repositoryCN2.ChiTietDDHRepositoryCN2;
 @RequestMapping(value = "quanlychitietdondathang/cn1")
 public class QLChiTietDDHController {
 	@Autowired
-	ChiTietDDHRepositoryCN2 ctdhrepo;
+	ChiTietDDHRepositoryCN1 ctdhrepo;
 
 	@Autowired
 	ServletContext session;
 	
 	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
 	public String getDDHCN(ModelMap model, HttpServletRequest request){	
+		System.out.print("khong co ma kho");
 		String idddh= (String) request.getParameter("idddh");
 		if(idddh != "" && idddh != null ) {
 
