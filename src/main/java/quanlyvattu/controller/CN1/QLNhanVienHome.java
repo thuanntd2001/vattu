@@ -17,6 +17,7 @@ import quanlyvattu.entity.NhanVienEntity;
 import quanlyvattu.model.UserModel;
 import quanlyvattu.repositoryCN1.ChiNhanhRepositoryCN1;
 import quanlyvattu.repositoryCN1.NhanVienRepositoryCN1;
+import quanlyvattu.repositoryCN2.ChiNhanhRepositoryCN2;
 import quanlyvattu.repositoryCN2.NhanVienRepositoryCN2;
 
 @Controller
@@ -131,7 +132,7 @@ public class QLNhanVienHome {
 	}
 	
 	@RequestMapping(value = "chinhanh/xoa", method = RequestMethod.GET)
-	public String xoaNVCN1(ModelMap model, @ModelAttribute("nv") NhanVienEntity nv, HttpServletRequest request) {
+	public String xoaNVCN1(ModelMap model, HttpServletRequest request) {
 
 		model.addAttribute("id", request.getParameter("id"));
 
@@ -140,13 +141,18 @@ public class QLNhanVienHome {
 		
 	}
 	@RequestMapping(value = "chinhanh/xoa", method = RequestMethod.POST)
-	public String xoaNVCN1P(ModelMap model, @ModelAttribute("nv") NhanVienEntity nv, HttpServletRequest request) {
+	public String xoaNVCN1P(ModelMap model,  HttpServletRequest request) {
 
 		int id=Integer.parseInt(request.getParameter("id"));
+		System.out.print(request.getParameter("xacNhan") + request.getParameter("id"));
 		try {
-			if (request.getAttribute("xacNhan").equals("YES"))
+			if (request.getParameter("xacNhan").equals("YES"))
 			{
-				nvrepo.findOne(id).setTrangThaiXoa(1);
+				NhanVienEntity nvsave=nvrepo.findOne(id);
+				nvsave.setTrangThaiXoa(1);
+				System.out.print(nvsave.getHo());
+				System.out.print(nvsave.getTrangThaiXoa());
+				nvrepo.save(nvsave);
 				model.addAttribute("message", "xoá nhân viên thành công");
 			}
 		} catch(Exception e){

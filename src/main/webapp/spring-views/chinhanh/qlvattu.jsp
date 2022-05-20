@@ -71,8 +71,8 @@
 										<td>${nv.donViTinh}</td>
 										<td>${nv.soLuongTon}</td>
 
-										<td><a href="edit-vattu.html"
-											class="fa fa-pencil-square-o"></a> <a href="#"
+										<td><a href="quanlyvattu/cn1/chinhanh/edit.htm?id=${nv.maVT}"
+											class="fa fa-pencil-square-o"></a> <a href="quanlyvattu/cn1/chinhanh/xoa.htm?id=${nv.maVT}"
 											class="fa fa-times-circle"></a></td>
 									</tr>
 								</c:forEach>

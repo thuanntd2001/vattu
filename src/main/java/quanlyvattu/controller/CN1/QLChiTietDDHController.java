@@ -28,10 +28,11 @@ public class QLChiTietDDHController {
 	@Autowired
 	ServletContext session;
 	
+	String idddh="n/a";
 	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
 	public String getDDHCN(ModelMap model, HttpServletRequest request){	
 		System.out.print("khong co ma kho");
-		String idddh= (String) request.getParameter("idddh");
+		idddh= (String) request.getParameter("idddh");
 		if(idddh != "" && idddh != null ) {
 
 			List<CTDDHEntity> dhs=(List<CTDDHEntity>) ctdhrepo.findByMaSoDDH(idddh);
@@ -39,7 +40,7 @@ public class QLChiTietDDHController {
 			
 			return "chinhanh/qlCTDDH";
 		}else {
-			System.out.print("khong co ma kho");
+			System.out.print("khong co ma DDH");
 
 			model.addAttribute("ddhs",ctdhrepo.findAll());
 			return "chinhanh/qlCTDDH";
@@ -53,16 +54,9 @@ public class QLChiTietDDHController {
 
 		return "chinhanh/form/add-dondathang";
 	}
-	@RequestMapping(value = "congty/add", method = RequestMethod.GET)
-	public String addDDHCT(){	
 
-		return "congty/form/add-dondathang";
-	}
-	@RequestMapping(value = "user/add", method = RequestMethod.GET)
-	public String addDDHU(){	
-
-		return "user/form/add-dondathang";
-	}
+	
+	
 }
 
 

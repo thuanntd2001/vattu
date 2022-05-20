@@ -46,20 +46,35 @@
 
 				<div class="card">
 					<div class="card-body">
-						<h5 class="card-title">Thông tin nhân viên</h5>
+						<h5 class="card-title">Thông tin kho</h5>
 						${message}
-						
-						Bạn có đồng ý xoá NV ${id }
 						<!-- Multi Columns Form -->
-						<form action="quanlynhanvien/cn1/chinhanh/xoa.htm?id=${id }" method="post"
-							class="row g-3">
+						<form:form action="quanlykho/cn1/chinhanh/edit.htm"
+							method="post" modelAttribute="k" class="row g-3">
+			
+								<form:input type="hidden" class="form-control" id="inputPassword5"
+									path="maKho" />
+						
 							
+						
 							<div class="col-md-5">
-								<label for="inputEmail5" class="form-label">Xác Nhận( Nhập "YES" vào khung này)</label>
-								<input type="text" class="form-control" name="xacNhan" />
+								<label for="inputPassword5" class="form-label">Tên Kho</label>
+								<form:input type="text" class="form-control" id="inputPassword5"
+									path="tenKho" />
 							</div>
-							<button type="submit" > Xoá </button>
-						</form>
+							
+							 <br>
+							<div class="col-md-12">
+								<label for="inputAddress5" class="form-label">Đia Chỉ</label>
+								<form:input type="text" class="form-control" id="inputAddres5s"
+									placeholder="TPHCM" path="diaChi" />
+							</div>
+
+							<div class="text-center">
+								<button type="submit" class="btn btn-primary">Sửa</button>
+								<button type="reset" class="btn btn-secondary">Reset</button>
+							</div>
+						</form:form>
 						<!-- End Multi Columns Form -->
 
 					</div>

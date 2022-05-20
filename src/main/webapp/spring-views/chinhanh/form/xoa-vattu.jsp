@@ -25,22 +25,10 @@
 	<!-- ======= Sidebar ======= -->
 	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
 
-	<!-- End Sidebar-->
-
 
 	<main id="main" class="main">
-
-	<div class="pagetitle">
-		<h1>Nhân viên</h1>
-		<nav>
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a
-					href="quanlynhanvien/chinhanh.htm">Nhân Viên</a></li>
-				<li class="breadcrumb-item active">Thêm Nhân viên</li>
-			</ol>
-		</nav>
-	</div>
-	<section class="section">
+	<!-- End Sidebar-->
+<section class="section">
 		<div class="row">
 			<div class="col-lg-10">
 
@@ -48,10 +36,13 @@
 					<div class="card-body">
 						<h5 class="card-title">Thông tin nhân viên</h5>
 						${message}
+
+
+						${message}
 						
-						Bạn có đồng ý xoá NV ${id }
+						Bạn có đồng ý xoá vật tư ${id }
 						<!-- Multi Columns Form -->
-						<form action="quanlynhanvien/cn1/chinhanh/xoa.htm?id=${id }" method="post"
+						<form action="quanlyvattu/cn1/chinhanh/xoa.htm?id=${id }" method="post"
 							class="row g-3">
 							
 							<div class="col-md-5">

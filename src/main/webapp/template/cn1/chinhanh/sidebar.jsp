@@ -24,6 +24,6 @@
 		</a></li>
 
 	</ul>
-
+ ${message}   
 </aside>
 <!-- End Sidebar-->

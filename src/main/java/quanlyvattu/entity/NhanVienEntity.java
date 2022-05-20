@@ -92,7 +92,7 @@ public class NhanVienEntity {
 		return trangThaiXoa;
 	}
 	public void setTrangThaiXoa(int trangThaiXoa) {
-		trangThaiXoa = trangThaiXoa;
+		this.trangThaiXoa = trangThaiXoa;
 	}
 	@Column(name="TRANGTHAIXOA")
 	private int trangThaiXoa;

@@ -31,7 +31,7 @@
 	<main id="main" class="main">
 
 	<div class="pagetitle">
-		<h1>Vật tư</h1>
+		<h1>Đơn hàng</h1>
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a

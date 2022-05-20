@@ -2,6 +2,7 @@ package quanlyvattu.entity;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -12,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -24,8 +27,9 @@ public class PhieuXuatEntity {
 	@Column(name="MAPX")
 	private String maPX;
 	@Column(name="NGAY")
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
-	private Timestamp ngay;
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern="dd-MM-yyyy")
+	private Date ngay;
 	@Column(name="HOTENKH")
 	private String hoTenKH;
 
@@ -56,10 +60,10 @@ public class PhieuXuatEntity {
 	public void setKho(KhoEntity kho) {
 		this.kho = kho;
 	}
-	public Timestamp getNgay() {
+	public Date getNgay() {
 		return ngay;
 	}
-	public void setNgay(Timestamp ngay) {
+	public void setNgay(Date ngay) {
 		this.ngay = ngay;
 	}
 	public String getHoTenKH() {

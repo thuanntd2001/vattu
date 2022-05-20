@@ -31,7 +31,8 @@
 			<li class="nav-item"><a class="nav-link" href="#">Xem báo
 					cáo</a></li>
 			<li class="nav-item"><a class="nav-link" href="taologin/cn1/chinhanh.htm">Tạo Login cho hệ thống</a></li>
-		<li class="nav-item">   ${message}   </li>
+		 
 		</ul>
 	</div>
+	 ${message}   
 </nav>

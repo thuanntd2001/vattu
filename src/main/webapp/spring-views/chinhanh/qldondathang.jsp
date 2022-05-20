@@ -40,7 +40,7 @@
 		</nav>
 	</div>
 	<!-- End Page Title -->
-
+${message}
 	<section class="section">
 		<div class="row">
 			<div class="col-lg-12">
@@ -56,6 +56,7 @@
 									<th scope="col">Nhà cung cấp</th>
 									<th scope="col">Mã NV</th>
 									<th scope="col">Mã Kho</th>
+									<th scope="col">Xem</th>
 									<th scope="col">Thao tác</th>
 								</tr>
 							</thead>
@@ -68,11 +69,16 @@
 										<td>${k.nhaCC}</td>
 										<td>${k.nhanVien.maNV}</td>
 										<td>${k.kho.maKho}</td>
-										<td><a href="quanlychitietdondathang/cn1/chinhanh.htm?idddh=${k.maSoDDH}" class="fa fa-eye"><br>Chi Tiết
-												DDH<br>
-										</a> <a href="quanlyphieunhap/cn1/chinhanh.htm?idDDH=${k.maSoDDH}" class="fa fa-indent">
-										<br>Xem phiếu nhập<br></a> <a
-											href="#}"class="fa fa-pencil-square-o"></a></td>
+										<td><a
+											href="quanlychitietdondathang/cn1/chinhanh.htm?idddh=${k.maSoDDH}"
+											class="fa fa-eye"><br>Chi Tiết DDH<br> </a> <a
+											href="quanlyphieunhap/cn1/chinhanh.htm?idDDH=${k.maSoDDH}"
+											class="fa fa-indent"> <br>Xem phiếu nhập<br></a>
+										<td><a
+											href="quanlydondathang/cn1/chinhanh/edit.htm?id=${k.maSoDDH}"
+											class="fa fa-pencil-square-o"></a> <a
+											href="quanlydondathang/cn1/chinhanh/xoa.htm?id=${k.maSoDDH}"
+											class="fa fa-times-circle"></a></td>
 									</tr>
 								</c:forEach>
 							</tbody>

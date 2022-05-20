@@ -31,10 +31,10 @@
 	<main id="main" class="main">
 
 	<div class="pagetitle">
-		<h1>Nhân viên</h1>
+		<h1>Đơn hàng</h1>
 		<nav>
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="Kho.html">Kho</a></li>
+				<li class="breadcrumb-item"><a href=""quanlykho/cn1/chinhanh.htm"">Kho</a></li>
 				<li class="breadcrumb-item"><a href="Donhang.html">Đơn hàng</a></li>
 				<li class="breadcrumb-item active">Chi tiết đơn đặt hàng</li>
 			</ol>
@@ -52,14 +52,14 @@
 							<thead>
 								<tr class="table-secondary">
 									<th scope="col">Mã số DDH</th>
-									<th scope="col">Mã VT</th>
+									<th scope="col">tên VT</th>
 									<th scope="col">Số lượng</th>
 									<th scope="col">Đơn giá</th>
 									<th scope="col">Thao tác</th>
 								</tr>
 							</thead>
 							<tbody>
-							
+
 
 
 
@@ -67,7 +67,7 @@
 									<tr>
 
 										<th scope="row">${k.datHang.maSoDDH}</th>
-										<td>${k.vatTu.maVT}</td>
+										<td>${k.vatTu.tenVT}</td>
 										<td>${k.soLuong}</td>
 
 										<td>${k.donGia}</td>
@@ -78,7 +78,8 @@
 							</tbody>
 						</table>
 
-
+						<a href="quanlychitietdondathang/cn1/chinhanh/add.htm"
+							class="fa fa-plus"></a>
 
 					</div>
 				</div>

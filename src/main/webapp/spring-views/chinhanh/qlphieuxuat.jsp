@@ -57,6 +57,7 @@
 									<th scope="col">Họ tên KH</th>
 									<th scope="col">Mã NV</th>
 									<th scope="col">Mã Kho</th>
+									<th scope="col">Xem</th>
 									<th scope="col">Thao tác</th>
 								</tr>
 							</thead>
@@ -71,6 +72,11 @@
 										<td>${k.nhanVien.maNV}</td>
 										<td>${k.kho.maKho}</td>
 										<td><a href="quanlychitietphieuxuat/cn1/chinhanh.htm?idpx=${k.maPX}" class="fa fa-eye"></a></td>
+										<td><a
+											href="quanlyphieuxuat/cn1/chinhanh/edit.htm?id=${k.maPX}"
+											class="fa fa-pencil-square-o"></a> <a
+											href="quanlyphieuxuat/cn1/chinhanh/xoa.htm?id=${k.maPX}"
+											class="fa fa-times-circle"></a></td>
 									</tr>
 								</c:forEach>
 							</tbody>

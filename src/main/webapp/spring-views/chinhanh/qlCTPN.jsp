@@ -55,7 +55,7 @@
 							<thead>
 								<tr>
 									<th scope="col">Mã PN</th>
-									<th scope="col">Mã VT</th>
+									<th scope="col">tên VT</th>
 									<th scope="col">Số Lượng</th>
 									<th scope="col">Đơn giá</th>
 									<th scope="col">Thao tác</th>
@@ -67,7 +67,7 @@
 									<tr>
 
 										<th scope="row">${k.phieuNhap.maPN}</th>
-										<td>${k.vatTu.maVT}</td>
+										<td>${k.vatTu.tenVT}</td>
 										<td>${k.soLuong}</td>
 										<td>${k.donGia}VNĐ</td>
 
@@ -77,6 +77,8 @@
 
 							</tbody>
 						</table>
+						<a href="quanlychitietphieunhap/cn1/chinhanh/add.htm"
+							class="fa fa-plus"></a>
 					</div>
 				</div>
 

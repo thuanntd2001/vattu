@@ -47,20 +47,20 @@
           <div class="col-lg-15">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Thêm đơn đặt hàng</h5>
+                <h5 class="card-title">Thêm phiếu xuất</h5>
 
 
 
-							<form:form action="quanlydondathang/cn1/chinhanh/add.htm"
-							method="post" modelAttribute="dh" class="row g-3">
+							<form:form action="quanlyphieuxuat/cn1/chinhanh/add.htm"
+							method="post" modelAttribute="px" class="row g-3">
 					
 							<div class="col-md-5">
-								 <label for="inputEmail5" class="form-label">Mã số DDH</label>
-                        		 <form:input type="text" class="form-control" id="inputEmail5" path="maSoDDH"/>
+								 <label for="inputEmail5" class="form-label">Mã số PX</label>
+                        		 <form:input type="text" class="form-control" id="inputEmail5" path="maPX"/>
 							</div>
 							<div class="col-md-5">
-								<label for="inputPassword5" class="form-label">Nhà cung cấp</label>
-								<form:input type="text" class="form-control" id="inputPassword5" path="nhaCC" />
+								<label for="inputPassword5" class="form-label">Họ tên KH</label>
+								<form:input type="text" class="form-control" id="inputPassword5" path="hoTenKH" />
 							</div>
 							<div class="col-md-5">
 								<label for="inputPassword5" class="form-label">Mã Kho</label>

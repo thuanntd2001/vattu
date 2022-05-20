@@ -46,20 +46,39 @@
 
 				<div class="card">
 					<div class="card-body">
-						<h5 class="card-title">Thông tin nhân viên</h5>
+						<h5 class="card-title">Thông tin Đơn Đặt</h5>
 						${message}
-						
-						Bạn có đồng ý xoá NV ${id }
 						<!-- Multi Columns Form -->
-						<form action="quanlynhanvien/cn1/chinhanh/xoa.htm?id=${id }" method="post"
-							class="row g-3">
-							
+						<form:form action="quanlydondathang/cn1/chinhanh/edit.htm"
+							method="post" modelAttribute="dh" class="row g-3">
+
 							<div class="col-md-5">
-								<label for="inputEmail5" class="form-label">Xác Nhận( Nhập "YES" vào khung này)</label>
-								<input type="text" class="form-control" name="xacNhan" />
+								<label for="inputEmail5" class="form-label">Mã số DDH</label>
+								<form:input type="text" class="form-control" id="inputEmail5"
+									path="maSoDDH" readonly="true"/>
 							</div>
-							<button type="submit" > Xoá </button>
-						</form>
+							<div class="col-md-5">
+								<label for="inputPassword5" class="form-label">Nhà cung
+									cấp</label>
+								<form:input type="text" class="form-control" id="inputPassword5"
+									path="nhaCC" />
+							</div>
+							<div class="col-md-5">
+								<label for="inputPassword5" class="form-label">Mã Kho</label> <input
+									type="text" class="form-control" id="inputPassword5"
+									value="${idkho} " readonly />
+							</div>
+
+
+
+
+
+
+							<div class="text-center">
+								<button type="submit" class="btn btn-primary">Sửa</button>
+								<button type="reset" class="btn btn-secondary">Reset</button>
+							</div>
+						</form:form>
 						<!-- End Multi Columns Form -->
 
 					</div>
