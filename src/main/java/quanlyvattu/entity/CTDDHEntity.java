@@ -10,43 +10,43 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import quanlyvattu.complexId.ChiTietDDHId;
 
-//class ChiTietDHVT implements Serializable {
-//	private DatHangEntity datHang;
-//	private VatTuEntity vatTu;
-//
-//	public ChiTietDHVT(DatHangEntity datHang, VatTuEntity vatTu) {
-//		super();
-//		this.datHang = datHang;
-//		this.vatTu = vatTu;
-//	}
-//
-//	public ChiTietDHVT() {
-//		super();
-//		// TODO Auto-generated constructor stub
-//	}
-//
-//	public DatHangEntity getDatHang() {
-//		return datHang;
-//	}
-//
-//	public void setDatHang(DatHangEntity datHang) {
-//		this.datHang = datHang;
-//	}
-//
-//	public VatTuEntity getVatTu() {
-//		return vatTu;
-//	}
-//
-//	public void setVatTu(VatTuEntity vatTu) {
-//		this.vatTu = vatTu;
-//	}
-//
-//}
+
+class ChiTietDHVT implements Serializable {
+	private DatHangEntity datHang;
+	private VatTuEntity vatTu;
+
+	public ChiTietDHVT(DatHangEntity datHang, VatTuEntity vatTu) {
+		super();
+		this.datHang = datHang;
+		this.vatTu = vatTu;
+	}
+
+	public ChiTietDHVT() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public DatHangEntity getDatHang() {
+		return datHang;
+	}
+
+	public void setDatHang(DatHangEntity datHang) {
+		this.datHang = datHang;
+	}
+
+	public VatTuEntity getVatTu() {
+		return vatTu;
+	}
+
+	public void setVatTu(VatTuEntity vatTu) {
+		this.vatTu = vatTu;
+	}
+
+}
 
 @Entity
-@IdClass(ChiTietDDHId.class)
+@IdClass(ChiTietDHVT.class)
 @Table(name = "CTDDH")
 
 public class CTDDHEntity {

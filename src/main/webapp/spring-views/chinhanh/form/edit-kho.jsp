@@ -31,12 +31,12 @@
 	<main id="main" class="main">
 
 	<div class="pagetitle">
-		<h1>Nhân viên</h1>
+		<h1>Kho</h1>
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a
-					href="quanlynhanvien/chinhanh.htm">Nhân Viên</a></li>
-				<li class="breadcrumb-item active">Thêm Nhân viên</li>
+					href="quanlykho/cn1/chinhanh.htm">Kho</a></li>
+				<li class="breadcrumb-item active">Sửa Kho</li>
 			</ol>
 		</nav>
 	</div>
@@ -57,7 +57,7 @@
 						
 							
 						
-							<div class="col-md-5">
+							<div class="col-md-7">
 								<label for="inputPassword5" class="form-label">Tên Kho</label>
 								<form:input type="text" class="form-control" id="inputPassword5"
 									path="tenKho" />
@@ -70,9 +70,11 @@
 									placeholder="TPHCM" path="diaChi" />
 							</div>
 
-							<div class="text-center">
-								<button type="submit" class="btn btn-primary">Sửa</button>
-								<button type="reset" class="btn btn-secondary">Reset</button>
+							<div class="col-md-12" >
+								<div class="text-center" style="margin-top:20px">
+									<button type="submit" class="btn btn-primary">Tạo</button>
+									<button type="reset" class="btn btn-secondary">Reset</button>
+								</div>
 							</div>
 						</form:form>
 						<!-- End Multi Columns Form -->

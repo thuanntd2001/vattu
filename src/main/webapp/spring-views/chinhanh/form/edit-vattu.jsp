@@ -31,12 +31,12 @@
 	<main id="main" class="main">
 
 	<div class="pagetitle">
-		<h1>Nhân viên</h1>
+		<h1>Vật tư</h1>
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a
-					href="quanlynhanvien/chinhanh.htm">Nhân Viên</a></li>
-				<li class="breadcrumb-item active">Thêm Nhân viên</li>
+					href="quanlyvattu/cn1/chinhanh.htm">Vật tư</a></li>
+				<li class="breadcrumb-item active">Sửa vật tư</li>
 			</ol>
 		</nav>
 	</div>
@@ -46,7 +46,7 @@
 
 				<div class="card">
 					<div class="card-body">
-						<h5 class="card-title">Thông tin nhân viên</h5>
+						<h5 class="card-title">Thông tin vật tư</h5>
 						${message}
 						<!-- Multi Columns Form -->
 						<form:form action="quanlyvattu/cn1/chinhanh/edit.htm"
@@ -59,12 +59,13 @@
 										 <form:input path="chiNhanh" value="${chiNhanhHT}" label="${chiNhanhHT.chiNhanh} "  />
 								</form:select>
 							</div> --%>
-							<div class="col-md-5">
+							<div class="col-md-0">
 								
 								<form:input type="hidden" class="form-control" id="inputEmail5"
 									path="maVT" />
 							</div>
-							<div class="col-md-5">
+
+							<div class="col-md-8">
 								<label for="inputEmail5" class="form-label">Tên VT</label>
 								<form:input type="text" class="form-control" id="inputEmail5"
 									path="tenVT" />
@@ -76,16 +77,17 @@
 							</div>
 
 							<div class="col-md-6">
-								<div class="col-md-10">
+								
 									<label for="inputCity" class="form-label">Số lượng tồn</label>
-									<form:input type="number" min="1" max="10000" 
+									<form:input type="number" min="1" max="10000" class="form-control" id="inputCity"
 										path="soLuongTon" />
-								</div>
+								
 							</div>
-
-							<div class="text-center">
-								<button type="submit" class="btn btn-primary">Sửa</button>
-								<button type="reset" class="btn btn-secondary">Reset</button>
+							<div class="col-md-12" >
+								<div class="text-center" style="margin-top:20px">
+									<button type="submit" class="btn btn-primary">Sửa</button>
+									<button type="reset" class="btn btn-secondary">Reset</button>
+								</div>
 							</div>
 						</form:form>
 						<!-- End Multi Columns Form -->

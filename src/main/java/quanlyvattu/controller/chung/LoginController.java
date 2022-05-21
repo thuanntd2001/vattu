@@ -86,7 +86,7 @@ public class LoginController {
 					InfoConnection.setPassWordPM(model.getPasswd());
 					InfoConnection.setUserNamePM(model.getUserName());
 
-					System.out.print("thanh cong ket noi " + InfoConnection.getUrlPM());
+					System.out.print("thanh cong ket noi phan manh" + InfoConnection.getUrlPM());
 
 					NhanVienLoginModel login = nvdao.login(model.getUserName(), model.getPasswd());
 
@@ -97,7 +97,7 @@ public class LoginController {
 					SessionUtil.getInstance().putValue(request, "USERMODEL", model);
 					session.setAttribute("USERMODEL", model);
 
-					if (model.getChiNhanh().equals("TBTUONGLAI1\\SQLSV1")) {
+					if (model.getChiNhanh().equals("GHDBP-20210702Z\\SQLSV1")) {
 						model.setMaChiNhanh("CN1");
 						if (model.getRoleID().equals("CONGTY"))
 
@@ -110,7 +110,7 @@ public class LoginController {
 							return "redirect:quanlynhanvien/cn1/user.htm";
 					}
 
-					else if (model.getChiNhanh().equals("TBTUONGLAI1\\SQLSV2"))
+					else if (model.getChiNhanh().equals("GHDBP-20210702Z\\SQLSV2"))
 					{
 						model.setMaChiNhanh("CN2");
 						// tra ra view
