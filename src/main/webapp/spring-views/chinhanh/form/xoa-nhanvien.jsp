@@ -35,30 +35,37 @@
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a
-					href="quanlynhanvien/chinhanh.htm">Nhân Viên</a></li>
-				<li class="breadcrumb-item active">Thêm Nhân viên</li>
+					href="quanlynhanvien/cn1/chinhanh.htm">Nhân Viên</a></li>
+				<li class="breadcrumb-item active">Xoá Nhân viên</li>
 			</ol>
 		</nav>
 	</div>
 	<section class="section">
 		<div class="row">
-			<div class="col-lg-10">
+			<div class="col-lg-5" >
 
 				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">Thông tin nhân viên</h5>
+					<div class="card-body" style="align-content: center;">
+						<h5 class="card-title">Xoá nhân viên</h5>
 						${message}
 						
-						Bạn có đồng ý xoá NV ${id }
+						
 						<!-- Multi Columns Form -->
 						<form action="quanlynhanvien/cn1/chinhanh/xoa.htm?id=${id }" method="post"
 							class="row g-3">
+							<div  class="col-md-12" style="align-items=center;">
+								<label for="inputEmail5" class="form-label">Bạn có đồng ý xoá NV ${id }</label>
+							</div>
 							
-							<div class="col-md-5">
+							<div class="col-md-12">
 								<label for="inputEmail5" class="form-label">Xác Nhận( Nhập "YES" vào khung này)</label>
 								<input type="text" class="form-control" name="xacNhan" />
 							</div>
-							<button type="submit" > Xoá </button>
+							
+							<div class="text-center" style="margin-top:15px; margin-left:170px">
+								<button type="submit" class="btn btn-primary">Xoá</button>
+								
+							</div>
 						</form>
 						<!-- End Multi Columns Form -->
 

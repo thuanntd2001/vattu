@@ -85,18 +85,19 @@
 						<!-- End Multi Columns Form -->
 						<form:form action="quanlyvattu/cn1/chinhanh/add.htm"
 							method="post" modelAttribute="vt" class="row g-3">
-
-							<label for="inputEmail5" class="form-label">Mã VT</label>
-							<form:input type="text" class="form-control" id="inputEmail5" path="maVT" />
 							<div class="col-md-5">
 								<div class="col-md-6">
-									<label for="inputPassword5" class="form-label">Tên VT</label>
-									<form:input type="text" class="form-control" id="inputEmail5" path="tenVT" />
+									<label for="inputEmail5" class="form-label">Mã VT</label>
+									<form:input type="text" class="form-control" id="inputEmail5" path="maVT" />
 								</div>
 
 							</div>
+							<div class="col-md-5">
+									<label for="inputPassword5" class="form-label">Tên VT</label>
+									<form:input type="text" class="form-control" id="inputEmail5" path="tenVT" />
+							</div>
 
-							<div class="col-md-4">
+							<div class="col-md-9">
 								<label for="inputState" class="form-label">Đơn vị tính</label> <br>
 								<form:input path="donViTinh" />
 								<br>

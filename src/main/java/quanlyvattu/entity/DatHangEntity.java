@@ -35,7 +35,7 @@ public class DatHangEntity {
 	private String nhaCC;
 
 	@ManyToOne
-	@JoinColumn(name="MAKHO")
+	@JoinColumn(name="KHO")
 	private KhoEntity kho;
 	
 	@ManyToOne

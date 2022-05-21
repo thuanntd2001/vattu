@@ -26,7 +26,7 @@ public class JPAConfigCN2 {
 	  @Bean public DataSource DataSourceCN2() {
 	        DriverManagerDataSource dataSource = new DriverManagerDataSource();
 	        dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			dataSource.setUrl("jdbc:sqlserver://GHDBP-20210702Z\\SQLSV2; Database=QLVT_DATHANG");
+			dataSource.setUrl("jdbc:sqlserver://TBTUONGLAI1\\SQLSV2; Database=QLVT_DATHANG");
 			dataSource.setUsername("sa");
 			dataSource.setPassword("1234");
 	        return dataSource;

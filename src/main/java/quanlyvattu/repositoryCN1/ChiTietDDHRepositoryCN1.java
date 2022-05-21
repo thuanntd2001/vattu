@@ -8,6 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 
 import quanlyvattu.entity.CTDDHEntity;
 
+import quanlyvattu.entity.DatHangEntity;
+
 public interface ChiTietDDHRepositoryCN1 extends JpaRepository<CTDDHEntity, String> {
 
 	@Query("select ctdatHang from CTDDHEntity ctdatHang where ctdatHang.datHang.maSoDDH = ?1")

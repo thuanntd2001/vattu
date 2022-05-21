@@ -59,7 +59,7 @@ public class PhieuNhapEntity {
 	private NhanVienEntity nhanVien;
 	
 	@ManyToOne
-	@JoinColumn(name="MAKHO")
+	@JoinColumn(name="KHO")
 	private KhoEntity kho;
 	
 	

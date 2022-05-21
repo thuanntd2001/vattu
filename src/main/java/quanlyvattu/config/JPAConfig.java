@@ -47,7 +47,7 @@ public class JPAConfig {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-		dataSource.setUrl("jdbc:sqlserver://GHDBP-20210702Z\\SQLSV1; Database=QLVT_DATHANG");
+		dataSource.setUrl("jdbc:sqlserver://TBTUONGLAI1\\SQLSV1; Database=QLVT_DATHANG");
 		dataSource.setUsername("sa");
 		dataSource.setPassword("1234");
 

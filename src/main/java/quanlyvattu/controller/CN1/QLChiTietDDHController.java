@@ -1,5 +1,6 @@
 package quanlyvattu.controller.CN1;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletContext;
@@ -9,17 +10,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import quanlyvattu.dao.impl.AbstractDAO;
 import quanlyvattu.entity.CTDDHEntity;
-
+import quanlyvattu.entity.DatHangEntity;
+import quanlyvattu.model.UserModel;
 import quanlyvattu.repositoryCN1.ChiTietDDHRepositoryCN1;
+import quanlyvattu.repositoryCN1.DatHangRepositoryCN1;
+import quanlyvattu.repositoryCN1.VatTuRepositoryCN1;
 import quanlyvattu.repositoryCN2.ChiTietDDHRepositoryCN2;
 import quanlyvattu.statics.InfoConnection;
-
-
 
 @Controller
 @RequestMapping(value = "quanlychitietdondathang/cn1")
@@ -28,43 +31,38 @@ public class QLChiTietDDHController {
 	ChiTietDDHRepositoryCN1 ctdhrepo;
 
 	@Autowired
+	DatHangRepositoryCN1 dhrepo;
+
+	@Autowired
+	VatTuRepositoryCN1 vtrepo;
+
+	@Autowired
 	ServletContext session;
-<<<<<<< HEAD
-	
-	String idddh="n/a";
-=======
 
 	AbstractDAO dao = new AbstractDAO();
 
 	String idddh = "n/a";
 
->>>>>>> e7ce4f9e574a4bf54067cddfa14f51b4b3e4d2ab
 	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
-	public String getDDHCN(ModelMap model, HttpServletRequest request){	
-		System.out.print("khong co ma kho");
-		idddh= (String) request.getParameter("idddh");
-		if(idddh != "" && idddh != null ) {
+	public String getDDHCN(ModelMap model, HttpServletRequest request) {
+		System.out.print("khong co ma dh");
+		idddh = (String) request.getParameter("idddh");
+		if (idddh != "" && idddh != null) {
 
-			List<CTDDHEntity> dhs=(List<CTDDHEntity>) ctdhrepo.findByMaSoDDH(idddh);
-			model.addAttribute("ddhs",dhs);
-			
+			List<CTDDHEntity> dhs = (List<CTDDHEntity>) ctdhrepo.findByMaSoDDH(idddh);
+			model.addAttribute("ddhs", dhs);
+
 			return "chinhanh/qlCTDDH";
-		}else {
+		} else {
 			System.out.print("khong co ma DDH");
 
-			model.addAttribute("ddhs",ctdhrepo.findAll());
+			model.addAttribute("ddhs", ctdhrepo.findAll());
 			return "chinhanh/qlCTDDH";
 		}
-		
+
 	}
 
-
 	@RequestMapping(value = "chinhanh/add", method = RequestMethod.GET)
-<<<<<<< HEAD
-	public String addDDHCN(){	
-
-		return "chinhanh/form/add-dondathang";
-=======
 	public String addDDHCN(ModelMap model) {
 		model.addAttribute("ct", new CTDDHEntity());
 		model.addAttribute("vattus", vtrepo.findAll());
@@ -138,11 +136,6 @@ public class QLChiTietDDHController {
 		}
 		return "redirect:/quanlykho/cn1/chinhanh.htm";
 
->>>>>>> e7ce4f9e574a4bf54067cddfa14f51b4b3e4d2ab
 	}
 
-	
-	
 }
-
-
