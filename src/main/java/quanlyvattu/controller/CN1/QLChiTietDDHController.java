@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import quanlyvattu.dao.impl.AbstractDAO;
 import quanlyvattu.entity.CTDDHEntity;
 import quanlyvattu.entity.DatHangEntity;
 import quanlyvattu.model.UserModel;
@@ -21,6 +22,7 @@ import quanlyvattu.repositoryCN1.ChiTietDDHRepositoryCN1;
 import quanlyvattu.repositoryCN1.DatHangRepositoryCN1;
 import quanlyvattu.repositoryCN1.VatTuRepositoryCN1;
 import quanlyvattu.repositoryCN2.ChiTietDDHRepositoryCN2;
+import quanlyvattu.statics.InfoConnection;
 
 @Controller
 @RequestMapping(value = "quanlychitietdondathang/cn1")
@@ -37,6 +39,8 @@ public class QLChiTietDDHController {
 	@Autowired
 	ServletContext session;
 
+	AbstractDAO dao=new AbstractDAO();
+	
 	String idddh = "n/a";
 
 	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
@@ -74,20 +78,34 @@ public class QLChiTietDDHController {
 		try {
 			ct.setDatHang(dhrepo.findOne(idddh));
 			ct.setVatTu(vtrepo.findOne(request.getParameter("maVT")));
-			System.out.println(ct.getVatTu().getMaVT());
-			System.out.println(ct.getVatTu().getMaVT());
+			
+			System.out.println(InfoConnection.getUrlPM());
+//			nvsave = ctdhrepo.save(ct);
+			
+			String sql="INSERT INTO [dbo].[CTDDH]\n" + 
+					"           ([MasoDDH]\n" + 
+					"           ,[MAVT]\n" + 
+					"           ,[SOLUONG]\n" + 
+					"           ,[DONGIA]\n)" + 
+				
+					"     VALUES (?,?,?,?)";
+			System.out.println(sql);
 			System.out.println(ct.getDatHang().getMaSoDDH());
-			nvsave = ctdhrepo.save(ct);
+			System.out.println(ct.getVatTu().getMaVT());
+			System.out.println(ct.getSoLuong());
+			System.out.println(ct.getDonGia());
+			dao.insertPM(sql, ct.getDatHang().getMaSoDDH(),ct.getVatTu().getMaVT(),ct.getSoLuong(),ct.getDonGia());
+			model.addAttribute("message", "thêm chi tiết thành công");
+			System.out.print("thêm chi tiết thành công");
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("message", "thêm chi tiết thất bại, loại vật tư đã tồn tại");
 			System.out.print("thêm đơn hàng thất bại");
 
 		}
-		if (nvsave != null) {
-			model.addAttribute("message", "thêm chi tiết thành công");
-			System.out.print("thêm chi tiết thành công");
-		}
+	
+			
+		
 
 		return "redirect:/quanlychitietdondathang/cn1/chinhanh/add.htm?idddh="+idddh;
 	}

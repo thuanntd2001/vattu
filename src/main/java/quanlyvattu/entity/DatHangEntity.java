@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -41,11 +42,11 @@ public class DatHangEntity {
 	@JoinColumn(name="MANV")
 	private NhanVienEntity nhanVien;
 	
-//	@OneToMany(mappedBy = "datHang", fetch = FetchType.EAGER)
-//	List<PhieuNhapEntity> phieuNhaps = new ArrayList<PhieuNhapEntity>();
+	@OneToMany(mappedBy = "datHang", fetch = FetchType.EAGER, cascade=CascadeType.MERGE)
+	List<PhieuNhapEntity> phieuNhaps = new ArrayList<PhieuNhapEntity>();
 	
-	@OneToMany(mappedBy = "datHang", fetch = FetchType.EAGER)
-	List<CTDDHEntity> phieuNhaps = new ArrayList<CTDDHEntity>();
+	@OneToMany(mappedBy = "datHang", fetch = FetchType.EAGER,cascade=CascadeType.MERGE)
+	List<CTDDHEntity> chiTiets = new ArrayList<CTDDHEntity>();
 	
 	public String getMaSoDDH() {
 		return maSoDDH;
