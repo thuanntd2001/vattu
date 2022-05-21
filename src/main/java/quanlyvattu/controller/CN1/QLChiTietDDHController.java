@@ -1,6 +1,5 @@
 package quanlyvattu.controller.CN1;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletContext;
@@ -10,17 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import quanlyvattu.entity.CTDDHEntity;
-import quanlyvattu.entity.DatHangEntity;
-import quanlyvattu.model.UserModel;
+
 import quanlyvattu.repositoryCN1.ChiTietDDHRepositoryCN1;
-import quanlyvattu.repositoryCN1.DatHangRepositoryCN1;
-import quanlyvattu.repositoryCN1.VatTuRepositoryCN1;
 import quanlyvattu.repositoryCN2.ChiTietDDHRepositoryCN2;
+
+
 
 @Controller
 @RequestMapping(value = "quanlychitietdondathang/cn1")
@@ -29,67 +26,37 @@ public class QLChiTietDDHController {
 	ChiTietDDHRepositoryCN1 ctdhrepo;
 
 	@Autowired
-	DatHangRepositoryCN1 dhrepo;
-
-	@Autowired
-	VatTuRepositoryCN1 vtrepo;
-
-	@Autowired
 	ServletContext session;
-
-	String idddh = "n/a";
-
+	
+	String idddh="n/a";
 	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
-	public String getDDHCN(ModelMap model, HttpServletRequest request) {
-		System.out.print("khong co ma dh");
-		idddh = (String) request.getParameter("idddh");
-		if (idddh != "" && idddh != null) {
+	public String getDDHCN(ModelMap model, HttpServletRequest request){	
+		System.out.print("khong co ma kho");
+		idddh= (String) request.getParameter("idddh");
+		if(idddh != "" && idddh != null ) {
 
-			List<CTDDHEntity> dhs = (List<CTDDHEntity>) ctdhrepo.findByMaSoDDH(idddh);
-			model.addAttribute("ddhs", dhs);
-
+			List<CTDDHEntity> dhs=(List<CTDDHEntity>) ctdhrepo.findByMaSoDDH(idddh);
+			model.addAttribute("ddhs",dhs);
+			
 			return "chinhanh/qlCTDDH";
-		} else {
+		}else {
 			System.out.print("khong co ma DDH");
 
-			model.addAttribute("ddhs", ctdhrepo.findAll());
+			model.addAttribute("ddhs",ctdhrepo.findAll());
 			return "chinhanh/qlCTDDH";
 		}
-
+		
 	}
+
 
 	@RequestMapping(value = "chinhanh/add", method = RequestMethod.GET)
-	public String addDDHCN(ModelMap model) {
-		model.addAttribute("ct", new CTDDHEntity());
-		model.addAttribute("vattus", vtrepo.findAll());
-		return "chinhanh/form/add-CTDDH";
+	public String addDDHCN(){	
+
+		return "chinhanh/form/add-dondathang";
 	}
 
-	@RequestMapping(value = "chinhanh/add", method = RequestMethod.POST)
-	public String addchitietDDHCN(ModelMap model, @ModelAttribute("ct") CTDDHEntity ct, HttpServletRequest request) {
-
-		CTDDHEntity nvsave = null;
-		UserModel user = (UserModel) session.getAttribute("USERMODEL");
-
-		try {
-			ct.setDatHang(dhrepo.findOne(idddh));
-			ct.setVatTu(vtrepo.findOne(request.getParameter("maVT")));
-			System.out.println(ct.getVatTu().getMaVT());
-			System.out.println(ct.getVatTu().getMaVT());
-			System.out.println(ct.getDatHang().getMaSoDDH());
-			nvsave = ctdhrepo.save(ct);
-		} catch (Exception e) {
-			e.printStackTrace();
-			model.addAttribute("message", "thêm chi tiết thất bại, loại vật tư đã tồn tại");
-			System.out.print("thêm đơn hàng thất bại");
-
-		}
-		if (nvsave != null) {
-			model.addAttribute("message", "thêm chi tiết thành công");
-			System.out.print("thêm chi tiết thành công");
-		}
-
-		return "redirect:/quanlychitietdondathang/cn1/chinhanh/add.htm?idddh="+idddh;
-	}
-
+	
+	
 }
+
+

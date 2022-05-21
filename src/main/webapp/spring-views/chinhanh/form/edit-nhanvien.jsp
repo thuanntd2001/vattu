@@ -34,8 +34,9 @@
 		<h1>Nhân viên</h1>
 		<nav>
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="quanlynhanvien/cn1/chinhanh.htm">Nhân Viên</a></li>
-				<li class="breadcrumb-item active">Sửa Thông Tin Nhân viên</li>
+				<li class="breadcrumb-item"><a
+					href="quanlynhanvien/chinhanh.htm">Nhân Viên</a></li>
+				<li class="breadcrumb-item active">Thêm Nhân viên</li>
 			</ol>
 		</nav>
 	</div>
@@ -58,7 +59,7 @@
 										 <form:input path="chiNhanh" value="${chiNhanhHT}" label="${chiNhanhHT.chiNhanh} "  />
 								</form:select>
 							</div> --%>
-							<div class="col-md-0">
+							<div class="col-md-5">
 								
 								<form:input type="hidden" class="form-control" id="inputEmail5"
 									path="maNV" />
@@ -101,7 +102,7 @@
 									placeholder="TPHCM" path="diaChi" />
 							</div>
 
-							<div class="text-center" style="margin-top:15px; margin-left:350px">
+							<div class="text-center">
 								<button type="submit" class="btn btn-primary">Sửa</button>
 								<button type="reset" class="btn btn-secondary">Reset</button>
 							</div>

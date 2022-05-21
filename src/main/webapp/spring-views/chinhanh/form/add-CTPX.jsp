@@ -48,9 +48,42 @@
 					<div class="card-body">
 						<h5 class="card-title">Thông tin Vật tư</h5>
 
-						
+						<!-- Multi Columns Form -->
+						<%-- <form:form action="quanlyvattu/cn1/chinhanh/add.htm"
+							method="post" modelAtribute="vt" class="row g-3">
+							<div class="col-md-6">
+								<label for="inputEmail5" class="form-label">Mã VT</label> 
+								<form:input type="text"  path="maVT"/>
+							</div>
+							<div class="col-md-6">
+								<label for="inputPassword5" class="form-label">Tên VT</label>
+								 <form:input type="text"   path="tenVT"/>
+							</div>
+
+							<div class="col-md-6">
+								<div class="col-md-10">
+									<label for="inputCity" class="form-label">Số lượng tồn</label>
+									<form:input type="number" min="1" max="10000" step="5"
+									 path="soLuongTon"/>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<label for="inputState" class="form-label">Đơn vị tính</label> 
+								<br>
+								<form:input path="donViTinh" />
+								<br>
+							</div>
+
+
+							<div >
+							<br><br><br>
+								<button type="submit" class="btn btn-primary">Thêm</button>
+
+							</div>
+						</form:form> --%>
 						<!-- End Multi Columns Form -->
-						<form:form action="quanlychitietphieuxuat/cn1/chinhanh/add.htm"
+						<form:form action="quanlyvattu/cn1/chinhanh/add.htm"
 							method="post" modelAttribute="vt" class="row g-3">
 
 							<label for="inputEmail5" class="form-label">Mã VT</label>

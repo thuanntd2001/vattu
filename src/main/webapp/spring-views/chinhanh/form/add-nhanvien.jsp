@@ -35,7 +35,7 @@
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a
-					href="quanlynhanvien/cn1/chinhanh.htm">Nhân Viên</a></li>
+					href="quanlynhanvien/chinhanh.htm">Nhân Viên</a></li>
 				<li class="breadcrumb-item active">Thêm Nhân viên</li>
 			</ol>
 		</nav>
@@ -52,12 +52,12 @@
 						<form:form action="quanlynhanvien/cn1/chinhanh/add.htm"
 							method="post" modelAttribute="nv" class="row g-3">
 					
-							<div class="col-md-6">
+							<div class="col-md-5">
 								<label for="inputEmail5" class="form-label">Họ</label>
 								<form:input type="text" class="form-control" id="inputEmail5"
 									path="ho" />
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-5">
 								<label for="inputPassword5" class="form-label">Tên</label>
 								<form:input type="text" class="form-control" id="inputPassword5"
 									path="ten" />
@@ -66,7 +66,7 @@
 
 
 
-							<!-- 	<div class="col-md-9">
+							<!-- 	<div class="col-md-7">
 								<label for="inputDate" class="col-sm-2 col-form-label">Ngày
 									sinh</label>
 								<div class="col-md-10">
@@ -75,12 +75,14 @@
 							</div>
 							 -->
 							 <br>
-							
-								<label for="set-date" style="margin-left: 13px; margin-top: 15px">Ngày sinh:</label> 
-								<div class="col-md-12">
-									<input type="datetime-local" id="set-date" name="tg" style="margin-left:10px" >
-								</div>
+							<div class="col-md-7">
+								<label for="set-date" style="margin-right: 33px;">Ngày
+									sinh:</label> <input type="datetime-local" id="set-date" name="tg">
 							</div>
+
+
+
+
 							<div class="col-md-4">
 								<label for="inputCity" class="form-label">Lương</label>
 								<form:input type="number" class="form-control" id="inputCity"
@@ -92,7 +94,7 @@
 									placeholder="TPHCM" path="diaChi" />
 							</div>
 
-							<div class="text-center" style="margin-top:15px">
+							<div class="text-center">
 								<button type="submit" class="btn btn-primary">Tạo</button>
 								<button type="reset" class="btn btn-secondary">Reset</button>
 							</div>
