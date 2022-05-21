@@ -12,10 +12,12 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import quanlyvattu.dao.impl.AbstractDAO;
 import quanlyvattu.entity.CTDDHEntity;
 
 import quanlyvattu.repositoryCN1.ChiTietDDHRepositoryCN1;
 import quanlyvattu.repositoryCN2.ChiTietDDHRepositoryCN2;
+import quanlyvattu.statics.InfoConnection;
 
 
 
@@ -27,8 +29,16 @@ public class QLChiTietDDHController {
 
 	@Autowired
 	ServletContext session;
+<<<<<<< HEAD
 	
 	String idddh="n/a";
+=======
+
+	AbstractDAO dao = new AbstractDAO();
+
+	String idddh = "n/a";
+
+>>>>>>> e7ce4f9e574a4bf54067cddfa14f51b4b3e4d2ab
 	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
 	public String getDDHCN(ModelMap model, HttpServletRequest request){	
 		System.out.print("khong co ma kho");
@@ -50,9 +60,85 @@ public class QLChiTietDDHController {
 
 
 	@RequestMapping(value = "chinhanh/add", method = RequestMethod.GET)
+<<<<<<< HEAD
 	public String addDDHCN(){	
 
 		return "chinhanh/form/add-dondathang";
+=======
+	public String addDDHCN(ModelMap model) {
+		model.addAttribute("ct", new CTDDHEntity());
+		model.addAttribute("vattus", vtrepo.findAll());
+		return "chinhanh/form/add-CTDDH";
+	}
+
+	@RequestMapping(value = "chinhanh/add", method = RequestMethod.POST)
+	public String addchitietDDHCN(ModelMap model, @ModelAttribute("ct") CTDDHEntity ct, HttpServletRequest request) {
+
+		CTDDHEntity nvsave = null;
+		UserModel user = (UserModel) session.getAttribute("USERMODEL");
+
+		try {
+			ct.setDatHang(dhrepo.findOne(idddh));
+			ct.setVatTu(vtrepo.findOne(request.getParameter("maVT")));
+
+			System.out.println(InfoConnection.getUrlPM());
+//			nvsave = ctdhrepo.save(ct);
+
+			String sql = "INSERT INTO [dbo].[CTDDH]\n" + "           ([MasoDDH]\n" + "           ,[MAVT]\n"
+					+ "           ,[SOLUONG]\n" + "           ,[DONGIA]\n)" +
+
+					"     VALUES (?,?,?,?)";
+			System.out.println(sql);
+			System.out.println(ct.getDatHang().getMaSoDDH());
+			System.out.println(ct.getVatTu().getMaVT());
+			System.out.println(ct.getSoLuong());
+			System.out.println(ct.getDonGia());
+			dao.insertPM(sql, ct.getDatHang().getMaSoDDH(), ct.getVatTu().getMaVT(), ct.getSoLuong(), ct.getDonGia());
+			model.addAttribute("message", "thêm chi tiết thành công");
+			System.out.print("thêm chi tiết thành công");
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("message", "thêm chi tiết thất bại, loại vật tư đã tồn tại");
+			System.out.print("thêm đơn hàng thất bại");
+
+		}
+
+		return "redirect:/quanlychitietdondathang/cn1/chinhanh.htm?idddh=" + idddh;
+	}
+
+	@RequestMapping(value = "chinhanh/xoa", method = RequestMethod.GET)
+	public String xoaNVCN1(ModelMap model, HttpServletRequest request) {
+
+		model.addAttribute("id", request.getParameter("id"));
+		model.addAttribute("vt", request.getParameter("vt"));
+
+		return "chinhanh/form/xoa-CTDDH";
+
+	}
+	
+	@RequestMapping(value = "chinhanh/xoa", method = RequestMethod.POST)
+	public String xoaKCN1P(ModelMap model, HttpServletRequest request) {
+
+		String id = request.getParameter("id");
+		String vt = request.getParameter("vt");
+		System.out.print(request.getParameter("xacNhan") + request.getParameter("id"));
+		try {
+			if (request.getParameter("xacNhan").equals("YES")) {
+//				VatTuEntity nvsave = vtrepo.findOne(id);
+				dhrepo.delete(id);
+				String sql = "DELETE FROM [dbo].[CTDDH]\n" + 
+						"      WHERE MasoDDH=? and MAVT=?\n";
+				
+						
+				model.addAttribute("message", "xoá đơn hàng thành công");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("message", "xoá đơn hàng thất bại, chỉ có thể xoá đơn hàng trống");
+		}
+		return "redirect:/quanlykho/cn1/chinhanh.htm";
+
+>>>>>>> e7ce4f9e574a4bf54067cddfa14f51b4b3e4d2ab
 	}
 
 	

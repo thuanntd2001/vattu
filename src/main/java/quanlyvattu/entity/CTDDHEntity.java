@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+
+
 class ChiTietDHVT implements Serializable {
 	private DatHangEntity datHang;
 	private VatTuEntity vatTu;
