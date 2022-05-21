@@ -71,7 +71,7 @@
 										<td>${k.soLuong}</td>
 
 										<td>${k.donGia}</td>
-										<td><a href="quanlychitietdondathang/cn1/chinhanh/xoa.htm?id=${k.datHang.maSoDDH}&&vt=${k.vatTu.maVT}" class="fa fa-pencil-square-o"></a></td>
+										<td><a href="quanlychitietdondathang/cn1/chinhanh/xoa.htm?id=${k.datHang.maSoDDH}&vt=${k.vatTu.maVT}" class="fa fa-pencil-square-o"></a></td>
 									</tr>
 								</c:forEach>
 

@@ -72,14 +72,14 @@
 										<td>${k.soLuong}</td>
 										<td>${k.donGia}VNĐ</td>
 
-										<td><a href="edit-PX.html" class="fa fa-pencil-square-o"></a>
+										<td><a href="quanlychitietphieuxuat/cn1/chinhanh/xoa.htm?id=${k.phieuXuat.maPX}&vt=${k.vatTu.maVT}" class="fa fa-pencil-square-o"></a>
 									</tr>
 								</c:forEach>
 
-								</tr>
+								
 							</tbody>
 						</table>
-						<a href="quanlychitietphieuxuat/cn1/chinhanh/add.htm"></a>
+						<a href="quanlychitietphieuxuat/cn1/chinhanh/add.htm" class="fa fa-plus"></a>
 					</div>
 				</div>
 

@@ -109,7 +109,7 @@ public class QLChiTietDDHController {
 
 		model.addAttribute("id", request.getParameter("id"));
 		model.addAttribute("vt", request.getParameter("vt"));
-
+		System.out.println(request.getParameter("vt"));
 		return "chinhanh/form/xoa-CTDDH";
 
 	}
@@ -123,18 +123,21 @@ public class QLChiTietDDHController {
 		try {
 			if (request.getParameter("xacNhan").equals("YES")) {
 //				VatTuEntity nvsave = vtrepo.findOne(id);
-				dhrepo.delete(id);
+			
 				String sql = "DELETE FROM [dbo].[CTDDH]\n" + 
 						"      WHERE MasoDDH=? and MAVT=?\n";
-				
-						
-				model.addAttribute("message", "xoá đơn hàng thành công");
+				System.out.println(id);
+				System.out.println(id);
+				System.out.println(vt);
+				System.out.println(InfoConnection.getUrlPM());
+				dao.updatePM(sql, id,vt);
+				model.addAttribute("message", "xoá chi tiết đơn hàng thành công");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			model.addAttribute("message", "xoá đơn hàng thất bại, chỉ có thể xoá đơn hàng trống");
+			model.addAttribute("message", "xoá ct đơn hàng thất bại");
 		}
-		return "redirect:/quanlykho/cn1/chinhanh.htm";
+		return "redirect:/quanlychitietdondathang/cn1/chinhanh.htm";
 
 	}
 

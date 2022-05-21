@@ -48,37 +48,38 @@
 					<div class="card-body">
 						<h5 class="card-title">Thông tin Vật tư</h5>
 
-						
+
 						<!-- End Multi Columns Form -->
 						<form:form action="quanlychitietphieuxuat/cn1/chinhanh/add.htm"
-							method="post" modelAttribute="vt" class="row g-3">
+							method="post" modelAttribute="ct" class="row g-3">
 
-							<label for="inputEmail5" class="form-label">Mã VT</label>
-							<form:input type="text" class="form-control" id="inputEmail5" path="maVT" />
+							<label for="inputEmail5" class="form-label">tên VT</label>
+							<select class="form-control" id="inputEmail5" name="maVT">
+								<c:forEach items="${vattus }" var="vt">
+
+									<option value="${vt.maVT}" label="${vt.tenVT}"></option>
+
+								</c:forEach>
+							</select>
 							<div class="col-md-5">
 								<div class="col-md-6">
-									<label for="inputPassword5" class="form-label">Tên VT</label>
-									<form:input type="text" class="form-control" id="inputEmail5" path="tenVT" />
+									<label for="inputPassword5" class="form-label">Số lượng</label>
+									<form:input type="text" class="form-control" id="inputEmail5"
+										path="soLuong" />
 								</div>
 
 							</div>
 
 							<div class="col-md-4">
-								<label for="inputState" class="form-label">Đơn vị tính</label> <br>
-								<form:input path="donViTinh" />
+								<label for="inputState" class="form-label">Đơn giá</label> <br>
+								<form:input path="donGia" />
 								<br>
 							</div>
 
 
 
 
-							<div class="col-md-6">
-								<div class="col-md-10">
-									<label for="inputCity" class="form-label">Số lượng tồn</label>
-									<form:input type="number" min="0" max="10000" 
-										path="soLuongTon" />
-								</div>
-							</div>
+			
 
 
 							<div class="text-center">

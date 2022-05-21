@@ -32,7 +32,7 @@ public class QLKhoController {
 	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
 	public String getKCN(ModelMap model) {
 		Sort sort = new Sort(Sort.Direction.ASC, "maKho");
-		;
+	
 		model.addAttribute("ks", krepo.findAll(sort));
 		return "chinhanh/qlkho";
 	}
