@@ -31,13 +31,14 @@
 	<main id="main" class="main">
 
 	<div class="pagetitle">
-		<h1>Kho</h1>
+		<h1>Đơn hàng</h1>
 		<nav>
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="Kho.html">Kho</a></li>
-				<li class="breadcrumb-item"><a href="Donhang.html">Đơn hàng</a></li>
-				<li class="breadcrumb-item"><a href="Phieunhap.html">Phiếu
-						Nhập</a></li>
+				<li class="breadcrumb-item"><a href=""quanlykho/cn1/chinhanh.htm"">Kho</a></li>
+				<li class="breadcrumb-item"><a
+					href="quanlydondathang/cn1/chinhanh.htm">Đơn hàng</a></li>
+				<li class="breadcrumb-item"><a
+					href="quanlyphieunhap/cn1/chinhanh.htm">Phiếu nhập</a></li>
 				<li class="breadcrumb-item active">Chi tiết phiếu nhập</li>
 			</ol>
 		</nav>
@@ -71,7 +72,7 @@
 										<td>${k.soLuong}</td>
 										<td>${k.donGia}VNĐ</td>
 
-										<td><a href="edit-PX.html" class="fa fa-pencil-square-o"></a>
+										<td><a href="quanlychitietphieunhap/cn1/chinhanh/add.htm" class="fa fa-pencil-square-o"></a>
 									</tr>
 								</c:forEach>
 

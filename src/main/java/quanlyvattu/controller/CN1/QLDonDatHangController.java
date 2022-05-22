@@ -70,8 +70,15 @@ public class QLDonDatHangController {
 
 	@RequestMapping(value = "chinhanh/add", method = RequestMethod.POST)
 	public String addDHCN1(ModelMap model, @ModelAttribute("dh") DatHangEntity dh, HttpServletRequest request) {
+		boolean ckddh=false;
+		try {
+			ckddh=(dhrepo.ckDDH(dh.getMaSoDDH())==0);
+		}catch(Exception e) {
+			e.printStackTrace(); 
+			
+		}
+		if (ckddh) {
 
-		if (dhrepo.findOne(dh.getMaSoDDH()) == null) {
 			DatHangEntity nvsave = null;
 			UserModel user = (UserModel) session.getAttribute("USERMODEL");
 

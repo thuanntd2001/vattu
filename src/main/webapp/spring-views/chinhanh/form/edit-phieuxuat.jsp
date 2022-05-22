@@ -31,12 +31,14 @@
 	<main id="main" class="main">
 
 	<div class="pagetitle">
-		<h1>Nhân viên</h1>
+		<h1>Phiếu xuất</h1>
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a
-					href="quanlynhanvien/chinhanh.htm">Nhân Viên</a></li>
-				<li class="breadcrumb-item active">Thêm Nhân viên</li>
+					href="quanlykho/cn1/chinhanh.htm">Kho</a></li>
+				<li class="breadcrumb-item"><a
+					href="quanlyphieuxuat/cn1/chinhanh.htm">Phiếu xuất</a></li>
+				<li class="breadcrumb-item active">Sửa Phiếu xuất</li>
 			</ol>
 		</nav>
 	</div>
@@ -53,30 +55,34 @@
 							method="post" modelAttribute="dh" class="row g-3">
 
 							<div class="col-md-5">
-								<label for="inputEmail5" class="form-label">Mã số PX</label>
-								<form:input type="text" class="form-control" id="inputEmail5"
-									path="maPX" readonly="true"/>
-							</div>
-							<div class="col-md-5">
-								<label for="inputPassword5" class="form-label">Tên Khách hàng</label>
-								<form:input type="text" class="form-control" id="inputPassword5"
-									path="hoTenKH" />
-							</div>
-							<div class="col-md-5">
-								<label for="inputPassword5" class="form-label">Mã Kho</label> <input
-									type="text" class="form-control" id="inputPassword5"
-									value="${idkho} " readonly />
-							</div>
+									<label for="inputEmail5" class="form-label">Mã số PX</label>
+									<form:input type="text" class="form-control" id="inputEmail5"
+										path="maPX" />
+								</div>
+
+								<div class="col-md-5">
+									<label for="inputPassword5" class="form-label">Mã Kho</label> <input
+										type="text" class="form-control" id="inputPassword5"
+										value="${idkho} " readonly />
+								</div>
+								<div class="col-md-10">
+									<label for="inputPassword5" class="form-label">Họ tên
+										KH</label>
+									<form:input type="text" class="form-control"
+										id="inputPassword5" path="hoTenKH" />
+								</div>
 
 
 
 
 
 
-							<div class="text-center">
-								<button type="submit" class="btn btn-primary">Sửa</button>
-								<button type="reset" class="btn btn-secondary">Reset</button>
-							</div>
+								<div class="col-md-12">
+									<div class="text-center" style="margin-top: 20px">
+										<button type="submit" class="btn btn-primary">Tạo</button>
+										<button type="reset" class="btn btn-secondary">Reset</button>
+									</div>
+								</div>
 						</form:form>
 						<!-- End Multi Columns Form -->
 

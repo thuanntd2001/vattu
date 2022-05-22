@@ -38,8 +38,10 @@
 				<li class="breadcrumb-item"><a
 					href="quanlydondathang/cn1/chinhanh.htm">Đơn hàng</a></li>
 				<li class="breadcrumb-item"><a
-					href="quanlychitietdondathang/cn1/chinhanh.htm">Chi tiết đơn đặt hàng</a></li>
-				<li class="breadcrumb-item active">Thêm chi tiết đơn đặt hàng</li>
+					href="quanlyphieunhap/cn1/chinhanh.htm">Phiếu nhập</a></li>
+				<li class="breadcrumb-item"><a
+					href="quanlychitietphieunhap/cn1/chinhanh.htm">Chi tiết phiếu nhập</a></li>
+				<li class="breadcrumb-item active">Thêm chi tiết phiếu nhập</li>
 			</ol>
 		</nav>
 	</div>
@@ -49,11 +51,11 @@
 
 				<div class="card">
 					<div class="card-body">
-						<h5 class="card-title">Thông tin chi tiết đơn đặt hàng</h5>
+						<h5 class="card-title">Thông chi tiết đơn đặt hàng</h5>
 
 
 						<!-- End Multi Columns Form -->
-						<form:form action="quanlychitietdondathang/cn1/chinhanh/add.htm"
+						<form:form action="quanlychitietphieunhap/cn1/chinhanh/add.htm"
 							method="post" modelAttribute="ct" class="row g-3">
 							<div class="col-md-8">
 								<label for="inputEmail5" class="form-label">Tên VT</label> <select

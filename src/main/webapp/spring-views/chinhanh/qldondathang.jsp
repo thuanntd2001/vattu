@@ -34,7 +34,8 @@
 		<h1>Đơn Đặt Hàng</h1>
 		<nav>
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="Kho.html">Kho</a></li>
+				<li class="breadcrumb-item"><a
+					href="quanlykho/cn1/chinhanh.htm">Kho</a></li>
 				<li class="breadcrumb-item active">Đơn đặt hàng</li>
 			</ol>
 		</nav>
