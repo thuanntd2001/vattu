@@ -48,8 +48,15 @@ public class QLKhoController {
 	public String addKCN1(ModelMap model, @ModelAttribute("k") KhoEntity k, HttpServletRequest request) {
 		UserModel user = (UserModel) session.getAttribute("USERMODEL");
 		System.out.print(user.getChiNhanh());
+		boolean ckk=false;
+		try {
+			ckk=(krepo.ckK(k.getMaKho())==0);
+		}catch(Exception e) {
+			e.printStackTrace(); 
+			
+		}
+		if (ckk) {
 
-		if (krepo.findOne(k.getMaKho()) == null) {
 			KhoEntity nvsave = null;
 			ChiNhanhEntity cn = cnrepo.findAll().get(0);
 			k.setChiNhanh(cn);
