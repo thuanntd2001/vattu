@@ -20,6 +20,7 @@ public class NhanVienDAO extends AbstractDAO<NhanVienLoginModel> implements INha
 	public NhanVienLoginModel login(String userName,String passWord){
 		String sql = "EXEC	sp_DangNhap ?";
 		List<NhanVienLoginModel> nv =queryPM(userName,passWord,sql,new NhanVienLoginMapper(),userName);
+		System.out.println(nv);
 		return nv==null? null:nv.get(0);
 	}
 

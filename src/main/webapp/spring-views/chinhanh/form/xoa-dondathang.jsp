@@ -40,9 +40,9 @@
 
 						${message}
 						
-						Bạn có đồng ý xoá đơn đặt ${id }
+						Bạn có đồng ý xoá chi tiết đơn đặt ${id }
 						<!-- Multi Columns Form -->
-						<form action="quanlydondathang/cn1/chinhanh/xoa.htm?id=${id }" method="post"
+						<form action="quanlychitietdondathang/cn1/chinhanh/xoa.htm?id=${id }" method="post"
 							class="row g-3">
 							
 							<div class="col-md-5">
