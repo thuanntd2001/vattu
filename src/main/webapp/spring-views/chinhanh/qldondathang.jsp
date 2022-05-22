@@ -72,7 +72,7 @@ ${message}
 										<td><a
 											href="quanlychitietdondathang/cn1/chinhanh.htm?idddh=${k.maSoDDH}"
 											class="fa fa-eye"><br>Chi Tiết DDH<br> </a> <a
-											href="quanlyphieunhap/cn1/chinhanh.htm?idDDH=${k.maSoDDH}"
+											href="quanlyphieunhap/cn1/chinhanh.htm?idDDH=${k.maSoDDH}&&idkho=${k.kho.maKho}"
 											class="fa fa-indent"> <br>Xem phiếu nhập<br></a>
 										<td><a
 											href="quanlydondathang/cn1/chinhanh/edit.htm?id=${k.maSoDDH}"

@@ -50,14 +50,7 @@
 										class="form-control" id="inputCity">
 								</div>
 							</div>
-							<div class="col-md-5">
-								<label for="inputState" class="form-label">Chi nhánh</label> <select
-									id="inputState" class="form-select">
-									<option selected>...</option>
-									<option>CN1</option>
-									<option>CN2</option>
-								</select>
-							</div>
+						
 
 							<div class="col-md-10">
 								<label for="inputPassword5" class="form-label">Tên tài
