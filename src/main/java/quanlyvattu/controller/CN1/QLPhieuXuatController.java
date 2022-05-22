@@ -68,7 +68,14 @@ public class QLPhieuXuatController {
 	@RequestMapping(value = "chinhanh/add", method = RequestMethod.POST)
 	public String addDHCN1(ModelMap model, @ModelAttribute("px") PhieuXuatEntity dh, HttpServletRequest request) {
 
-		if (pxrepo.findOne(dh.getMaPX()) == null) {
+		boolean ckpx=false;
+		try {
+			ckpx=(pxrepo.ckPX(dh.getMaPX())==0);
+		}catch(Exception e) {
+			e.printStackTrace(); 
+			
+		}
+		if (ckpx) {
 			PhieuXuatEntity nvsave = null;
 			UserModel user = (UserModel) session.getAttribute("USERMODEL");
 
@@ -90,6 +97,7 @@ public class QLPhieuXuatController {
 		} else {
 			model.addAttribute("message", "thêm PHIẾU XUẤT thất bại, mã PHIẾU XUẤT đã tồn tại");
 			System.out.print("thêm đơn hàng thất bại");
+			System.out.println("Ma px da ton tai");
 		}
 
 		return "redirect:/quanlyphieuxuat/cn1/chinhanh/add.htm";
