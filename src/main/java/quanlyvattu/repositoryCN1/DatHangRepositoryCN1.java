@@ -11,5 +11,6 @@ public interface DatHangRepositoryCN1 extends JpaRepository<DatHangEntity, Strin
 
 	@Query("select datHang from DatHangEntity datHang where datHang.kho.maKho = ?1")
 	List<DatHangEntity> findByKho(String maKho);
-
+	@Query (value="exec sp_KiemTraMaDonDatHang ?1", nativeQuery=true)
+	int ckDDH(String id);
 }

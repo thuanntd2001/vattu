@@ -31,11 +31,10 @@
 	<main id="main" class="main">
 
 	<div class="pagetitle">
-		<h1>Phiếu nhập</h1>
+		<h1>Đơn hàng</h1>
 		<nav>
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="Kho.html">Kho</a></li>
-				<li class="breadcrumb-item"><a href="Donhang.html">Đơn hàng</a></li>
+				<li class="breadcrumb-item"><a href=""quanlykho/cn1/chinhanh.htm"">Kho</a></li>
 				<li class="breadcrumb-item active">Phiếu nhập</li>
 			</ol>
 		</nav>

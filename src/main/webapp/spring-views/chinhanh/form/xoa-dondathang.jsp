@@ -26,36 +26,50 @@
 	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
 
 
-	<main id="main" class="main">
-	<!-- End Sidebar-->
-<section class="section">
+	<main id="main" class="main"> <!-- End Sidebar-->
+	<div class="pagetitle">
+		<h1>Đơn đặt hàng</h1>
+		<nav>
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a
+					href="quanlykho/cn1/chinhanh.htm">Kho</a></li>
+				<li class="breadcrumb-item"><a
+					href="quanlydondathang/cn1/chinhanh.htm">Đơn đặt hàng</a></li>
+				<li class="breadcrumb-item active">Xóa đơn đặt hàng</li>
+			</ol>
+		</nav>
+	</div>
+	<section class="section">
 		<div class="row">
-			<div class="col-lg-10">
+			<div class="col-lg-5">
 
 				<div class="card">
 					<div class="card-body">
-						<h5 class="card-title">Thông tin DDH</h5>
-						${message}
+						<h5 class="card-title">Xóa đơn đặt hàng</h5>
+						${message} ${message}
 
-
-						${message}
-						
-						Bạn có đồng ý xoá chi tiết đơn đặt ${id }
-						<!-- Multi Columns Form -->
-						<form action="quanlychitietdondathang/cn1/chinhanh/xoa.htm?id=${id }" method="post"
-							class="row g-3">
-							
-							<div class="col-md-5">
-								<label for="inputEmail5" class="form-label">Xác Nhận( Nhập "YES" vào khung này)</label>
-								<input type="text" class="form-control" name="xacNhan" />
+						<form
+							action="quanlychitietdondathang/cn1/chinhanh/xoa.htm?id=${id }"
+							method="post" class="row g-3">
+							<div class="col-md-12" style="">
+								<label for="inputEmail5" class="form-label">Bạn có đồng
+									ý xoá đơn đặt ${id }</label>
 							</div>
-							<button type="submit" > Xoá </button>
-						</form>
-						<!-- End Multi Columns Form -->
 
+							<div class="col-md-12">
+								<label for="inputEmail5" class="form-label">Xác Nhận(
+									Nhập "YES" vào khung này)</label> <input type="text"
+									class="form-control" name="xacNhan" />
+							</div>
+
+							<div class="text-center"
+								style="margin-top: 15px; margin-left: 170px">
+								<button type="submit" class="btn btn-primary">Xoá</button>
+
+							</div>
+						</form>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</section>

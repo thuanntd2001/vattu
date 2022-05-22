@@ -35,7 +35,7 @@
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href=""quanlykho/cn1/chinhanh.htm"">Kho</a></li>
-				<li class="breadcrumb-item"><a href="Donhang.html">Đơn hàng</a></li>
+				<li class="breadcrumb-item"><a href="quanlydondathang/cn1/chinhanh.htm">Đơn hàng</a></li>
 				<li class="breadcrumb-item active">Chi tiết đơn đặt hàng</li>
 			</ol>
 		</nav>
@@ -71,7 +71,7 @@
 										<td>${k.soLuong}</td>
 
 										<td>${k.donGia}</td>
-										<td><a href="quanlychitietdondathang/cn1/chinhanh/xoa.htm?id=${k.datHang.maSoDDH}&vt=${k.vatTu.maVT}" class="fa fa-pencil-square-o"></a></td>
+										<td><a href="quanlychitietdondathang/cn1/chinhanh/xoa.htm?id=${k.datHang.maSoDDH}&vt=${k.vatTu.maVT}" class="fa fa-times-circle"></a></td>
 									</tr>
 								</c:forEach>
 
