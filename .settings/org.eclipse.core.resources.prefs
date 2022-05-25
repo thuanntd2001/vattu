@@ -1,8 +1,0 @@
-eclipse.preferences.version=1
-<<<<<<< HEAD
-encoding//src/main/java/quanlyvattu/controller=UTF-8
-encoding//src/main/java/quanlyvattu/controller/CN1/QLChiTietDDHController.java=UTF-8
-=======
-encoding//src/main/java/quanlyvattu/controller/CN1/QLPhieuXuatController.java=UTF-8
->>>>>>> ce2649bc806b0065c09a11ee259bed09263e55ab
-encoding//src/main/webapp/spring-views/chung/login.jsp=UTF-8
