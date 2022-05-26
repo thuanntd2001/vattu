@@ -13,4 +13,6 @@ public interface PhieuNhapRepositoryCN1 extends JpaRepository<PhieuNhapEntity, S
 	List<PhieuNhapEntity> findByDDH(String maSoDDH);
 	@Query (value="exec sp_KiemTraMaPhieuNhap ?1", nativeQuery=true)
 	int ckPN(String MAPN);
+	
+	
 }

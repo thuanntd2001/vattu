@@ -159,7 +159,7 @@ public class QLChiTietPNController {
 			e.printStackTrace();
 			model.addAttribute("message", "xoá ct phiếu Nhập thất bại");
 		}
-		return "redirect:/quanlychitietphieunhap/cn1/chinhanh.htm?idpx=" + id;
+		return "redirect:/quanlychitietphieunhap/cn1/chinhanh.htm?idpn=" + id;
 
 	}
 }

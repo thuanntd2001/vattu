@@ -42,7 +42,7 @@
 						
 						Bạn có đồng ý xoá đơn đặt ${id }
 						<!-- Multi Columns Form -->
-						<form action="quanlychitietphieuxuat/cn1/chinhanh/xoa.htm?id=${id }&&vt=${vt}" method="post"
+						<form action="quanlychitietphieunhap/cn1/chinhanh/xoa.htm?id=${id }&&vt=${vt}" method="post"
 							class="row g-3">
 							
 							<div class="col-md-5">
