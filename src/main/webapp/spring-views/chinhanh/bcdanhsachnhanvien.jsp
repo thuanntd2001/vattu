@@ -37,7 +37,7 @@
 							202......</h6>
 						<br> <br>
 						<h3
-							style="margin: 20px; text-align: center; text-transform: uppercase">
+							style="margin: 20px; text-align: center; text-transform: uppercaguse">
 							<strong>Báo cáo <br> Đơn hàng không có phiếu nhập
 							</strong>
 						</h3>
@@ -55,26 +55,24 @@
 						<table class="table table-bordered border-bottom-0 border-dark">
 							<thead class="reports head">
 								<tr>
-									<th scope="col">Mã số DDH</th>
-									<th scope="col">Ngày nhập</th>
-									<th scope="col">Nhà cung cấp</th>
-									<th scope="col">Họ tên nhân viên</th>
-									<th scope="col">Tên vật tư</th>
-									<th scope="col">Số lượng đặt</th>
-									<th scope="col">Đơn giá</th>
+									<th scope="col">Mã NV</th>
+									<th scope="col">Họ</th>
+									<th scope="col">Tên</th>
+									<th scope="col">Địa chỉ</th>
+									<th scope="col">Ngày sinh</th>
+									<th scope="col">Lương</label></th>
 								</tr>
 							</thead>
 							<tbody class="reports body">
-								<c:forEach items="${ddhs }" var="nv">
+								<c:forEach items="${nvs }" var="nv">
 									<tr>
 
-										<th scope="row">${nv.maSoDDH}</th>
-										<td>${nv.ngayNhap}</td>
-										<td>${nv.nhaCC}</td>
-										<td>${nv.ho+" "+nv.ten}</td>
-										<td>${nv.tenVT}</td>
-										<td>${nv.soLuongDat}</td>
-										<td>${nv.donGia}VND</td>
+										<th scope="row">${nv.maNV}</th>
+										<td>${nv.ho}</td>
+										<td>${nv.ten}</td>
+										<td>${nv.diaChi}</td>
+										<td>${nv.ngaySinh}</td>
+										<td>${nv.luong}VND</td>
 									</tr>
 								</c:forEach>
 

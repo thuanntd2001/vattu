@@ -4,7 +4,7 @@ public class InfoConnection {
 
 	private static String userNameChu="sa";
 	private static String passWordChu="1234";
-	private static String urlChu="jdbc:sqlserver://GHDBP-20210702Z; Database=QLVT_DATHANG";
+	private static String urlChu="jdbc:sqlserver://TBTUONGLAI1; Database=QLVT_DATHANG";
 	private static String driverChu="com.microsoft.sqlserver.jdbc.SQLServerDriver";
 
 	
@@ -15,7 +15,7 @@ public class InfoConnection {
 	
 	private static String userNameTC="sa";
 	private static String passWordTC="1234";
-	private static String urlTC="jdbc:sqlserver://GHDBP-20210702Z\\SQLSV3; Database=QLVT_DATHANG";
+	private static String urlTC="jdbc:sqlserver://TBTUONGLAI1\\SQLSV3; Database=QLVT_DATHANG";
 	private static String driverTC="com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	public static String getUserNameChu() {
 		return userNameChu;

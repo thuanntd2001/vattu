@@ -41,7 +41,7 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 		}
 	}
 
-	
+
 
 //PHANMANH
 	@Override

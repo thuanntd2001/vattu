@@ -55,24 +55,27 @@
 						<table class="table table-bordered border-bottom-0 border-dark">
 							<thead class="reports head">
 								<tr>
-									<th scope="col">Mã NV</th>
-									<th scope="col">Họ</th>
-									<th scope="col">Tên</th>
-									<th scope="col">Địa chỉ</th>
-									<th scope="col">Ngày sinh</th>
-									<th scope="col">Lương</th>
+									<th scope="col">Mã số DDH</th>
+									<th scope="col">Ngày nhập</th>
+									<th scope="col">Nhà cung cấp</th>
+									<th scope="col">Họ tên nhân viên</th>
+									<th scope="col">Tên vật tư</th>
+									<th scope="col">Số lượng đặt</th>
+									<th scope="col">Đơn giá</th>
 								</tr>
 							</thead>
 							<tbody class="reports body">
-								<c:forEach items="${nvs }" var="nv">
+								<c:forEach items="${ddhs }" var="nv">
 									<tr>
 
-										<th scope="row">${nv.maNV}</th>
-										<td>${nv.ho}</td>
-										<td>${nv.ten}</td>
-										<td>${nv.diaChi}</td>
-										<td>${nv.ngaySinh}</td>
-										<td>${nv.luong}VND</td>
+										<th scope="row">${nv.maSoDDH}</th>
+										<td>${nv.ngay}</td>
+										<td>${nv.nhaCC}</td>
+
+										<td>${nv.hoTen}</td>
+										<td>${nv.tenVT}</td>
+										<td>${nv.soLuong}</td>
+										<td>${nv.donGia}</td>
 									</tr>
 								</c:forEach>
 

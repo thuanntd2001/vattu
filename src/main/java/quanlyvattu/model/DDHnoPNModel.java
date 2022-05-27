@@ -10,60 +10,64 @@ public class DDHnoPNModel {
 	private String maSoDDH;
 	
 	@Temporal(TemporalType.DATE)
-	private Date ngayLap;
+	private Date ngay;
 	
 	private String nhaCC;
 	
-	private String ho;
+	private String hoTen;
 	
-	private String ten;
+
 	
 	private String tenVT;
 	
 	private int soLuong;
 	
 	private float donGia;
-	
-	
+
 	public String getMaSoDDH() {
 		return maSoDDH;
 	}
-	
+
 	public void setMaSoDDH(String maSoDDH) {
 		this.maSoDDH = maSoDDH;
 	}
-	
-	public Date getNgayLap() {
-		return ngayLap;
+
+	public Date getNgay() {
+		return ngay;
 	}
-	public void setNgayLap(Date ngayLap) {
-		this.ngayLap = ngayLap;
+
+	public void setNgay(Date ngay) {
+		this.ngay = ngay;
 	}
-	
-	public String getHo() {
-		return ho;
+
+	public String getNhaCC() {
+		return nhaCC;
 	}
-	public void setHo(String ho) {
-		this.ho = ho;
+
+	public void setNhaCC(String nhaCC) {
+		this.nhaCC = nhaCC;
 	}
-	public String getTen() {
-		return ten;
+
+	public String getHoTen() {
+		return hoTen;
 	}
-	public void setTen(String ten) {
-		this.ten = ten;
+
+	public void setHoTen(String hoTen) {
+		this.hoTen = hoTen;
 	}
-	
+
 	public String getTenVT() {
 		return tenVT;
 	}
+
 	public void setTenVT(String tenVT) {
 		this.tenVT = tenVT;
 	}
-	
+
 	public int getSoLuong() {
 		return soLuong;
 	}
-	
+
 	public void setSoLuong(int soLuong) {
 		this.soLuong = soLuong;
 	}
@@ -75,6 +79,12 @@ public class DDHnoPNModel {
 	public void setDonGia(float donGia) {
 		this.donGia = donGia;
 	}
+
+
+
+	
+	
+
 	
 	
 	

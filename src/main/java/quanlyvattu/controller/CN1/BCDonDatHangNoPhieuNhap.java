@@ -15,14 +15,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import quanlyvattu.dao.impl.AbstractDAO;
 import quanlyvattu.entity.DatHangEntity;
 import quanlyvattu.entity.KhoEntity;
+import quanlyvattu.mapper.DDHnoPNMapper;
 import quanlyvattu.model.DDHnoPNModel;
 import quanlyvattu.model.UserModel;
 import quanlyvattu.repositoryCN1.ChiNhanhRepositoryCN1;
 import quanlyvattu.repositoryCN1.DatHangRepositoryCN1;
 import quanlyvattu.repositoryCN1.KhoRepositoryCN1;
 import quanlyvattu.repositoryCN1.NhanVienRepositoryCN1;
+import quanlyvattu.statics.InfoConnection;
 
 @Controller
 @RequestMapping(value = "baocaodondathangkhongcophieunhap/cn1")
@@ -39,14 +42,15 @@ public class BCDonDatHangNoPhieuNhap {
 	@Autowired
 	ServletContext session;
 
-
+	AbstractDAO dao = new AbstractDAO();
 	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
 	public String getNVCN1(ModelMap model) {
-		Sort sort = new Sort(Sort.Direction.DESC, "maSoDDH");
-		List<DDHnoPNModel> dhs = (List<DDHnoPNModel>) dhrepo.findByDDHnoPNModel();
-		model.addAttribute("ddhs", dhs);
+		String sql = "EXEC [dbo].[sp_DonHangKhongPhieuNhap]";
+		List<DDHnoPNModel> ddhs=dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql, new DDHnoPNMapper());
+		System.out.println(ddhs.get(0).getMaSoDDH());
+		model.addAttribute("ddhs", ddhs);
 		model.addAttribute("nvs", nvrepo.findAllNV());
-		return "chinhanh/bcdondathangkhongcophieunhap";
+		return "chinhanh/bcdonhangkhongcophieunhap";
 	}
 			
 
