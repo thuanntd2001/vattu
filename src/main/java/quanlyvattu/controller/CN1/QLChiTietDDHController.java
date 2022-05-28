@@ -43,7 +43,7 @@ public class QLChiTietDDHController {
 
 	String idddh = "n/a";
 
-	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
+	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
 	public String getDDHCN(ModelMap model, HttpServletRequest request) {
 		System.out.print("khong co ma dh");
 		idddh = (String) request.getParameter("idddh");

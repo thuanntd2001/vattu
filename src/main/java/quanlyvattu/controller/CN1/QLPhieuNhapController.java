@@ -43,7 +43,7 @@ public class QLPhieuNhapController {
 	private String idDDH = "N/A";
 	private String idKho = "N/A";
 
-	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
+	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
 	public String getPXCN(ModelMap model, HttpServletRequest request) {
 		idDDH = (String) request.getParameter("idDDH");
 		idKho = (String) request.getParameter("idkho");

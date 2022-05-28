@@ -29,7 +29,7 @@ public class QLKhoController {
 	@Autowired
 	ServletContext session;
 
-	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
+	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
 	public String getKCN(ModelMap model) {
 		Sort sort = new Sort(Sort.Direction.ASC, "maKho");
 	

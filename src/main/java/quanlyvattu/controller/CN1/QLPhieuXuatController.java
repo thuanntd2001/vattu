@@ -38,7 +38,7 @@ public class QLPhieuXuatController {
 	ServletContext session;
 	private String idKho = "N/A";
 
-	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
+	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
 	public String getPXCN(ModelMap model, HttpServletRequest request) {
 		idKho = (String) request.getParameter("idkho");
 		if (idKho != "" && idKho != null) {

@@ -43,7 +43,7 @@ public class BCDonDatHangNoPhieuNhap {
 	ServletContext session;
 
 	AbstractDAO dao = new AbstractDAO();
-	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
+	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
 	public String getNVCN1(ModelMap model) {
 		String sql = "EXEC [dbo].[sp_DonHangKhongPhieuNhap]";
 		List<DDHnoPNModel> ddhs=dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql, new DDHnoPNMapper());

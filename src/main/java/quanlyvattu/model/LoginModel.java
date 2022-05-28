@@ -9,6 +9,8 @@ public class LoginModel {
 	
 	private String maNV;
 	
+	private String quyen;
+	
 	public String getLgName() {
 		return lgName;
 	}
@@ -33,14 +35,16 @@ public class LoginModel {
 		this.maNV = maNV;
 	}
 
-	public String getRole() {
-		return role;
+
+
+	public String getQuyen() {
+		return quyen;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setQuyen(String quyen) {
+		this.quyen = quyen;
 	}
 
-	private String role;
+
 
 }

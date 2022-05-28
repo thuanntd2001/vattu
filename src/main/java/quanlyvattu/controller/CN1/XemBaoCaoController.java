@@ -30,7 +30,7 @@ public class XemBaoCaoController {
 	@Autowired
 	ServletContext session;
 
-	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
+	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
 	public String getNVCN1(ModelMap model) {
 		Sort sort = new Sort(Sort.Direction.ASC, "ten");
 	

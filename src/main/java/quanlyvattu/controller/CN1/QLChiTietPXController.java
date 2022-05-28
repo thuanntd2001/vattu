@@ -39,7 +39,7 @@ public class QLChiTietPXController {
 
 	PhieuXuatRepositoryCN1 pxrepo;
 
-	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
+	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
 	public String getDDHCN(ModelMap model, HttpServletRequest request) {
 		idddh = (String) request.getParameter("idpx");
 		if (idddh != "" && idddh != null) {

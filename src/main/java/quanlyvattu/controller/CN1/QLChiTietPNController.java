@@ -53,7 +53,7 @@ public class QLChiTietPNController {
 	@Autowired
 	DatHangRepositoryCN1 dhrepo;
 
-	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
+	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
 	public String getDDHCN(ModelMap model, HttpServletRequest request) {
 		idpn = (String) request.getParameter("idpn");
 		if (idpn != "" && idpn != null) {

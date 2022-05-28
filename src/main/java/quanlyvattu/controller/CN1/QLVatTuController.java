@@ -27,7 +27,7 @@ public class QLVatTuController {
 	@Autowired
 	ServletContext session;
 
-	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
+	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
 	public String getVTCN(ModelMap model) {
 		/*
 		 * Sort sort = new Sort(Sort.Direction.ASC, "maVT");;

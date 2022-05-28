@@ -40,7 +40,7 @@ public class QLDonDatHangController {
 
 	private String idKho = "N/A";
 
-	@RequestMapping(value = "chinhanh", method = RequestMethod.GET)
+	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
 	public String getDDHCN(ModelMap model, HttpServletRequest request) {
 		idKho = (String) request.getParameter("idkho");
 		if (idKho != "" && idKho != null) {
