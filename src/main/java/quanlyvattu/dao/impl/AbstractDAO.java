@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import quanlyvattu.dao.IGenericDAO;
@@ -32,6 +33,9 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 				} else if (parameter instanceof Timestamp) {
 					statement.setTimestamp(index, (Timestamp) parameter);
 				}
+				 else if (parameter instanceof Date) {
+						statement.setDate(index, (java.sql.Date) parameter);
+					}
 				else if (parameter instanceof Float) {
 					statement.setFloat(index, (Float) parameter);
 				}
@@ -314,7 +318,7 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
 		try {
-			connection = getConnectionChu();
+			connection = getConnectionChu(); 
 			statement = connection.prepareStatement(sql);
 			setParameter(statement, parameters);
 			resultSet = statement.executeQuery();

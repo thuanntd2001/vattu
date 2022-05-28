@@ -17,9 +17,8 @@
 </head>
 <body>
 
-	<main id="mains" class="mains">
-	<!-- End Page Title -->
 
+	<main id="mains" class="mains">
 	<section class="section">
 		<div class="row">
 			<div class="col-lg-12">
@@ -38,33 +37,37 @@
 						<br> <br>
 						<h3
 							style="margin: 20px; text-align: center; text-transform: uppercaguse">
-							<strong>Báo cáo <br> Danh sách vật tư
+							<strong>Báo cáo <br> Chi tiết số lượng trị giá hàng hóa xuất
 							</strong>
 						</h3>
-
+						<h5 style="margin: 20px; text-align: center">
+							<b>Chi nhánh 1</b>
+						</h5>
 						<br> <br>
 						<p>
 							<b>Họ và Tên : ${USERMODEL.hoTen}</b>
 						</p>
-
+						<p>
+							<b>Chi Nhánh : ${USERMODEL.maChiNhanh}</b>
+						</p>
 						<br>
 						<table class="table table-bordered border-bottom-0 border-dark">
 							<thead class="reports head">
 								<tr>
-									<th scope="col">Mã vật tư</th>
+									<th scope="col">Tháng/Năm</th>
 									<th scope="col">Tên vật tư</th>
-									<th scope="col">Đơn vị tính</th>
-									<th scope="col">Số lượng tồn</th>
+									<th scope="col">Tổng số lượng</th>
+									<th scope="col">Trị giá</th>
 								</tr>
 							</thead>
 							<tbody class="reports body">
-								<c:forEach items="${vts }" var="nv">
+								<c:forEach items="${ctpns }" var="nv">
 									<tr>
 
-										<th scope="row">${nv.maVT}</th>
+										<th scope="row">${nv.thangNam}</th>
 										<td>${nv.tenVT}</td>
-										<td>${nv.donViTinh}</td>
-										<td>${nv.soLuongTon}</td>
+										<td>${nv.tongSoLuong}</td>
+										<td>${nv.triGia}</td>
 									</tr>
 								</c:forEach>
 

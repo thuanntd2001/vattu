@@ -61,6 +61,26 @@
 										<th scope="row">Đơn đặt hàng không có phiếu nhập</th>
 										<td><a href="baocaodondathangkhongcophieunhap/cn1/chinhanh.htm" class="fa fa-eye"></a></td>
 									</tr>
+									<tr>
+										<th scope="row">Chi tiết số lượng trị giá hàng hóa nhập</th>
+										<td><a href="chitietsoluongtrigiahanghoanhapxuat/cn1/chinhanh/nhap.htm" class="fa fa-eye"></a></td>
+									</tr>
+									<tr>
+										<th scope="row">Chi tiết số lượng trị giá hàng hóa xuất</th>
+										<td><a href="chitietsoluongtrigiahanghoanhapxuat/cn1/chinhanh/xuat.htm" class="fa fa-eye"></a></td>
+									</tr>
+									<tr>
+										<th scope="row">Hoạt động nhân viên - Chứng từ nhập</th>
+										<td><a href= "hoatdongnhanvien/cn1/chinhanh/nhap.htm" class="fa fa-eye"></a></td>
+									</tr>
+									<tr>
+										<th scope="row">Hoạt động nhân viên - Chứng từ xuất</th>
+										<td><a href="hoatdongnhanvien/cn1/chinhanh/xuat.htm"class="fa fa-eye"></a></td>
+									</tr>
+									<tr>
+										<th scope="row">Tổng hợp nhập xuất</th>
+										<td><a href="tonghopnhapxuat/cn1/chinhanh/nhap.htm"class="fa fa-eye"></a></td>
+									</tr>
 							</tbody>
 						</table>
 					</div>

@@ -33,12 +33,11 @@
 							<b>Độc Lập - Tự Do - Hạnh Phúc</b>
 						</h5>
 						<br>
-						<h6 style="margin-left:1000px;">............,ngày.....tháng.....năm
-							202......</h6>
+						<h6 style="margin-left:890px;">............,ngày.....tháng.....năm 202......</h6>
 						<br> <br>
 						<h3
 							style="margin: 20px; text-align: center; text-transform: uppercaguse">
-							<strong>Báo cáo <br> Đơn hàng không có phiếu nhập
+							<strong>Báo cáo <br> Danh sách nhân viên
 							</strong>
 						</h3>
 						<h5 style="margin: 20px; text-align: center">
@@ -79,7 +78,7 @@
 							</tbody>
 						</table>
 						<br> <br>
-						<p style="margin-left:1050px;">
+						<p style="margin-left:950px;">
 							<b> Người báo cáo</b>
 						</p>
 						<br> <br> <br> <br>
