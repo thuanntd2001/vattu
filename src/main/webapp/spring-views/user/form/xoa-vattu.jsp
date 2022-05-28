@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/chinhanh/head.jsp" />
+<jsp:include page="/template/cn1/user/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
+	<jsp:include page="/template/cn1/user/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
+	<jsp:include page="/template/cn1/user/sidebar.jsp" />
 
 
 	<main id="main" class="main"> <!-- End Sidebar-->
@@ -32,7 +32,7 @@
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a
-					href="quanlyvattu/cn1/chinhanh.htm">Vật tư</a></li>
+					href="quanlyvattu/cn1/user.htm">Vật tư</a></li>
 				<li class="breadcrumb-item active">Xóa vật tư</li>
 			</ol>
 		</nav>
@@ -46,7 +46,7 @@
 						<h5 class="card-title">Xóa vật tư</h5>
 						${message} ${message} 
 						
-						<form action="quanlyvattu/cn1/chinhanh/xoa.htm?id=${id }" method="post"
+						<form action="quanlyvattu/cn1/user/xoa.htm?id=${id }" method="post"
 							class="row g-3">
 							<div  class="col-md-12" style="align-items=center;">
 								<label for="inputEmail5" class="form-label">Bạn có đồng ý xoá vật tư ${id }</label>
@@ -73,7 +73,7 @@
 
 	</main>
 	<!-- End #main -->
-	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
+	<jsp:include page="/template/cn1/user/footer.jsp" />
 
 
 </body>

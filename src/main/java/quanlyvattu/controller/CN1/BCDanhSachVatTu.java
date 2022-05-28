@@ -27,7 +27,9 @@ public class BCDanhSachVatTu {
 	@Autowired
 	ServletContext session;
 
-	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
+//===============================CHINHANH==============================//
+
+	@RequestMapping(value = { "chinhanh", "congty", "user" }, method = RequestMethod.GET)
 	public String getVTCN(ModelMap model) {
 		/*
 		 * Sort sort = new Sort(Sort.Direction.ASC, "maVT");;
@@ -35,5 +37,24 @@ public class BCDanhSachVatTu {
 		return "chinhanh/bcdanhsachvattu";
 	}
 
+	// ===============================CONGTY==============================//
+
+	@RequestMapping(value = {"congty"}, method = RequestMethod.GET)
+	public String getVTCTY(ModelMap model) {
+		/*
+		 * Sort sort = new Sort(Sort.Direction.ASC, "maVT");;
+		 */ model.addAttribute("vts", vtrepo.findAll());
+		return "congty/bcdanhsachvattu";
+	}
+
+	// ===============================USER==============================//
+
+	@RequestMapping(value = {"user" }, method = RequestMethod.GET)
+	public String getVTU(ModelMap model) {
+		/*
+		 * Sort sort = new Sort(Sort.Direction.ASC, "maVT");;
+		 */ model.addAttribute("vts", vtrepo.findAll());
+		return "user/bcdanhsachvattu";
+	}
 
 }

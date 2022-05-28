@@ -42,7 +42,7 @@ public class TaoLoginController {
 			model.addAttribute("newLogin",new LoginModel());
 			return "chinhanh/taologin";
 		}
-	@RequestMapping(value = "chinhanh", method = RequestMethod.POST)
+	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.POST)
 	public String taoLogin(ModelMap model, @ModelAttribute("newLogin") LoginModel lg){	
 		int f=1;
 		System.out.println(lg.getLgName());

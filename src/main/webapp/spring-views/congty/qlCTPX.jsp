@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/chinhanh/head.jsp" />
+<jsp:include page="/template/cn1/congty/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
+	<jsp:include page="/template/cn1/congty/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
+	<jsp:include page="/template/cn1/congty/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -58,7 +58,7 @@
 									<th scope="col">Tên VT</th>
 									<th scope="col">Số Lượng</th>
 									<th scope="col">Đơn giá</th>
-									<th scope="col">Thao tác</th>
+									
 								</tr>
 							</thead>
 							<tbody>
@@ -72,14 +72,14 @@
 										<td>${k.soLuong}</td>
 										<td>${k.donGia}VNĐ</td>
 
-										<td><a href="quanlychitietphieuxuat/cn1/chinhanh/xoa.htm?id=${k.phieuXuat.maPX}&vt=${k.vatTu.maVT}" class="fa fa-pencil-square-o"></a>
+										
 									</tr>
 								</c:forEach>
 
 								
 							</tbody>
 						</table>
-						<a href="quanlychitietphieuxuat/cn1/chinhanh/add.htm" class="fa fa-plus"></a>
+						
 					</div>
 				</div>
 
@@ -90,7 +90,7 @@
 	</main>
 	<!-- End #main -->
 
-	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
+	<jsp:include page="/template/cn1/congty/footer.jsp" />
 
 
 </body>

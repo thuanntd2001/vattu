@@ -48,7 +48,7 @@ public class TongHopNhapXuatController {
 
 	AbstractDAO dao = new AbstractDAO();
 
-	@RequestMapping(value = "chinhanh/nhap", method = RequestMethod.GET)
+	@RequestMapping(value = {"chinhanh/nhap","congty/nhap","user/nhap"}, method = RequestMethod.GET)
 	public String getNVCN1(ModelMap model,HttpServletRequest request) {
 		
 		
@@ -75,7 +75,7 @@ public class TongHopNhapXuatController {
 //		return "chinhanh/ctsoluongtrigiahanghoanhapxuat";
 	}
 
-	@RequestMapping(value = "chinhanh/nhap", method = RequestMethod.POST)
+	@RequestMapping(value = {"chinhanh/nhap","congty/nhap","user/nhap"}, method = RequestMethod.POST)
 	public String getPNCN1(ModelMap model, HttpServletRequest request) {
 		Timestamp tungay= Timestamp.valueOf(request.getParameter("tungay").replace("T", " ") + ":00");
 		Timestamp denngay= Timestamp.valueOf(request.getParameter("denngay").replace("T", " ") + ":00");

@@ -30,10 +30,11 @@ public class QLNhanVienHome {
 	@Autowired
 	ServletContext session;
 
-	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
+//=======================================CHINHANH=========================================//
+	@RequestMapping(value = { "chinhanh"}, method = RequestMethod.GET)
 	public String getNVCN1(ModelMap model) {
 		Sort sort = new Sort(Sort.Direction.ASC, "id");
-	
+
 		model.addAttribute("nvs", nvrepo.findAllNV());
 		return "chinhanh/qlnhanvien";
 	}
@@ -80,7 +81,7 @@ public class QLNhanVienHome {
 
 	@RequestMapping(value = "chinhanh/edit", method = RequestMethod.GET)
 	public String editNVCN1(ModelMap model, HttpServletRequest request) {
-		
+
 		int id = Integer.parseInt(request.getParameter("id"));
 
 		NhanVienEntity nv = nvrepo.findOne(id);
@@ -106,7 +107,7 @@ public class QLNhanVienHome {
 			nv.setNgaySinh(Timestamp.valueOf(request.getParameter("tg").replace("T", " ") + ":00"));
 		} catch (Exception e) {
 		}
-		
+
 		try {
 			if (nv.getNgaySinh() != null)
 				nvsave.setNgaySinh(nv.getNgaySinh());
@@ -118,7 +119,7 @@ public class QLNhanVienHome {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		System.out.println(nvsave.getHo());
 
 		if (nvsave != null) {
@@ -128,9 +129,8 @@ public class QLNhanVienHome {
 
 		return "redirect:/quanlynhanvien/cn1/chinhanh.htm";
 
-		
 	}
-	
+
 	@RequestMapping(value = "chinhanh/xoa", method = RequestMethod.GET)
 	public String xoaNVCN1(ModelMap model, HttpServletRequest request) {
 
@@ -138,31 +138,173 @@ public class QLNhanVienHome {
 
 		return "chinhanh/form/xoa-nhanvien";
 
-		
 	}
-	@RequestMapping(value = "chinhanh/xoa", method = RequestMethod.POST)
-	public String xoaNVCN1P(ModelMap model,  HttpServletRequest request) {
 
-		int id=Integer.parseInt(request.getParameter("id"));
+	@RequestMapping(value = "chinhanh/xoa", method = RequestMethod.POST)
+	public String xoaNVCN1P(ModelMap model, HttpServletRequest request) {
+
+		int id = Integer.parseInt(request.getParameter("id"));
 		System.out.print(request.getParameter("xacNhan") + request.getParameter("id"));
 		try {
-			if (request.getParameter("xacNhan").equals("YES"))
-			{
-				NhanVienEntity nvsave=nvrepo.findOne(id);
+			if (request.getParameter("xacNhan").equals("YES")) {
+				NhanVienEntity nvsave = nvrepo.findOne(id);
 				nvsave.setTrangThaiXoa(1);
 				System.out.print(nvsave.getHo());
 				System.out.print(nvsave.getTrangThaiXoa());
 				nvrepo.save(nvsave);
 				model.addAttribute("message", "xoá nhân viên thành công");
 			}
-		} catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("message", "xoá nhân viên thất bại");
 		}
 		return "redirect:/quanlynhanvien/cn1/chinhanh.htm";
 
-		
 	}
 
+	// =======================================CONGTY=========================================//
+	@RequestMapping(value = { "congty" }, method = RequestMethod.GET)
+	public String getNVCTY(ModelMap model) {
+		Sort sort = new Sort(Sort.Direction.ASC, "id");
+
+		model.addAttribute("nvs", nvrepo.findAllNV());
+		return "congty/qlnhanvien";
+	}
+
+	
+
+	
+
+	// =======================================USER=========================================//
+	@RequestMapping(value = { "user" }, method = RequestMethod.GET)
+	public String getNVU(ModelMap model) {
+		Sort sort = new Sort(Sort.Direction.ASC, "id");
+
+		model.addAttribute("nvs", nvrepo.findAllNV());
+		return "user/qlnhanvien";
+	}
+
+	@RequestMapping(value = "user/add", method = RequestMethod.GET)
+	public String addDDHU(ModelMap model) {
+		model.addAttribute("nv", new NhanVienEntity());
+
+		UserModel user = (UserModel) session.getAttribute("USERMODEL");
+		model.addAttribute("chiNhanhHT", cnrepo.findOne(user.getChiNhanh()));
+		return "user/form/add-nhanvien";
+	}
+
+	@RequestMapping(value = "user/add", method = RequestMethod.POST)
+	public String addNVU(ModelMap model, @ModelAttribute("nv") NhanVienEntity nv, HttpServletRequest request) {
+		model.addAttribute("nv", new NhanVienEntity());
+		UserModel user = (UserModel) session.getAttribute("USERMODEL");
+		Integer idMoi = null;
+		idMoi = nvrepo.TimMaNV();
+		System.out.print(idMoi);
+		nv.setMaNV(idMoi);
+		try {
+			nv.setNgaySinh(Timestamp.valueOf(request.getParameter("tg").replace("T", " ") + ":00"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		nv.setChiNhanh(cnrepo.findOne(user.getMaChiNhanh()));
+		NhanVienEntity nvsave = null;
+
+		try {
+			nvsave = nvrepo.save(nv);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("message", "thêm nhân viên thất bại");
+			System.out.print("thêm nhân viên thất bại");
+		}
+		if (nvsave != null) {
+			model.addAttribute("message", "thêm nhân viên thành công");
+			System.out.print("thêm nhân viên thành công");
+		}
+
+		return "redirect:/quanlynhanvien/cn1/user/add.htm";
+	}
+
+	@RequestMapping(value = "user/edit", method = RequestMethod.GET)
+	public String editNVU(ModelMap model, HttpServletRequest request) {
+
+		int id = Integer.parseInt(request.getParameter("id"));
+
+		NhanVienEntity nv = nvrepo.findOne(id);
+		if (nv != null) {
+			model.addAttribute("nv", nv);
+			System.out.print("tồn tại nv");
+		}
+
+		else {
+			System.out.print("không tồn tại nv");
+			return "redirect:quanlynhanvien/cn1/user.htm";
+		}
+
+		return "user/form/edit-nhanvien";
+	}
+
+	@RequestMapping(value = "user/edit", method = RequestMethod.POST)
+	public String editNVU(ModelMap model, @ModelAttribute("nv") NhanVienEntity nv, HttpServletRequest request) {
+
+		NhanVienEntity nvsave = nvrepo.findOne(nv.getMaNV());
+
+		try {
+			nv.setNgaySinh(Timestamp.valueOf(request.getParameter("tg").replace("T", " ") + ":00"));
+		} catch (Exception e) {
+		}
+
+		try {
+			if (nv.getNgaySinh() != null)
+				nvsave.setNgaySinh(nv.getNgaySinh());
+			nvsave.setDiaChi(nv.getDiaChi());
+			nvsave.setHo(nv.getHo());
+			nvsave.setTen(nv.getTen());
+			nvsave.setLuong(nv.getLuong());
+			nvrepo.save(nvsave);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		System.out.println(nvsave.getHo());
+
+		if (nvsave != null) {
+			model.addAttribute("message", "sửa nhân viên thành công");
+			System.out.print("sửa nhân viên thành công");
+		}
+
+		return "redirect:/quanlynhanvien/cn1/user.htm";
+
+	}
+
+	@RequestMapping(value = "user/xoa", method = RequestMethod.GET)
+	public String xoaNVU(ModelMap model, HttpServletRequest request) {
+
+		model.addAttribute("id", request.getParameter("id"));
+
+		return "user/form/xoa-nhanvien";
+
+	}
+
+	@RequestMapping(value = "user/xoa", method = RequestMethod.POST)
+	public String xoaNVU1(ModelMap model, HttpServletRequest request) {
+
+		int id = Integer.parseInt(request.getParameter("id"));
+		System.out.print(request.getParameter("xacNhan") + request.getParameter("id"));
+		try {
+			if (request.getParameter("xacNhan").equals("YES")) {
+				NhanVienEntity nvsave = nvrepo.findOne(id);
+				nvsave.setTrangThaiXoa(1);
+				System.out.print(nvsave.getHo());
+				System.out.print(nvsave.getTrangThaiXoa());
+				nvrepo.save(nvsave);
+				model.addAttribute("message", "xoá nhân viên thành công");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("message", "xoá nhân viên thất bại");
+		}
+		return "redirect:/quanlynhanvien/cn1/user.htm";
+
+	}
 
 }

@@ -72,7 +72,7 @@
 										<td>${k.soLuong}</td>
 										<td>${k.donGia}VNĐ</td>
 
-										<td><a href="quanlychitietphieunhap/cn1/chinhanh/xoa.htm?id=${k.phieuNhap.maPN}&&vt=${k.vatTu.maVT}" class="fa fa-pencil-square-o"></a>
+										<td><a href="quanlychitietphieunhap/cn1/chinhanh/xoa.htm?id=${k.phieuNhap.maPN}&&vt=${k.vatTu.maVT}" class="fa fa-times-circle"></a>
 									</tr>
 								</c:forEach>
 

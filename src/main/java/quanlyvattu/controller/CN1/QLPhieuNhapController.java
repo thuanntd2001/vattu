@@ -42,8 +42,9 @@ public class QLPhieuNhapController {
 	ServletContext session;
 	private String idDDH = "N/A";
 	private String idKho = "N/A";
+//=================================CHINHANH=====================================//
 
-	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
+	@RequestMapping(value = { "chinhanh"}, method = RequestMethod.GET)
 	public String getPXCN(ModelMap model, HttpServletRequest request) {
 		idDDH = (String) request.getParameter("idDDH");
 		idKho = (String) request.getParameter("idkho");
@@ -98,7 +99,7 @@ public class QLPhieuNhapController {
 			System.out.print("thêm đơn hàng thất bại");
 		}
 
-		return "redirect:/quanlyphieunhap/cn1/chinhanh.htm?idDDH="+idDDH+"&&idkho="+dh.getKho().getMaKho();
+		return "redirect:/quanlyphieunhap/cn1/chinhanh.htm?idDDH=" + idDDH + "&&idkho=" + dh.getKho().getMaKho();
 	}
 
 	@RequestMapping(value = "chinhanh/xoa", method = RequestMethod.GET)
@@ -126,8 +127,118 @@ public class QLPhieuNhapController {
 			e.printStackTrace();
 			model.addAttribute("message", "xoá phiếu nhập thất bại, chỉ có thể xoá phiếu nhập trống");
 		}
-		return "redirect:/quanlyphieunhap/cn1/chinhanh.htm?idDDH="+idDDH+"&&idkho="+idKho;
+		return "redirect:/quanlyphieunhap/cn1/chinhanh.htm?idDDH=" + idDDH + "&&idkho=" + idKho;
 
 	}
 
+	// =================================CONGTY=====================================//
+
+	@RequestMapping(value = { "congty"}, method = RequestMethod.GET)
+	public String getPXCTY(ModelMap model, HttpServletRequest request) {
+		idDDH = (String) request.getParameter("idDDH");
+		idKho = (String) request.getParameter("idkho");
+		if (idDDH != "" && idDDH != null) {
+			Sort sort = new Sort(Sort.Direction.DESC, "maPN");
+			List<PhieuNhapEntity> pxs = (List<PhieuNhapEntity>) pnrepo.findByDDH(idDDH);
+			model.addAttribute("ddhs", pxs);
+			/* for (PhieuXuatEntity dh:pxs) System.out.print(dh.pxrepo()); */
+			return "congty/qlphieunhap";
+		} else {
+			System.out.print("khong co ma kho");
+			Sort sort = new Sort(Sort.Direction.DESC, "maPN");
+			model.addAttribute("ddhs", pnrepo.findAll(sort));
+			return "congty/qlphieunhap";
+		}
+
+	}
+
+	
+	// =================================USER=====================================//
+
+	@RequestMapping(value = {"user" }, method = RequestMethod.GET)
+	public String getPXU(ModelMap model, HttpServletRequest request) {
+		idDDH = (String) request.getParameter("idDDH");
+		idKho = (String) request.getParameter("idkho");
+		if (idDDH != "" && idDDH != null) {
+			Sort sort = new Sort(Sort.Direction.DESC, "maPN");
+			List<PhieuNhapEntity> pxs = (List<PhieuNhapEntity>) pnrepo.findByDDH(idDDH);
+			model.addAttribute("ddhs", pxs);
+			/* for (PhieuXuatEntity dh:pxs) System.out.print(dh.pxrepo()); */
+			return "user/qlphieunhap";
+		} else {
+			System.out.print("khong co ma kho");
+			Sort sort = new Sort(Sort.Direction.DESC, "maPN");
+			model.addAttribute("ddhs", pnrepo.findAll(sort));
+			return "user/qlphieunhap";
+		}
+
+	}
+
+	@RequestMapping(value = "user/add", method = RequestMethod.GET)
+	public String addDDHU(ModelMap model) {
+
+		model.addAttribute("px", new PhieuNhapEntity());
+		model.addAttribute("idddh", idDDH);
+		model.addAttribute("idkho", idKho);
+		return "user/form/add-phieunhap";
+	}
+
+	@RequestMapping(value = "user/add", method = RequestMethod.POST)
+	public String addDHU(ModelMap model, @ModelAttribute("px") PhieuNhapEntity dh, HttpServletRequest request) {
+
+		if (pnrepo.findOne(dh.getMaPN()) == null) {
+			PhieuNhapEntity nvsave = null;
+			UserModel user = (UserModel) session.getAttribute("USERMODEL");
+
+			try {
+				dh.setDatHang(dhrepo.findOne(idDDH));
+				dh.setNgay(new Date());
+				dh.setNhanVien(nvrepo.findOne(user.getMaNV()));
+				dh.setKho(krepo.findOne(idKho));
+				nvsave = pnrepo.save(dh);
+			} catch (Exception e) {
+				e.printStackTrace();
+				model.addAttribute("message", "thêm PHIẾU Nhập thất bại, có 2 phieu nhập trong 1 đơn hàng");
+				System.out.print("thêm PHIẾU Nhập thất bại");
+			}
+			if (nvsave != null) {
+				model.addAttribute("message", "thêm PHIẾU Nhập thành công");
+				System.out.print("thêm PHIẾU Nhập thành công");
+			}
+		} else {
+			model.addAttribute("message", "thêm PHIẾU Nhập thất bại, mã PHIẾU Nhập đã tồn tại");
+			System.out.print("thêm đơn hàng thất bại");
+		}
+
+		return "redirect:/quanlyphieunhap/cn1/user.htm?idDDH=" + idDDH + "&&idkho=" + dh.getKho().getMaKho();
+	}
+
+	@RequestMapping(value = "user/xoa", method = RequestMethod.GET)
+	public String xoaNVU(ModelMap model, HttpServletRequest request) {
+
+		model.addAttribute("id", request.getParameter("id"));
+
+		return "user/form/xoa-phieunhap";
+
+	}
+
+	@RequestMapping(value = "user/xoa", method = RequestMethod.POST)
+	public String xoaKU(ModelMap model, HttpServletRequest request) {
+
+		String id = request.getParameter("id");
+		System.out.print(request.getParameter("xacNhan") + request.getParameter("id"));
+		try {
+			if (request.getParameter("xacNhan").equals("YES")) {
+//					VatTuEntity nvsave = vtrepo.findOne(id);
+				pnrepo.delete(id);
+
+				model.addAttribute("message", "xoá phiếu nhập thành công");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("message", "xoá phiếu nhập thất bại, chỉ có thể xoá phiếu nhập trống");
+		}
+		return "redirect:/quanlyphieunhap/cn1/user.htm?idDDH=" + idDDH + "&&idkho=" + idKho;
+
+	}
 }

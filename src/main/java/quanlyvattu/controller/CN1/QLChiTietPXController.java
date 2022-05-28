@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import quanlyvattu.dao.impl.AbstractDAO;
 import quanlyvattu.entity.CTDDHEntity;
 import quanlyvattu.entity.CTPXEntity;
+import quanlyvattu.entity.VatTuEntity;
 import quanlyvattu.model.UserModel;
+import quanlyvattu.repositoryCN1.ChiTietPNRepositoryCN1;
 import quanlyvattu.repositoryCN1.ChiTietPXRepositoryCN1;
 import quanlyvattu.repositoryCN1.PhieuXuatRepositoryCN1;
 import quanlyvattu.repositoryCN1.VatTuRepositoryCN1;
@@ -26,6 +28,9 @@ import quanlyvattu.statics.InfoConnection;
 public class QLChiTietPXController {
 	@Autowired
 	ChiTietPXRepositoryCN1 ctpxrepo;
+	
+	@Autowired
+	ChiTietPNRepositoryCN1 ctpnrepo;
 
 	@Autowired
 	ServletContext session;
@@ -39,7 +44,9 @@ public class QLChiTietPXController {
 
 	PhieuXuatRepositoryCN1 pxrepo;
 
-	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
+	
+//================================CHINHANH=====================================//
+	@RequestMapping(value = {"chinhanh"}, method = RequestMethod.GET)
 	public String getDDHCN(ModelMap model, HttpServletRequest request) {
 		idddh = (String) request.getParameter("idpx");
 		if (idddh != "" && idddh != null) {
@@ -66,37 +73,49 @@ public class QLChiTietPXController {
 
 	@RequestMapping(value = "chinhanh/add", method = RequestMethod.POST)
 	public String addchitietDDHCN(ModelMap model, @ModelAttribute("ct") CTPXEntity ct, HttpServletRequest request) {
-
+		
 		CTPXEntity nvsave = null;
 		UserModel user = (UserModel) session.getAttribute("USERMODEL");
-
-		try {
-			System.out.println(idddh);
-
-			String vt = request.getParameter("maVT");
-
-			System.out.println(InfoConnection.getUrlPM());
-//			nvsave = ctdhrepo.save(ct);
-
-			String sql = "INSERT INTO [dbo].[CTPX]\n" + "           ([MaPX]\n" + "           ,[MAVT]\n"
-					+ "           ,[SOLUONG]\n" + "           ,[DONGIA]\n)" +
-
-					"     VALUES (?,?,?,?)";
-			System.out.println(sql);
-
-			System.out.println(ct.getSoLuong());
-			System.out.println(ct.getDonGia());
-			dao.insertPM(sql, idddh, vt, ct.getSoLuong(), ct.getDonGia());
-			model.addAttribute("message", "thêm chi tiết thành công");
-			System.out.print("thêm chi tiết thành công");
-		} catch (Exception e) {
-			e.printStackTrace();
-			model.addAttribute("message", "thêm chi tiết thất bại, loại vật tư đã tồn tại");
-			System.out.print("thêm chi tiết thất bại");
-
+		VatTuEntity vattu = vtrepo.findOne(ct.getVatTu().getMaVT());
+		if(vattu.getSoLuongTon()-ct.getSoLuong()<0)
+		{
+			model.addAttribute("message","không đủ vật tư");
+			return "redirect:/quanlychitietphieuxuat/cn1/chinhanh.htm?idpx=" + idddh;
 		}
+		else {
 
-		return "redirect:/quanlychitietphieuxuat/cn1/chinhanh.htm?idpx=" + idddh;
+			
+			try {
+				System.out.println(idddh);
+
+				String vt = request.getParameter("maVT");
+
+				System.out.println(InfoConnection.getUrlPM());
+//				nvsave = ctdhrepo.save(ct);
+
+				String sql = "INSERT INTO [dbo].[CTPX]\n" + "           ([MaPX]\n" + "           ,[MAVT]\n"
+						+ "           ,[SOLUONG]\n" + "           ,[DONGIA]\n)" +
+
+						"     VALUES (?,?,?,?)";
+				System.out.println(sql);
+
+				System.out.println(ct.getSoLuong());
+				System.out.println(ct.getDonGia());
+				dao.insertPM(sql, idddh, vt, ct.getSoLuong(), ct.getDonGia());
+				model.addAttribute("message", "thêm chi tiết thành công");
+				System.out.print("thêm chi tiết thành công");
+				ctpxrepo.cnvt(vt,ct.getSoLuong());
+			} catch (Exception e) {
+				e.printStackTrace();
+				model.addAttribute("message", "thêm chi tiết thất bại, loại vật tư đã tồn tại");
+				System.out.print("thêm chi tiết thất bại");
+
+			}
+			
+
+			return "redirect:/quanlychitietphieuxuat/cn1/chinhanh.htm?idpx=" + idddh;	
+		}
+		
 	}
 
 	@RequestMapping(value = "chinhanh/xoa", method = RequestMethod.GET)
@@ -118,7 +137,8 @@ public class QLChiTietPXController {
 		try {
 			if (request.getParameter("xacNhan").equals("YES")) {
 //				VatTuEntity nvsave = vtrepo.findOne(id);
-
+				
+				
 				String sql = "DELETE FROM [dbo].[CTPX]\n" + "      WHERE MaPX=? and MAVT=?\n";
 				System.out.println(id);
 				System.out.println(id);
@@ -126,6 +146,7 @@ public class QLChiTietPXController {
 				System.out.println(InfoConnection.getUrlPM());
 				dao.updatePM(sql, id, vt);
 				model.addAttribute("message", "xoá chi tiết PX thành công");
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -134,4 +155,135 @@ public class QLChiTietPXController {
 		return "redirect:/quanlychitietphieuxuat/cn1/chinhanh.htm?idpx="+id;
 
 	}
+	//================================CONGTY=====================================//
+		@RequestMapping(value = {"congty"}, method = RequestMethod.GET)
+		public String getDDHCTY(ModelMap model, HttpServletRequest request) {
+			idddh = (String) request.getParameter("idpx");
+			if (idddh != "" && idddh != null) {
+
+				List<CTPXEntity> dhs = (List<CTPXEntity>) ctpxrepo.findByMaSoPX(idddh);
+				model.addAttribute("ddhs", dhs);
+
+				return "congty/qlCTPX";
+			} else {
+				System.out.print("khong co ma kho");
+
+				model.addAttribute("ddhs", ctpxrepo.findAll());
+				return "congty/qlCTPX";
+			}
+
+		}
+
+		
+		
+		//================================USER=====================================//
+		@RequestMapping(value = {"user"}, method = RequestMethod.GET)
+		public String getDDHU(ModelMap model, HttpServletRequest request) {
+			idddh = (String) request.getParameter("idpx");
+			if (idddh != "" && idddh != null) {
+
+				List<CTPXEntity> dhs = (List<CTPXEntity>) ctpxrepo.findByMaSoPX(idddh);
+				model.addAttribute("ddhs", dhs);
+
+				return "user/qlCTPX";
+			} else {
+				System.out.print("khong co ma kho");
+
+				model.addAttribute("ddhs", ctpxrepo.findAll());
+				return "user/qlCTPX";
+			}
+
+		}
+
+		@RequestMapping(value = "user/add", method = RequestMethod.GET)
+		public String addDDHU(ModelMap model) {
+			model.addAttribute("ct", new CTPXEntity());
+			model.addAttribute("vattus", vtrepo.findAll());
+			return "user/form/add-CTPX";
+		}
+
+		@RequestMapping(value = "user/add", method = RequestMethod.POST)
+		public String addchitietDDHU(ModelMap model, @ModelAttribute("ct") CTPXEntity ct, HttpServletRequest request) {
+			
+			CTPXEntity nvsave = null;
+			UserModel user = (UserModel) session.getAttribute("USERMODEL");
+			VatTuEntity vattu = vtrepo.findOne(ct.getVatTu().getMaVT());
+			if(vattu.getSoLuongTon()-ct.getSoLuong()<0)
+			{
+				model.addAttribute("message","không đủ vật tư");
+				return "redirect:/quanlychitietphieuxuat/cn1/user.htm?idpx=" + idddh;
+			}
+			else {
+
+				
+				try {
+					System.out.println(idddh);
+
+					String vt = request.getParameter("maVT");
+
+					System.out.println(InfoConnection.getUrlPM());
+//					nvsave = ctdhrepo.save(ct);
+
+					String sql = "INSERT INTO [dbo].[CTPX]\n" + "           ([MaPX]\n" + "           ,[MAVT]\n"
+							+ "           ,[SOLUONG]\n" + "           ,[DONGIA]\n)" +
+
+							"     VALUES (?,?,?,?)";
+					System.out.println(sql);
+
+					System.out.println(ct.getSoLuong());
+					System.out.println(ct.getDonGia());
+					dao.insertPM(sql, idddh, vt, ct.getSoLuong(), ct.getDonGia());
+					model.addAttribute("message", "thêm chi tiết thành công");
+					System.out.print("thêm chi tiết thành công");
+					ctpxrepo.cnvt(vt,ct.getSoLuong());
+				} catch (Exception e) {
+					e.printStackTrace();
+					model.addAttribute("message", "thêm chi tiết thất bại, loại vật tư đã tồn tại");
+					System.out.print("thêm chi tiết thất bại");
+
+				}
+				
+
+				return "redirect:/quanlychitietphieuxuat/cn1/user.htm?idpx=" + idddh;	
+			}
+			
+		}
+
+		@RequestMapping(value = "user/xoa", method = RequestMethod.GET)
+		public String xoaNVU(ModelMap model, HttpServletRequest request) {
+
+			model.addAttribute("id", request.getParameter("id"));
+			model.addAttribute("vt", request.getParameter("vt"));
+			System.out.println(request.getParameter("vt"));
+			return "user/form/xoa-CTPX";
+
+		}
+
+		@RequestMapping(value = "user/xoa", method = RequestMethod.POST)
+		public String xoaKU(ModelMap model, HttpServletRequest request) {
+
+			String id = request.getParameter("id");
+			String vt = request.getParameter("vt");
+			System.out.print(request.getParameter("xacNhan") + request.getParameter("id"));
+			try {
+				if (request.getParameter("xacNhan").equals("YES")) {
+//					VatTuEntity nvsave = vtrepo.findOne(id);
+					
+					
+					String sql = "DELETE FROM [dbo].[CTPX]\n" + "      WHERE MaPX=? and MAVT=?\n";
+					System.out.println(id);
+					System.out.println(id);
+					System.out.println(vt);
+					System.out.println(InfoConnection.getUrlPM());
+					dao.updatePM(sql, id, vt);
+					model.addAttribute("message", "xoá chi tiết PX thành công");
+					
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				model.addAttribute("message", "xoá ct phiếu xuất thất bại");
+			}
+			return "redirect:/quanlychitietphieuxuat/cn1/user.htm?idpx="+id;
+
+		}
 }

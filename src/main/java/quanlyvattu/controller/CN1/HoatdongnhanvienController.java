@@ -49,25 +49,23 @@ public class HoatdongnhanvienController {
 
 	AbstractDAO dao = new AbstractDAO();
 
-	@RequestMapping(value = "chinhanh/nhap", method = RequestMethod.GET)
-	public String getNVCN1(ModelMap model,HttpServletRequest request) {
+//==================================CHINHANH=====================================//
+	@RequestMapping(value = { "chinhanh/nhap"}, method = RequestMethod.GET)
+	public String getNVCN1(ModelMap model, HttpServletRequest request) {
 		model.addAttribute("nv", new NhanVienEntity());
-	
-		
+
 		return "chinhanh/form/choose-HDNV-nhap";
-		
-		
+
 //		String sql = "EXEC [dbo].[sp_ChiTietSoLuongTriGiaHangHoaNhapXuat] ?,?,?,?";
 //		List<CTSLHHXNModel> ctxn=dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql, new CTSLHHXNMapper(),"CHINHANH" "NHAP", );
 //		System.out.println(ctxn.get(0).getThangNam());
 //		model.addAttribute("ctxn", ctxn);
 //		model.addAttribute("nvs", nvrepo.findAllNV());
 //		return "chinhanh/ctsoluongtrigiahanghoanhapxuat";
-		
-		
+
 //		Timestamp tungay= Timestamp.valueOf(request.getParameter("tungay").replace("T", " ") + ":00");
 //		Timestamp denngay= Timestamp.valueOf(request.getParameter("denngay").replace("T", " ") + ":00");
-		
+
 //		String sql = "EXEC [dbo].[sp_ChiTietSoLuongTriGiaHangHoaNhapXuat] ?,?,?,?";
 //		@SuppressWarnings("deprecation")
 //		List<CTSLHHXNModel> ctxn=dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql, new CTSLHHXNMapper(),"CHINHANH" ,"NHAP",request.getParameter("tungay"),request.getParameter("denngay"));
@@ -77,50 +75,178 @@ public class HoatdongnhanvienController {
 //		return "chinhanh/ctsoluongtrigiahanghoanhapxuat";
 	}
 
-	@RequestMapping(value = "chinhanh/nhap", method = RequestMethod.POST)
+	@RequestMapping(value = { "chinhanh/nhap"}, method = RequestMethod.POST)
 	public String getPNCN1(ModelMap model, HttpServletRequest request) {
-		Timestamp tungay= Timestamp.valueOf(request.getParameter("tungay").replace("T", " ") + ":00");
-		Timestamp denngay= Timestamp.valueOf(request.getParameter("denngay").replace("T", " ") + ":00");
-		int manv =Integer.parseInt(request.getParameter("manhanvien"));
-		String sql = "EXEC	 [dbo].[sp_HoatDongNhanVien]\r\n" + 
-				"		@MANV = ?,\r\n" + 
-				"		@LOAI = ?,\r\n" + 
-				"		@DATEFROM =?,\r\n" + 
-				"		@DATETO = ?";
-		List<HDNVModel> hdn=dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql, new HDNVMapper(),manv,"NHAP",tungay,denngay );
+		Timestamp tungay = Timestamp.valueOf(request.getParameter("tungay").replace("T", " ") + ":00");
+		Timestamp denngay = Timestamp.valueOf(request.getParameter("denngay").replace("T", " ") + ":00");
+		int manv = Integer.parseInt(request.getParameter("manhanvien"));
+		String sql = "EXEC	 [dbo].[sp_HoatDongNhanVien]\r\n" + "		@MANV = ?,\r\n" + "		@LOAI = ?,\r\n"
+				+ "		@DATEFROM =?,\r\n" + "		@DATETO = ?";
+		List<HDNVModel> hdn = dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql,
+				new HDNVMapper(), manv, "NHAP", tungay, denngay);
 //		System.out.println(ctxn.get(0).getThangNam());
-		System.out.println(tungay+" "+denngay);
+		System.out.println(tungay + " " + denngay);
 		System.out.println(hdn.get(0).getTenVT());
 		model.addAttribute("hdns", hdn);
 		model.addAttribute("nvs", nvrepo.findOne(manv));
 //		System.out.println(ctxn.get(0).getTenVT());
 		return "chinhanh/bchoatdongnhanvienctn";
-		
-	}
-	
-	@RequestMapping(value = "chinhanh/xuat", method = RequestMethod.GET)
-	public String getPXCN1(ModelMap model,HttpServletRequest request) {
-		
-		
-		return "chinhanh/form/choose-HDNV-xuat";
-		
-		
+
 	}
 
-	@RequestMapping(value = "chinhanh/xuat", method = RequestMethod.POST)
+	@RequestMapping(value = { "chinhanh/xuat"}, method = RequestMethod.GET)
+	public String getPXCN1(ModelMap model, HttpServletRequest request) {
+
+		return "chinhanh/form/choose-HDNV-xuat";
+
+	}
+
+	@RequestMapping(value = { "chinhanh/xuat"}, method = RequestMethod.POST)
 	public String getHDPX12(ModelMap model, HttpServletRequest request) {
-		Timestamp tungay= Timestamp.valueOf(request.getParameter("tungay").replace("T", " ") + ":00");
-		Timestamp denngay= Timestamp.valueOf(request.getParameter("denngay").replace("T", " ") + ":00");
-		int manv =Integer.parseInt(request.getParameter("manhanvien"));
-		String sql = "EXEC	 [dbo].[sp_HoatDongNhanVien]\r\n" + 
-				"		@MANV = ?,\r\n" + 
-				"		@LOAI = ?,\r\n" + 
-				"		@DATEFROM =?,\r\n" + 
-				"		@DATETO = ?";
-		List<HDNVModel> hdx=dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql, new HDNVMapper(),manv ,"XUAT",tungay,denngay );
+		Timestamp tungay = Timestamp.valueOf(request.getParameter("tungay").replace("T", " ") + ":00");
+		Timestamp denngay = Timestamp.valueOf(request.getParameter("denngay").replace("T", " ") + ":00");
+		int manv = Integer.parseInt(request.getParameter("manhanvien"));
+		String sql = "EXEC	 [dbo].[sp_HoatDongNhanVien]\r\n" + "		@MANV = ?,\r\n" + "		@LOAI = ?,\r\n"
+				+ "		@DATEFROM =?,\r\n" + "		@DATETO = ?";
+		List<HDNVModel> hdx = dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql,
+				new HDNVMapper(), manv, "XUAT", tungay, denngay);
 		model.addAttribute("hdxs", hdx);
 		model.addAttribute("nvs", nvrepo.findOne(manv));
 		return "chinhanh/bchoatdongnhanvienctx";
-		
+
+	}
+
+	// ==================================CONGTY=====================================//
+	@RequestMapping(value = { "congty/nhap", }, method = RequestMethod.GET)
+	public String getNVCTY(ModelMap model, HttpServletRequest request) {
+		model.addAttribute("nv", new NhanVienEntity());
+
+		return "congty/form/choose-HDNV-nhap";
+
+//			String sql = "EXEC [dbo].[sp_ChiTietSoLuongTriGiaHangHoaNhapXuat] ?,?,?,?";
+//			List<CTSLHHXNModel> ctxn=dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql, new CTSLHHXNMapper(),"CHINHANH" "NHAP", );
+//			System.out.println(ctxn.get(0).getThangNam());
+//			model.addAttribute("ctxn", ctxn);
+//			model.addAttribute("nvs", nvrepo.findAllNV());
+//			return "chinhanh/ctsoluongtrigiahanghoanhapxuat";
+
+//			Timestamp tungay= Timestamp.valueOf(request.getParameter("tungay").replace("T", " ") + ":00");
+//			Timestamp denngay= Timestamp.valueOf(request.getParameter("denngay").replace("T", " ") + ":00");
+
+//			String sql = "EXEC [dbo].[sp_ChiTietSoLuongTriGiaHangHoaNhapXuat] ?,?,?,?";
+//			@SuppressWarnings("deprecation")
+//			List<CTSLHHXNModel> ctxn=dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql, new CTSLHHXNMapper(),"CHINHANH" ,"NHAP",request.getParameter("tungay"),request.getParameter("denngay"));
+//			model.addAttribute("ctpns", ctxn;
+//			model.addAttribute("nvs", nvrepo.findAllNV());
+//			System.out.println(ctxn.get(0).getTenVT());
+//			return "chinhanh/ctsoluongtrigiahanghoanhapxuat";
+	}
+
+	@RequestMapping(value = {  "congty/nhap",}, method = RequestMethod.POST)
+	public String getPNCTY(ModelMap model, HttpServletRequest request) {
+		Timestamp tungay = Timestamp.valueOf(request.getParameter("tungay").replace("T", " ") + ":00");
+		Timestamp denngay = Timestamp.valueOf(request.getParameter("denngay").replace("T", " ") + ":00");
+		int manv = Integer.parseInt(request.getParameter("manhanvien"));
+		String sql = "EXEC	 [dbo].[sp_HoatDongNhanVien]\r\n" + "		@MANV = ?,\r\n" + "		@LOAI = ?,\r\n"
+				+ "		@DATEFROM =?,\r\n" + "		@DATETO = ?";
+		List<HDNVModel> hdn = dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql,
+				new HDNVMapper(), manv, "NHAP", tungay, denngay);
+//			System.out.println(ctxn.get(0).getThangNam());
+		System.out.println(tungay + " " + denngay);
+		System.out.println(hdn.get(0).getTenVT());
+		model.addAttribute("hdns", hdn);
+		model.addAttribute("nvs", nvrepo.findOne(manv));
+//			System.out.println(ctxn.get(0).getTenVT());
+		return "congty/bchoatdongnhanvienctn";
+
+	}
+
+	@RequestMapping(value = {"congty/xuat", }, method = RequestMethod.GET)
+	public String getPXCTY(ModelMap model, HttpServletRequest request) {
+
+		return "congty/form/choose-HDNV-xuat";
+
+	}
+
+	@RequestMapping(value = { "congty/xuat", }, method = RequestMethod.POST)
+	public String getHDCTY(ModelMap model, HttpServletRequest request) {
+		Timestamp tungay = Timestamp.valueOf(request.getParameter("tungay").replace("T", " ") + ":00");
+		Timestamp denngay = Timestamp.valueOf(request.getParameter("denngay").replace("T", " ") + ":00");
+		int manv = Integer.parseInt(request.getParameter("manhanvien"));
+		String sql = "EXEC	 [dbo].[sp_HoatDongNhanVien]\r\n" + "		@MANV = ?,\r\n" + "		@LOAI = ?,\r\n"
+				+ "		@DATEFROM =?,\r\n" + "		@DATETO = ?";
+		List<HDNVModel> hdx = dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql,
+				new HDNVMapper(), manv, "XUAT", tungay, denngay);
+		model.addAttribute("hdxs", hdx);
+		model.addAttribute("nvs", nvrepo.findOne(manv));
+		return "congty/bchoatdongnhanvienctx";
+
+	}
+
+	// ==================================USER=====================================//
+	@RequestMapping(value = {"user/nhap" }, method = RequestMethod.GET)
+	public String getNVU(ModelMap model, HttpServletRequest request) {
+		model.addAttribute("nv", new NhanVienEntity());
+
+		return "user/form/choose-HDNV-nhap";
+
+//			String sql = "EXEC [dbo].[sp_ChiTietSoLuongTriGiaHangHoaNhapXuat] ?,?,?,?";
+//			List<CTSLHHXNModel> ctxn=dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql, new CTSLHHXNMapper(),"CHINHANH" "NHAP", );
+//			System.out.println(ctxn.get(0).getThangNam());
+//			model.addAttribute("ctxn", ctxn);
+//			model.addAttribute("nvs", nvrepo.findAllNV());
+//			return "chinhanh/ctsoluongtrigiahanghoanhapxuat";
+
+//			Timestamp tungay= Timestamp.valueOf(request.getParameter("tungay").replace("T", " ") + ":00");
+//			Timestamp denngay= Timestamp.valueOf(request.getParameter("denngay").replace("T", " ") + ":00");
+
+//			String sql = "EXEC [dbo].[sp_ChiTietSoLuongTriGiaHangHoaNhapXuat] ?,?,?,?";
+//			@SuppressWarnings("deprecation")
+//			List<CTSLHHXNModel> ctxn=dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql, new CTSLHHXNMapper(),"CHINHANH" ,"NHAP",request.getParameter("tungay"),request.getParameter("denngay"));
+//			model.addAttribute("ctpns", ctxn;
+//			model.addAttribute("nvs", nvrepo.findAllNV());
+//			System.out.println(ctxn.get(0).getTenVT());
+//			return "chinhanh/ctsoluongtrigiahanghoanhapxuat";
+	}
+
+	@RequestMapping(value = {  "user/nhap" }, method = RequestMethod.POST)
+	public String getPNU(ModelMap model, HttpServletRequest request) {
+		Timestamp tungay = Timestamp.valueOf(request.getParameter("tungay").replace("T", " ") + ":00");
+		Timestamp denngay = Timestamp.valueOf(request.getParameter("denngay").replace("T", " ") + ":00");
+		int manv = Integer.parseInt(request.getParameter("manhanvien"));
+		String sql = "EXEC	 [dbo].[sp_HoatDongNhanVien]\r\n" + "		@MANV = ?,\r\n" + "		@LOAI = ?,\r\n"
+				+ "		@DATEFROM =?,\r\n" + "		@DATETO = ?";
+		List<HDNVModel> hdn = dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql,
+				new HDNVMapper(), manv, "NHAP", tungay, denngay);
+//			System.out.println(ctxn.get(0).getThangNam());
+		System.out.println(tungay + " " + denngay);
+		System.out.println(hdn.get(0).getTenVT());
+		model.addAttribute("hdns", hdn);
+		model.addAttribute("nvs", nvrepo.findOne(manv));
+//			System.out.println(ctxn.get(0).getTenVT());
+		return "user/bchoatdongnhanvienctn";
+
+	}
+
+	@RequestMapping(value = { "user/xuat" }, method = RequestMethod.GET)
+	public String getPXU(ModelMap model, HttpServletRequest request) {
+
+		return "user/form/choose-HDNV-xuat";
+
+	}
+
+	@RequestMapping(value = { "user/xuat" }, method = RequestMethod.POST)
+	public String getHDU(ModelMap model, HttpServletRequest request) {
+		Timestamp tungay = Timestamp.valueOf(request.getParameter("tungay").replace("T", " ") + ":00");
+		Timestamp denngay = Timestamp.valueOf(request.getParameter("denngay").replace("T", " ") + ":00");
+		int manv = Integer.parseInt(request.getParameter("manhanvien"));
+		String sql = "EXEC	 [dbo].[sp_HoatDongNhanVien]\r\n" + "		@MANV = ?,\r\n" + "		@LOAI = ?,\r\n"
+				+ "		@DATEFROM =?,\r\n" + "		@DATETO = ?";
+		List<HDNVModel> hdx = dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql,
+				new HDNVMapper(), manv, "XUAT", tungay, denngay);
+		model.addAttribute("hdxs", hdx);
+		model.addAttribute("nvs", nvrepo.findOne(manv));
+		return "user/bchoatdongnhanvienctx";
+
 	}
 }

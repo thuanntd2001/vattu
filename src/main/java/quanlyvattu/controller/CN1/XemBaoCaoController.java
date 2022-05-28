@@ -30,12 +30,31 @@ public class XemBaoCaoController {
 	@Autowired
 	ServletContext session;
 
-	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
+//==============================CHINHANH============================//
+	@RequestMapping(value = { "chinhanh"}, method = RequestMethod.GET)
 	public String getNVCN1(ModelMap model) {
 		Sort sort = new Sort(Sort.Direction.ASC, "ten");
-	
+
 		model.addAttribute("nvs", nvrepo.findAllNV());
 		return "chinhanh/Xembaocao";
 	}
 
-}	
+	// ==============================CONGTY============================//
+	@RequestMapping(value = { "congty"}, method = RequestMethod.GET)
+	public String getNVCTY(ModelMap model) {
+		Sort sort = new Sort(Sort.Direction.ASC, "ten");
+
+		model.addAttribute("nvs", nvrepo.findAllNV());
+		return "congty/Xembaocao";
+	}
+
+	// ==============================USER============================//
+	@RequestMapping(value = {  "user" }, method = RequestMethod.GET)
+	public String getNVU(ModelMap model) {
+		Sort sort = new Sort(Sort.Direction.ASC, "ten");
+
+		model.addAttribute("nvs", nvrepo.findAllNV());
+		return "user/Xembaocao";
+	}
+
+}

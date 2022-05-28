@@ -15,5 +15,6 @@ public interface ChiTietPXRepositoryCN1 extends JpaRepository<CTPXEntity, String
 
 	@Query("select ctPhieuxuat from CTPXEntity ctPhieuxuat where ctPhieuxuat.phieuXuat.maPX = ?1")
 	List<CTPXEntity> findByMaSoPX(String maSoDDH);
-
+	@Query (value="exec sp_CapNhatSoLuongVatTu 'XUAT',?1,?2", nativeQuery=true)
+	void cnvt(String maVT, int soLuong);
 }

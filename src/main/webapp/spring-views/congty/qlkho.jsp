@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/chinhanh/head.jsp" />
+<jsp:include page="/template/cn1/congty/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
+	<jsp:include page="/template/cn1/congty/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
+	<jsp:include page="/template/cn1/congty/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -49,7 +49,7 @@
 									<th scope="col">Địa chỉ</th>
 									<th scope="col">Mã chi nhánh</th>
 									<th scope="col">Xem</th>
-									<th scope="col">Thao tác</th>
+									
 								</tr>
 							</thead>
 							<tbody>
@@ -64,22 +64,17 @@
 										<td>${k.chiNhanh.maCN}</td>
 
 										<td><a
-											href="quanlydondathang/cn1/chinhanh.htm?idkho=${k.maKho}"
+											href="quanlydondathang/cn1/congty.htm?idkho=${k.maKho}"
 											class="fa fa-file-text-o"> <br>Đơn đặt hàng
-										</a> <a href="quanlyphieuxuat/cn1/chinhanh.htm?idkho=${k.maKho}"
+										</a> <a href="quanlyphieuxuat/cn1/congty.htm?idkho=${k.maKho}"
 											class="fa fa-outdent"><br>Phiếu xuất</a></td>
 
-										<td><a
-											href="quanlykho/cn1/chinhanh/edit.htm?id=${k.maKho}"
-											class="fa fa-pencil-square-o"></a> <a
-											href="quanlykho/cn1/chinhanh/xoa.htm?id=${k.maKho}"
-											class="fa fa-times-circle"></a></td>
+										
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
-						<!-- End Primary Color Bordered Table -->
-						<a href="quanlykho/cn1/chinhanh/add.htm" class="fa fa-plus"></a>
+						
 					</div>
 				</div>
 			</div>
@@ -88,7 +83,7 @@
 
 	</main>
 	<!-- End #main -->
-	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
+	<jsp:include page="/template/cn1/congty/footer.jsp" />
 	<!-- End #main -->
 
 
