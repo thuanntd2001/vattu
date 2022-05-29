@@ -12,7 +12,7 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/user/head.jsp" />
+<jsp:include page="/template/cn1/chinhanh/head.jsp" />
 
 </head>
 <body>
@@ -33,11 +33,11 @@
 							<b>Độc Lập - Tự Do - Hạnh Phúc</b>
 						</h5>
 						<br>
-						<h6 style="margin-left:1000px;">............,ngày.....tháng.....năm
+						<h6 style="margin-left:890px;">............,ngày.....tháng.....năm
 							202......</h6>
 						<br> <br>
 						<h3
-							style="margin: 20px; text-align: center; text-transform: uppercase">
+							style="margin: 20px; text-align: center; text-transform: uppercaguse">
 							<strong>Báo cáo <br> Danh sách vật tư
 							</strong>
 						</h3>
@@ -71,7 +71,7 @@
 							</tbody>
 						</table>
 						<br> <br>
-						<p style="margin-left:1050px;">
+						<p style="margin-left:950px;">
 							<b> Người báo cáo</b>
 						</p>
 						<br> <br> <br> <br>
@@ -86,7 +86,7 @@
 	</main>
 	<!-- End #main -->
 
-	<jsp:include page="/template/cn1/user/footer.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
 </body>
 
 </html>

@@ -73,10 +73,10 @@ public class QLChiTietPXController {
 
 	@RequestMapping(value = "chinhanh/add", method = RequestMethod.POST)
 	public String addchitietDDHCN(ModelMap model, @ModelAttribute("ct") CTPXEntity ct, HttpServletRequest request) {
-		
+		String vt = request.getParameter("maVT");
 		CTPXEntity nvsave = null;
 		UserModel user = (UserModel) session.getAttribute("USERMODEL");
-		VatTuEntity vattu = vtrepo.findOne(ct.getVatTu().getMaVT());
+		VatTuEntity vattu = vtrepo.findOne(vt);
 		if(vattu.getSoLuongTon()-ct.getSoLuong()<0)
 		{
 			model.addAttribute("message","không đủ vật tư");
@@ -88,7 +88,7 @@ public class QLChiTietPXController {
 			try {
 				System.out.println(idddh);
 
-				String vt = request.getParameter("maVT");
+				
 
 				System.out.println(InfoConnection.getUrlPM());
 //				nvsave = ctdhrepo.save(ct);
@@ -107,8 +107,7 @@ public class QLChiTietPXController {
 				ctpxrepo.cnvt(vt,ct.getSoLuong());
 			} catch (Exception e) {
 				e.printStackTrace();
-				model.addAttribute("message", "thêm chi tiết thất bại, loại vật tư đã tồn tại");
-				System.out.print("thêm chi tiết thất bại");
+				
 
 			}
 			
@@ -204,10 +203,10 @@ public class QLChiTietPXController {
 
 		@RequestMapping(value = "user/add", method = RequestMethod.POST)
 		public String addchitietDDHU(ModelMap model, @ModelAttribute("ct") CTPXEntity ct, HttpServletRequest request) {
-			
+			String vt = request.getParameter("maVT");
 			CTPXEntity nvsave = null;
 			UserModel user = (UserModel) session.getAttribute("USERMODEL");
-			VatTuEntity vattu = vtrepo.findOne(ct.getVatTu().getMaVT());
+			VatTuEntity vattu = vtrepo.findOne(vt);
 			if(vattu.getSoLuongTon()-ct.getSoLuong()<0)
 			{
 				model.addAttribute("message","không đủ vật tư");
@@ -219,7 +218,7 @@ public class QLChiTietPXController {
 				try {
 					System.out.println(idddh);
 
-					String vt = request.getParameter("maVT");
+					
 
 					System.out.println(InfoConnection.getUrlPM());
 //					nvsave = ctdhrepo.save(ct);
@@ -238,8 +237,7 @@ public class QLChiTietPXController {
 					ctpxrepo.cnvt(vt,ct.getSoLuong());
 				} catch (Exception e) {
 					e.printStackTrace();
-					model.addAttribute("message", "thêm chi tiết thất bại, loại vật tư đã tồn tại");
-					System.out.print("thêm chi tiết thất bại");
+					
 
 				}
 				

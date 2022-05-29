@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/user/head.jsp" />
+<jsp:include page="/template/cn1/chinhanh/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/user/header.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/user/sidebar.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -42,7 +42,7 @@
 						<h5 class="card-title">Tạo tài khoản nhân viên</h5>
 
 						<!-- Multi Columns Form -->
-						<form:form action="taologin/cn1/user.htm" method="post" modelAttribute="newLogin"   class="row g-3">
+						<form:form action="taologin/cn1/chinhanh.htm" method="post" modelAttribute="newLogin"   class="row g-3">
 							<div class="col-md-6">
 								<div class="col-md-8">
 									<label for="inputCity" class="form-label">Mã nhân viên</label>
@@ -95,7 +95,7 @@
 
 	</main>
 	<!-- End #main -->
-	<jsp:include page="/template/cn1/user/footer.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
 
 
 </body>

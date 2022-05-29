@@ -60,12 +60,14 @@
 					<form:form action="quanlychitietphieunhap/cn1/chinhanh/add.htm"
 						method="post" modelAttribute="ct" class="row g-3">
 						<div class="col-md-8">
-							<label for="inputEmail5" class="form-label">Tên VT</label> <select
+							<label for="inputEmail5" class="form-label">Tên VT</label> 
+							<select
 								class="form-control" id="inputEmail5" name="maVT">
 								<c:forEach items="${vattus }" var="vt">
 									<option value="${vt.maVT}" label="${vt.tenVT}"></option>
 								</c:forEach>
 							</select>
+							
 						</div>
 						<div class="col-md-4">
 							<label for="inputPassword5" class="form-label">Số lượng</label>
@@ -75,14 +77,15 @@
 						</div>
 
 						<div class="col-md-5">
-							<label for="inputState" class="form-label">Đơn giá</label> <br>
+							<label for="inputState" class="form-label">Đơn giá
+							</label> <br>
 							<form:input path="donGia" />
 							<br>
 						</div>
 
 						<div class="col-md-5">
 							<label for="inputState" class="form-label">Mã PN</label> <br>
-							<input value="${pn.maPN }" readonly/> <br>
+							<input value="${pn.maPN }"  readonly> <br>
 						</div>
 						<div class="col-md-12">
 							<div class="text-center" style="margin-top: 20px">

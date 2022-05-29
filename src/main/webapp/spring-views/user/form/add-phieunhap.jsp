@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/user/head.jsp" />
+<jsp:include page="/template/cn1/chinhanh/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/user/header.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/user/sidebar.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -51,7 +51,7 @@
 
 
 
-							<form:form action="quanlyphieunhap/cn1/user/add.htm"
+							<form:form action="quanlyphieunhap/cn1/chinhanh/add.htm"
 							method="post" modelAttribute="px" class="row g-3">
 					
 							<div class="col-md-5">
@@ -93,7 +93,7 @@
 
   </main><!-- End #main -->
 	<!-- End #main -->
-	<jsp:include page="/template/cn1/user/footer.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
 
 
 </body>

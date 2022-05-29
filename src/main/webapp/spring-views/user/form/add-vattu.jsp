@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/user/head.jsp" />
+<jsp:include page="/template/cn1/chinhanh/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/user/header.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/user/sidebar.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -35,7 +35,7 @@
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a
-					href="quanlyvattu/cn1/user.htm">Vật tư</a></li>
+					href="quanlyvattu/cn1/chinhanh.htm">Vật tư</a></li>
 				<li class="breadcrumb-item active">Thêm vật tư</li>
 			</ol>
 		</nav>
@@ -49,7 +49,7 @@
 						<h5 class="card-title">Thông tin Vật tư</h5>
 
 						<!-- Multi Columns Form -->
-						<%-- <form:form action="quanlyvattu/cn1/user/add.htm"
+						<%-- <form:form action="quanlyvattu/cn1/chinhanh/add.htm"
 							method="post" modelAtribute="vt" class="row g-3">
 							<div class="col-md-6">
 								<label for="inputEmail5" class="form-label">Mã VT</label> 
@@ -83,7 +83,7 @@
 							</div>
 						</form:form> --%>
 						<!-- End Multi Columns Form -->
-						<form:form action="quanlyvattu/cn1/user/add.htm"
+						<form:form action="quanlyvattu/cn1/chinhanh/add.htm"
 							method="post" modelAttribute="vt" class="row g-3">
 
 							<div class="col-md-4">
@@ -136,7 +136,7 @@
 	<!-- End #main -->
 
 	<!-- End #main -->
-	<jsp:include page="/template/cn1/user/footer.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
 
 
 </body>

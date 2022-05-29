@@ -102,12 +102,15 @@ public class QLChiTietPNController {
 	public String addchitietDDHCN(ModelMap model, @ModelAttribute("ct") CTPNEntity ct, HttpServletRequest request) {
 
 		CTPXEntity nvsave = null;
+		String vt = request.getParameter("maVT");
 		UserModel user = (UserModel) session.getAttribute("USERMODEL");
 		PhieuNhapEntity pn = pnrepo.findOne(idpn);
 		List<CTDDHEntity> ctdhs= ctdhrepo.findByMaSoDDH(pn.getDatHang().getMaSoDDH());
 		int flag = 0;
+		System.out.println(vt);
+	
 		for (CTDDHEntity ctdh:ctdhs) {
-			if (ctdh.getVatTu().getMaVT().equals(ct.getVatTu().getMaVT()) && ct.getSoLuong()<=ctdh.getSoLuong()) {
+			if (ctdh.getVatTu().getMaVT().equals(vt) && ct.getSoLuong()<=ctdh.getSoLuong()) {
 				flag = 1;
 			}
 		}
@@ -115,14 +118,14 @@ public class QLChiTietPNController {
 			try {
 				System.out.println(idpn);
 
-				String vt = request.getParameter("maVT");
+				
 
 				System.out.println(InfoConnection.getUrlPM());
 
 				String sql = "INSERT INTO [dbo].[CTPN]\n" + "           ([MaPN]\n" + "           ,[MAVT]\n"
 						+ "           ,[SOLUONG]\n" + "           ,[DONGIA]\n)" +
 
-						"     VALUES (?,?,?,?)";
+						"     VALUES (?,?,?,?) select 1";
 				System.out.println(sql);
 
 				System.out.println(ct.getSoLuong());
@@ -133,8 +136,7 @@ public class QLChiTietPNController {
 				System.out.print("thêm chi tiết thành công");
 			} catch (Exception e) {
 				e.printStackTrace();
-				model.addAttribute("message", "thêm chi tiết thất bại, loại vật tư đã tồn tại");
-				System.out.print("thêm chi tiết thất bại");
+				
 
 			}
 			return "redirect:/quanlychitietphieunhap/cn1/chinhanh.htm?idpn=" + idpn;
@@ -254,12 +256,15 @@ public class QLChiTietPNController {
 	public String addchitietDDHU(ModelMap model, @ModelAttribute("ct") CTPNEntity ct, HttpServletRequest request) {
 
 		CTPXEntity nvsave = null;
+		String vt = request.getParameter("maVT");
 		UserModel user = (UserModel) session.getAttribute("USERMODEL");
 		PhieuNhapEntity pn = pnrepo.findOne(idpn);
 		List<CTDDHEntity> ctdhs= ctdhrepo.findByMaSoDDH(pn.getDatHang().getMaSoDDH());
 		int flag = 0;
+		System.out.println(vt);
+	
 		for (CTDDHEntity ctdh:ctdhs) {
-			if (ctdh.getVatTu().getMaVT().equals(ct.getVatTu().getMaVT()) && ct.getSoLuong()<=ctdh.getSoLuong()) {
+			if (ctdh.getVatTu().getMaVT().equals(vt) && ct.getSoLuong()<=ctdh.getSoLuong()) {
 				flag = 1;
 			}
 		}
@@ -267,14 +272,14 @@ public class QLChiTietPNController {
 			try {
 				System.out.println(idpn);
 
-				String vt = request.getParameter("maVT");
+				
 
 				System.out.println(InfoConnection.getUrlPM());
 
 				String sql = "INSERT INTO [dbo].[CTPN]\n" + "           ([MaPN]\n" + "           ,[MAVT]\n"
 						+ "           ,[SOLUONG]\n" + "           ,[DONGIA]\n)" +
 
-						"     VALUES (?,?,?,?)";
+						"     VALUES (?,?,?,?) select 1";
 				System.out.println(sql);
 
 				System.out.println(ct.getSoLuong());
@@ -285,8 +290,7 @@ public class QLChiTietPNController {
 				System.out.print("thêm chi tiết thành công");
 			} catch (Exception e) {
 				e.printStackTrace();
-				model.addAttribute("message", "thêm chi tiết thất bại, loại vật tư đã tồn tại");
-				System.out.print("thêm chi tiết thất bại");
+				
 
 			}
 			return "redirect:/quanlychitietphieunhap/cn1/user.htm?idpn=" + idpn;

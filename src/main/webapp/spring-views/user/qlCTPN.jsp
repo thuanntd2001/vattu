@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/user/head.jsp" />
+<jsp:include page="/template/cn1/chinhanh/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/user/header.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/user/sidebar.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -34,11 +34,11 @@
 		<h1>Đơn hàng</h1>
 		<nav>
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href=""quanlykho/cn1/user.htm"">Kho</a></li>
+				<li class="breadcrumb-item"><a href=""quanlykho/cn1/chinhanh.htm"">Kho</a></li>
 				<li class="breadcrumb-item"><a
-					href="quanlydondathang/cn1/user.htm">Đơn hàng</a></li>
+					href="quanlydondathang/cn1/chinhanh.htm">Đơn hàng</a></li>
 				<li class="breadcrumb-item"><a
-					href="quanlyphieunhap/cn1/user.htm">Phiếu nhập</a></li>
+					href="quanlyphieunhap/cn1/chinhanh.htm">Phiếu nhập</a></li>
 				<li class="breadcrumb-item active">Chi tiết phiếu nhập</li>
 			</ol>
 		</nav>
@@ -72,13 +72,13 @@
 										<td>${k.soLuong}</td>
 										<td>${k.donGia}VNĐ</td>
 
-										<td><a href="quanlychitietphieunhap/cn1/user/xoa.htm?id=${k.phieuNhap.maPN}&&vt=${k.vatTu.maVT}" class="fa fa-times-circle"></a>
+										<td><a href="quanlychitietphieunhap/cn1/chinhanh/xoa.htm?id=${k.phieuNhap.maPN}&&vt=${k.vatTu.maVT}" class="fa fa-times-circle"></a>
 									</tr>
 								</c:forEach>
 
 							</tbody>
 						</table>
-						<a href="quanlychitietphieunhap/cn1/user/add.htm"
+						<a href="quanlychitietphieunhap/cn1/chinhanh/add.htm"
 							class="fa fa-plus"></a>
 					</div>
 				</div>
@@ -90,7 +90,7 @@
 	</main>
 	<!-- End #main -->
 
-	<jsp:include page="/template/cn1/user/footer.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
 
 
 </body>

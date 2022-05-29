@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/user/head.jsp" />
+<jsp:include page="/template/cn1/chinhanh/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/user/header.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/user/sidebar.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -34,8 +34,8 @@
 		<h1>Đơn hàng</h1>
 		<nav>
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href=""quanlykho/cn1/user.htm"">Kho</a></li>
-				<li class="breadcrumb-item"><a href="quanlydondathang/cn1/user.htm">Đơn hàng</a></li>
+				<li class="breadcrumb-item"><a href=""quanlykho/cn1/chinhanh.htm"">Kho</a></li>
+				<li class="breadcrumb-item"><a href="quanlydondathang/cn1/chinhanh.htm">Đơn hàng</a></li>
 				<li class="breadcrumb-item active">Chi tiết đơn đặt hàng</li>
 			</ol>
 		</nav>
@@ -71,14 +71,14 @@
 										<td>${k.soLuong}</td>
 
 										<td>${k.donGia}</td>
-										<td><a href="quanlychitietdondathang/cn1/user/xoa.htm?id=${k.datHang.maSoDDH}&vt=${k.vatTu.maVT}" class="fa fa-times-circle"></a></td>
+										<td><a href="quanlychitietdondathang/cn1/chinhanh/xoa.htm?id=${k.datHang.maSoDDH}&vt=${k.vatTu.maVT}" class="fa fa-times-circle"></a></td>
 									</tr>
 								</c:forEach>
 
 							</tbody>
 						</table>
 
-						<a href="quanlychitietdondathang/cn1/user/add.htm"
+						<a href="quanlychitietdondathang/cn1/chinhanh/add.htm"
 							class="fa fa-plus"></a>
 
 					</div>
@@ -91,7 +91,7 @@
 	</main>
 	<!-- End #main -->
 
-	<jsp:include page="/template/cn1/user/footer.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
 
 
 </body>

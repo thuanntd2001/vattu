@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/user/head.jsp" />
+<jsp:include page="/template/cn1/chinhanh/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/user/header.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/user/sidebar.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -35,7 +35,7 @@
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a
-					href="quanlykho/cn1/user.htm">Kho</a></li>
+					href="quanlykho/cn1/chinhanh.htm">Kho</a></li>
 				<li class="breadcrumb-item active">Đơn đặt hàng</li>
 			</ol>
 		</nav>
@@ -71,20 +71,20 @@ ${message}
 										<td>${k.nhanVien.maNV}</td>
 										<td>${k.kho.maKho}</td>
 										<td><a
-											href="quanlychitietdondathang/cn1/user.htm?idddh=${k.maSoDDH}"
+											href="quanlychitietdondathang/cn1/chinhanh.htm?idddh=${k.maSoDDH}"
 											class="fa fa-eye"><br>Chi Tiết DDH<br> </a> <a
-											href="quanlyphieunhap/cn1/user.htm?idDDH=${k.maSoDDH}&&idkho=${k.kho.maKho}"
+											href="quanlyphieunhap/cn1/chinhanh.htm?idDDH=${k.maSoDDH}&&idkho=${k.kho.maKho}"
 											class="fa fa-indent"> <br>Xem phiếu nhập<br></a>
 										<td><a
-											href="quanlydondathang/cn1/user/edit.htm?id=${k.maSoDDH}"
+											href="quanlydondathang/cn1/chinhanh/edit.htm?id=${k.maSoDDH}"
 											class="fa fa-pencil-square-o"></a> <a
-											href="quanlydondathang/cn1/user/xoa.htm?id=${k.maSoDDH}"
+											href="quanlydondathang/cn1/chinhanh/xoa.htm?id=${k.maSoDDH}"
 											class="fa fa-times-circle"></a></td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
-						<a href="quanlydondathang/cn1/user/add.htm" class="fa fa-plus"></a>
+						<a href="quanlydondathang/cn1/chinhanh/add.htm" class="fa fa-plus"></a>
 					</div>
 				</div>
 
@@ -94,7 +94,7 @@ ${message}
 
 	</main>
 	<!-- End #main -->
-	<jsp:include page="/template/cn1/user/footer.jsp" />
+	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
 
 
 </body>
