@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/chinhanh/head.jsp" />
+<jsp:include page="/template/cn1/congty/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
+	<jsp:include page="/template/cn1/congty/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
+	<jsp:include page="/template/cn1/congty/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -51,35 +51,35 @@
 							<tbody>
 									<tr>
 										<th scope="row">Danh sách nhân viên</th>
-										<td><a href="baocaodanhsachnhanvien/cn1/chinhanh.htm" class="fa fa-eye"></a></td>
+										<td><a href="baocaodanhsachnhanvien/cn1/congty.htm" class="fa fa-eye"></a></td>
 									</tr>
 									<tr>
 										<th scope="row">Danh sách vật tư</th>
-										<td><a href="baocaodanhsachvattu/cn1/chinhanh.htm" class="fa fa-eye"></a></td>
+										<td><a href="baocaodanhsachvattu/cn1/congty.htm" class="fa fa-eye"></a></td>
 									</tr>
 									<tr>
 										<th scope="row">Đơn đặt hàng không có phiếu nhập</th>
-										<td><a href="baocaodondathangkhongcophieunhap/cn1/chinhanh.htm" class="fa fa-eye"></a></td>
+										<td><a href="baocaodondathangkhongcophieunhap/cn1/congty.htm" class="fa fa-eye"></a></td>
 									</tr>
 									<tr>
 										<th scope="row">Chi tiết số lượng trị giá hàng hóa nhập</th>
-										<td><a href="chitietsoluongtrigiahanghoanhapxuat/cn1/chinhanh/nhap.htm" class="fa fa-eye"></a></td>
+										<td><a href="chitietsoluongtrigiahanghoanhapxuat/cn1/congty/nhap.htm" class="fa fa-eye"></a></td>
 									</tr>
 									<tr>
 										<th scope="row">Chi tiết số lượng trị giá hàng hóa xuất</th>
-										<td><a href="chitietsoluongtrigiahanghoanhapxuat/cn1/chinhanh/xuat.htm" class="fa fa-eye"></a></td>
+										<td><a href="chitietsoluongtrigiahanghoanhapxuat/cn1/congty/xuat.htm" class="fa fa-eye"></a></td>
 									</tr>
 									<tr>
 										<th scope="row">Hoạt động nhân viên - Chứng từ nhập</th>
-										<td><a href= "hoatdongnhanvien/cn1/chinhanh/nhap.htm" class="fa fa-eye"></a></td>
+										<td><a href= "hoatdongnhanvien/cn1/congty/nhap.htm" class="fa fa-eye"></a></td>
 									</tr>
 									<tr>
 										<th scope="row">Hoạt động nhân viên - Chứng từ xuất</th>
-										<td><a href="hoatdongnhanvien/cn1/chinhanh/xuat.htm"class="fa fa-eye"></a></td>
+										<td><a href="hoatdongnhanvien/cn1/congty/xuat.htm"class="fa fa-eye"></a></td>
 									</tr>
 									<tr>
 										<th scope="row">Tổng hợp nhập xuất</th>
-										<td><a href="tonghopnhapxuat/cn1/chinhanh/nhap.htm"class="fa fa-eye"></a></td>
+										<td><a href="tonghopnhapxuat/cn1/congty/nhap.htm"class="fa fa-eye"></a></td>
 									</tr>
 							</tbody>
 						</table>
@@ -93,7 +93,7 @@
 	</main>
 	<!-- End #main -->
 
-	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
+	<jsp:include page="/template/cn1/congty/footer.jsp" />
 </body>
 
 </html>

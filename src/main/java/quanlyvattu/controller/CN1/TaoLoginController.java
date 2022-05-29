@@ -34,15 +34,15 @@ public class TaoLoginController {
 	
 	@Autowired
 	NhanVienRepositoryCN1 nvrepo;
-
-	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.GET)
+//================================CHINHANH=====================================================
+	@RequestMapping(value = {"chinhanh"}, method = RequestMethod.GET)
 	public String getDDHCN(ModelMap model, HttpServletRequest request){	
 		
 
 			model.addAttribute("newLogin",new LoginModel());
 			return "chinhanh/taologin";
 		}
-	@RequestMapping(value = {"chinhanh","congty","user"}, method = RequestMethod.POST)
+	@RequestMapping(value = {"chinhanh"}, method = RequestMethod.POST)
 	public String taoLogin(ModelMap model, @ModelAttribute("newLogin") LoginModel lg){	
 		int f=1;
 		System.out.println(lg.getLgName());
@@ -65,6 +65,35 @@ public class TaoLoginController {
 		}
 		
 	
+	//================================CONGTY=====================================================
+	@RequestMapping(value = {"congty"}, method = RequestMethod.GET)
+	public String taoLoginCTY1(ModelMap model, HttpServletRequest request){	
+		
 
+			model.addAttribute("newLogin",new LoginModel());
+			return "congty/taologin";
+		}
+	@RequestMapping(value = {"congty"}, method = RequestMethod.POST)
+	public String taoLoginCTY(ModelMap model, @ModelAttribute("newLogin") LoginModel lg){	
+		int f=1;
+		System.out.println(lg.getLgName());
+		System.out.println(lg.getMaNV());
+		System.out.println(lg.getPass());
+		System.out.println(lg.getQuyen());
+			
+				 f=nvrepo.taoLogin(lg.getLgName(), lg.getPass(), lg.getMaNV(), lg.getQuyen());
+				 System.out.println("thành công");
+			
+				
+		
+			if (f==0) {
+				model.addAttribute("message","thêm login thanh cong");
+
+			}else {
+				System.out.println("thêm login thất bại");
+			}
+			return "congty/taologin";
+		}
+		
 
 }

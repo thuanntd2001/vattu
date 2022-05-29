@@ -12,7 +12,7 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/chinhanh/head.jsp" />
+<jsp:include page="/template/cn1/congty/head.jsp" />
 
 </head>
 <body>
@@ -90,7 +90,7 @@
 	</main>
 	<!-- End #main -->
 
-	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
+	<jsp:include page="/template/cn1/congty/footer.jsp" />
 </body>
 
 </html>
