@@ -33,14 +33,14 @@
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="quanlykho/cn1/chinhanh.htm">Kho</a></li>
 				<li class="breadcrumb-item"><a href="quanlyphieunhap/cn1/chinhanh.htm">Phiếu nhập</a></li>
-				<li class="breadcrumb-item active">Thêm phiếu nhập</li>
+				<li class="breadcrumb-item active">Xóa phiếu nhập</li>
 			</ol>
 		</nav>
     </div><!-- End Page Title -->
 	<!-- End Sidebar-->
 <section class="section">
 		<div class="row">
-			<div class="col-lg-5">
+			<div class="col-lg-10">
 
 				<div class="card">
 					<div class="card-body">
@@ -49,17 +49,19 @@
 
 						${message}
 						
-						Bạn có đồng ý xoá PN ${id }
+						
 						<!-- Multi Columns Form -->
 						<form action="quanlyphieunhap/cn1/chinhanh/xoa.htm?id=${id }" method="post"
 							class="row g-3">
 							
-							<div class="col-md-5">
+							<div class="col-md-12 text-center" >
+								Bạn có đồng ý xoá PN ${id }
+								<br>
 								<label for="inputEmail5" class="form-label">Xác Nhận( Nhập "YES" vào khung này)</label>
 								<input type="text" class="form-control" name="xacNhan" />
 							</div>
 							<div class="col-md-12">
-								<div style="margin-top:15px; margin-left:170px">
+								<div class="text-center">
 								<button type="submit" class="btn btn-primary">Xoá</button>
 							</div>
 							</div>
