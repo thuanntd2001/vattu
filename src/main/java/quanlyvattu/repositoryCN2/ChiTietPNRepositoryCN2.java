@@ -16,5 +16,8 @@ public interface ChiTietPNRepositoryCN2 extends JpaRepository<CTPNEntity, String
 
 	@Query("select ctPhieunhap from CTPNEntity ctPhieunhap where ctPhieunhap.phieuNhap.maPN = ?1")
 	List<CTPNEntity> findByMaSoPN(String maSoDDH);
+	
+	@Query (value="exec sp_CapNhatSoLuongVatTu 'NHAP',?1,?2", nativeQuery=true)
+	void cnvt(String maVT, int soLuong);
 
 }

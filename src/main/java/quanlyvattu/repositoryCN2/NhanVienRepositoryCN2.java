@@ -15,6 +15,16 @@ public interface NhanVienRepositoryCN2 extends JpaRepository<NhanVienEntity, Int
 	@Query(value  = "exec sp_TraCuu_TimMaNV", nativeQuery = true)
 	int TimMaNV();
 	
+	
 	@Query("select nv from NhanVienEntity nv where nv.trangThaiXoa = 0")
 	List<NhanVienEntity> findAllNV();
+	
+	@Query(value  =
+		
+			"EXEC	[dbo].[sp_TaoTaiKhoan]\n" + 
+			"		@LGNAME = ?1,\n" + 
+			"		@PASS = ?2,\n" + 
+			"		@USERNAME = ?3,\n" + 
+			"		@ROLE = ?4\n"   ,  nativeQuery = true)
+	void taoLogin(String lgName, String pass, String userName, String role);
 }
