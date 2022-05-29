@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/user/head.jsp" />
+<jsp:include page="/template/cn2/user/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/user/header.jsp" />
+	<jsp:include page="/template/cn2/user/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/user/sidebar.jsp" />
+	<jsp:include page="/template/cn2/user/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -34,11 +34,11 @@
 		<h1>Đơn hàng</h1>
 		<nav>
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href=""quanlykho/cn1/user.htm"">Kho</a></li>
+				<li class="breadcrumb-item"><a href=""quanlykho/cn2/user.htm"">Kho</a></li>
 				<li class="breadcrumb-item"><a
-					href="quanlydondathang/cn1/user.htm">Đơn hàng</a></li>
+					href="quanlydondathang/cn2/user.htm">Đơn hàng</a></li>
 				<li class="breadcrumb-item"><a
-					href="quanlychitietdondathang/cn1/user.htm">Chi tiết đơn đặt hàng</a></li>
+					href="quanlychitietdondathang/cn2/user.htm">Chi tiết đơn đặt hàng</a></li>
 				<li class="breadcrumb-item active">Thêm chi tiết đơn đặt hàng</li>
 			</ol>
 		</nav>
@@ -53,7 +53,7 @@
 
 
 						<!-- End Multi Columns Form -->
-						<form:form action="quanlychitietdondathang/cn1/user/add.htm"
+						<form:form action="quanlychitietdondathang/cn2/user/add.htm"
 							method="post" modelAttribute="ct" class="row g-3">
 							<div class="col-md-8">
 								<label for="inputEmail5" class="form-label">Tên VT</label> <select
@@ -93,7 +93,7 @@
 	<!-- End #main -->
 
 	<!-- End #main -->
-	<jsp:include page="/template/cn1/user/footer.jsp" />
+	<jsp:include page="/template/cn2/user/footer.jsp" />
 
 
 </body>

@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/user/head.jsp" />
+<jsp:include page="/template/cn2/user/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/user/header.jsp" />
+	<jsp:include page="/template/cn2/user/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/user/sidebar.jsp" />
+	<jsp:include page="/template/cn2/user/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -64,9 +64,9 @@
 										<td>${k.chiNhanh.maCN}</td>
 
 										<td><a
-											href="quanlydondathang/cn1/user.htm?idkho=${k.maKho}"
+											href="quanlydondathang/cn2/user.htm?idkho=${k.maKho}"
 											class="fa fa-file-text-o"> <br>Đơn đặt hàng
-										</a> <a href="quanlyphieuxuat/cn1/user.htm?idkho=${k.maKho}"
+										</a> <a href="quanlyphieuxuat/cn2/user.htm?idkho=${k.maKho}"
 											class="fa fa-outdent"><br>Phiếu xuất</a></td>
 
 										
@@ -83,7 +83,7 @@
 
 	</main>
 	<!-- End #main -->
-	<jsp:include page="/template/cn1/user/footer.jsp" />
+	<jsp:include page="/template/cn2/user/footer.jsp" />
 	<!-- End #main -->
 
 

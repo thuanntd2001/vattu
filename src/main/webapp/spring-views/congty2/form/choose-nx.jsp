@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/chinhanh/head.jsp" />
+<jsp:include page="/template/cn2/chinhanh/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
+	<jsp:include page="/template/cn2/chinhanh/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
+	<jsp:include page="/template/cn2/chinhanh/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -39,7 +39,7 @@
 					<div class="card-body">
 						<h5 class="card-title">Tổng hợp nhập xuất</h5>
 						${message}
-						<form action="tonghopnhapxuat/cn1/chinhanh/nhap.htm"
+						<form action="tonghopnhapxuat/cn2/chinhanh/nhap.htm"
 							method="post" modelAttribute="nv" class="row g-3">
 					
 							<div class="col-md-6">
@@ -77,7 +77,7 @@
 
 	</main>
 	<!-- End #main -->
-	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
+	<jsp:include page="/template/cn2/chinhanh/footer.jsp" />
 
 
 </body>

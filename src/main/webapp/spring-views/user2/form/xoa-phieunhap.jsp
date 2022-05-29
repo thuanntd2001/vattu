@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/user/head.jsp" />
+<jsp:include page="/template/cn2/user/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/user/header.jsp" />
+	<jsp:include page="/template/cn2/user/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/user/sidebar.jsp" />
+	<jsp:include page="/template/cn2/user/sidebar.jsp" />
 
 
 	<main id="main" class="main">
@@ -41,7 +41,7 @@
 						
 						Bạn có đồng ý xoá PN ${id }
 						<!-- Multi Columns Form -->
-						<form action="quanlyphieunhap/cn1/user/xoa.htm?id=${id }" method="post"
+						<form action="quanlyphieunhap/cn2/user/xoa.htm?id=${id }" method="post"
 							class="row g-3">
 							
 							<div class="col-md-5">
@@ -61,7 +61,7 @@
 
 	</main>
 	<!-- End #main -->
-	<jsp:include page="/template/cn1/user/footer.jsp" />
+	<jsp:include page="/template/cn2/user/footer.jsp" />
 
 
 </body>
