@@ -55,7 +55,7 @@
 									<th scope="col">tên VT</th>
 									<th scope="col">Số lượng</th>
 									<th scope="col">Đơn giá</th>
-									<th scope="col">Thao tác</th>
+								
 								</tr>
 							</thead>
 							<tbody>
@@ -71,15 +71,14 @@
 										<td>${k.soLuong}</td>
 
 										<td>${k.donGia}</td>
-										<td><a href="quanlychitietdondathang/cn1/congty/xoa.htm?id=${k.datHang.maSoDDH}&vt=${k.vatTu.maVT}" class="fa fa-times-circle"></a></td>
+										
 									</tr>
 								</c:forEach>
 
 							</tbody>
 						</table>
 
-						<a href="quanlychitietdondathang/cn1/congty/add.htm"
-							class="fa fa-plus"></a>
+					
 
 					</div>
 				</div>

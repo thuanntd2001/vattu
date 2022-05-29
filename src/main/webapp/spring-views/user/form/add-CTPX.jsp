@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/chinhanh/head.jsp" />
+<jsp:include page="/template/cn1/user/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
+	<jsp:include page="/template/cn1/user/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
+	<jsp:include page="/template/cn1/user/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -35,7 +35,7 @@
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a
-					href="quanlyvattu/cn1/chinhanh.htm">Vật tư</a></li>
+					href="quanlyvattu/cn1/user.htm">Vật tư</a></li>
 				<li class="breadcrumb-item active">Thêm Vật tư</li>
 			</ol>
 		</nav>
@@ -50,7 +50,7 @@
 
 
 						<!-- End Multi Columns Form -->
-						<form:form action="quanlychitietphieuxuat/cn1/chinhanh/add.htm"
+						<form:form action="quanlychitietphieuxuat/cn1/user/add.htm"
 							method="post" modelAttribute="ct" class="row g-3">
 
 							<label for="inputEmail5" class="form-label">tên VT</label>
@@ -98,7 +98,7 @@
 	<!-- End #main -->
 
 	<!-- End #main -->
-	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
+	<jsp:include page="/template/cn1/user/footer.jsp" />
 
 
 </body>

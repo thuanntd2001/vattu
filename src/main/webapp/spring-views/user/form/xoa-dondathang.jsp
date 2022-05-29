@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/chinhanh/head.jsp" />
+<jsp:include page="/template/cn1/user/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
+	<jsp:include page="/template/cn1/user/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
+	<jsp:include page="/template/cn1/user/sidebar.jsp" />
 
 
 	<main id="main" class="main"> <!-- End Sidebar-->
@@ -32,9 +32,9 @@
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a
-					href="quanlykho/cn1/chinhanh.htm">Kho</a></li>
+					href="quanlykho/cn1/user.htm">Kho</a></li>
 				<li class="breadcrumb-item"><a
-					href="quanlydondathang/cn1/chinhanh.htm">Đơn đặt hàng</a></li>
+					href="quanlydondathang/cn1/user.htm">Đơn đặt hàng</a></li>
 				<li class="breadcrumb-item active">Xóa đơn đặt hàng</li>
 			</ol>
 		</nav>
@@ -49,7 +49,7 @@
 						${message} ${message}
 
 						<form
-							action="quanlychitietdondathang/cn1/chinhanh/xoa.htm?id=${id }"
+							action="quanlydondathang/cn1/user/xoa.htm?id=${id }"
 							method="post" class="row g-3">
 							<div class="col-md-12" style="">
 								<label for="inputEmail5" class="form-label">Bạn có đồng
@@ -76,7 +76,7 @@
 
 	</main>
 	<!-- End #main -->
-	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
+	<jsp:include page="/template/cn1/user/footer.jsp" />
 
 
 </body>

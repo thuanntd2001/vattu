@@ -50,7 +50,7 @@
 									<th scope="col">Địa chỉ</th>
 									<th scope="col">Ngày sinh</th>
 									<th scope="col">Lương</label></th>
-									<th scope="col">Thao tác</th>
+								
 								</tr>
 							</thead>
 							<tbody>
@@ -63,15 +63,13 @@
 										<td>${nv.diaChi}</td>
 										<td>${nv.ngaySinh}</td>
 										<td>${nv.luong}VND</td>
-										<td><a href="quanlynhanvien/cn1/congty/edit.htm?id=${nv.maNV} "
-											class="fa fa-pencil-square-o"></a> <a href="quanlynhanvien/cn1/congty/xoa.htm?id=${nv.maNV} "
-											class="fa fa-times-circle"></a>
+										
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
 						<!-- End Table with stripped rows -->
-						<a href="quanlynhanvien/cn1/congty/add.htm" class="fa fa-plus"></a>
+			
 					</div>
 				</div>
 

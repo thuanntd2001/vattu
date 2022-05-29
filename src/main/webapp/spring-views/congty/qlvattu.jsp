@@ -49,7 +49,7 @@
 									<th scope="col">Tên vật tư</th>
 									<th scope="col">Đơn vị tính</th>
 									<th scope="col">Số lượng tồn</th>
-									<th scope="col">Thao tác</th>
+								
 								</tr>
 							</thead>
 							<tbody>
@@ -71,15 +71,13 @@
 										<td>${nv.donViTinh}</td>
 										<td>${nv.soLuongTon}</td>
 
-										<td><a href="quanlyvattu/cn1/congty/edit.htm?id=${nv.maVT}"
-											class="fa fa-pencil-square-o"></a> <a href="quanlyvattu/cn1/congty/xoa.htm?id=${nv.maVT}"
-											class="fa fa-times-circle"></a></td>
+									
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
 						<!-- End Table with stripped rows -->
-						<a href="quanlyvattu/cn1/congty/add.htm" class="fa fa-plus"></a>
+					
 					</div>
 				</div>
 

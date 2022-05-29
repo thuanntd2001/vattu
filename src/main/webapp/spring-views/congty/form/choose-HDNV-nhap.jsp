@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/chinhanh/head.jsp" />
+<jsp:include page="/template/cn1/congty/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
+	<jsp:include page="/template/cn1/congty/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
+	<jsp:include page="/template/cn1/congty/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -40,7 +40,7 @@
 						<h5 class="card-title">Hoạt động của nhân viên - Chứng từ phiếu nhập</h5>
 						${message}
 						<form
-							action="hoatdongnhanvien/cn1/chinhanh/nhap.htm"
+							action="hoatdongnhanvien/cn1/congty/nhap.htm"
 							method="post" modelAttribute="nv"  class="row g-3">
 							<div class="col-md-10">
 								<label for="inputEmail5" class="form-label">Mã nhân viên</label> 
@@ -85,7 +85,7 @@
 
 	</main>
 	<!-- End #main -->
-	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
+	<jsp:include page="/template/cn1/congty/footer.jsp" />
 
 
 </body>

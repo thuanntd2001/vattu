@@ -71,19 +71,6 @@ public class BCDonDatHangNoPhieuNhap {
 		model.addAttribute("nvs", nvrepo.findAllNV());
 		return "congty/bcdonhangkhongcophieunhap";
 	}
-	// ===========================================USER============================================//
-
-
-
-	@RequestMapping(value = {"user" }, method = RequestMethod.GET)
-	public String getNVU(ModelMap model) {
-		String sql = "EXEC [dbo].[sp_DonHangKhongPhieuNhap]";
-		List<DDHnoPNModel> ddhs = dao.queryPM(InfoConnection.getUserNamePM(), InfoConnection.getPassWordPM(), sql,
-				new DDHnoPNMapper());
-		System.out.println(ddhs.get(0).getMaSoDDH());
-		model.addAttribute("ddhs", ddhs);
-		model.addAttribute("nvs", nvrepo.findAllNV());
-		return "user/bcdonhangkhongcophieunhap";
-	}
+	
 
 }

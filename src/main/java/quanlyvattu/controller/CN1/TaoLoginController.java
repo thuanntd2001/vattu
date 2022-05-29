@@ -44,23 +44,24 @@ public class TaoLoginController {
 		}
 	@RequestMapping(value = {"chinhanh"}, method = RequestMethod.POST)
 	public String taoLogin(ModelMap model, @ModelAttribute("newLogin") LoginModel lg){	
-		int f=1;
+		
 		System.out.println(lg.getLgName());
 		System.out.println(lg.getMaNV());
 		System.out.println(lg.getPass());
 		System.out.println(lg.getQuyen());
-			
-				 f=nvrepo.taoLogin(lg.getLgName(), lg.getPass(), lg.getMaNV(), lg.getQuyen());
+				try {
+				 nvrepo.taoLogin(lg.getLgName(), lg.getPass(), lg.getMaNV(), lg.getQuyen());
 				 System.out.println("thành công");
+				 model.addAttribute("message","thêm login thành  công"); 
+				}
+				catch(Exception e){
+					e.printStackTrace();
+					model.addAttribute("message","thêm login thất bại,kiểm tra lại nhân viên đã có account chưa ?");
+				}
 			
 				
 		
-			if (f==0) {
-				model.addAttribute("message","thêm login thanh cong");
-
-			}else {
-				System.out.println("thêm login thất bại");
-			}
+			
 			return "chinhanh/taologin";
 		}
 		
@@ -81,17 +82,19 @@ public class TaoLoginController {
 		System.out.println(lg.getPass());
 		System.out.println(lg.getQuyen());
 			
-				 f=nvrepo.taoLogin(lg.getLgName(), lg.getPass(), lg.getMaNV(), lg.getQuyen());
+		try {
+				 nvrepo.taoLogin(lg.getLgName(), lg.getPass(), lg.getMaNV(), lg.getQuyen());
 				 System.out.println("thành công");
-			
-				
+				 model.addAttribute("message","thêm login thành  công");
+				 }
 		
-			if (f==0) {
-				model.addAttribute("message","thêm login thanh cong");
-
-			}else {
-				System.out.println("thêm login thất bại");
-			}
+		catch(Exception e) {
+			e.printStackTrace();
+			model.addAttribute("message","thêm login thất bại, vui lòng kiểm tra lại thông tin account");
+		}
+				 
+			
+	
 			return "congty/taologin";
 		}
 		

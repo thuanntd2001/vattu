@@ -140,7 +140,7 @@ public class QLChiTietDDHController {
 			e.printStackTrace();
 			model.addAttribute("message", "xoá ct đơn hàng thất bại");
 		}
-		return "redirect:/quanlychitietdondathang/cn1/chinhanh.htm";
+		return "redirect:/quanlychitietdondathang/cn1/chinhanh.htm?idddh=" + idddh;
 
 	}
 //=========================================CONGTY====================================//
@@ -264,7 +264,7 @@ public class QLChiTietDDHController {
 			e.printStackTrace();
 			model.addAttribute("message", "xoá ct đơn hàng thất bại");
 		}
-		return "redirect:/quanlychitietdondathang/cn1/users.htm";
+		return "redirect:/quanlychitietdondathang/cn1/users.htm?idddh= + idddh";
 
 	}
 }

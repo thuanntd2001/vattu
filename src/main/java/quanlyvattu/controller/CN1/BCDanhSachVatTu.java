@@ -29,7 +29,7 @@ public class BCDanhSachVatTu {
 
 //===============================CHINHANH==============================//
 
-	@RequestMapping(value = { "chinhanh", "congty", "user" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "chinhanh" }, method = RequestMethod.GET)
 	public String getVTCN(ModelMap model) {
 		/*
 		 * Sort sort = new Sort(Sort.Direction.ASC, "maVT");;
@@ -47,14 +47,5 @@ public class BCDanhSachVatTu {
 		return "congty/bcdanhsachvattu";
 	}
 
-	// ===============================USER==============================//
-
-	@RequestMapping(value = {"user" }, method = RequestMethod.GET)
-	public String getVTU(ModelMap model) {
-		/*
-		 * Sort sort = new Sort(Sort.Direction.ASC, "maVT");;
-		 */ model.addAttribute("vts", vtrepo.findAll());
-		return "user/bcdanhsachvattu";
-	}
 
 }

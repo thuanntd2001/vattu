@@ -49,7 +49,7 @@
 									<th scope="col">Địa chỉ</th>
 									<th scope="col">Mã chi nhánh</th>
 									<th scope="col">Xem</th>
-									<th scope="col">Thao tác</th>
+								
 								</tr>
 							</thead>
 							<tbody>
@@ -69,17 +69,13 @@
 										</a> <a href="quanlyphieuxuat/cn1/congty.htm?idkho=${k.maKho}"
 											class="fa fa-outdent"><br>Phiếu xuất</a></td>
 
-										<td><a
-											href="quanlykho/cn1/congty/edit.htm?id=${k.maKho}"
-											class="fa fa-pencil-square-o"></a> <a
-											href="quanlykho/cn1/congty/xoa.htm?id=${k.maKho}"
-											class="fa fa-times-circle"></a></td>
+										
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
 						<!-- End Primary Color Bordered Table -->
-						<a href="quanlykho/cn1/congty/add.htm" class="fa fa-plus"></a>
+						
 					</div>
 				</div>
 			</div>

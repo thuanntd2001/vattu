@@ -57,7 +57,7 @@
 									<th scope="col">Mã NV</th>
 									<th scope="col">Mã Kho</th>
 									<th scope="col">Xem</th>
-									<th scope="col">Thao tác</th>
+							
 								</tr>
 							</thead>
 							<tbody>
@@ -70,14 +70,12 @@
 										<td>${k.nhanVien.maNV}</td>
 										<td>${k.kho.maKho}</td>
  										<td><a href="quanlychitietphieunhap/cn1/congty.htm?idpn=${k.maPN}" class="fa fa-eye"></a></td>
-										<td> <a
-											href="quanlyphieunhap/cn1/congty/xoa.htm?id=${k.maPN}"
-											class="fa fa-times-circle"></a></td>
+									
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
-						<a href="quanlyphieunhap/cn1/congty/add.htm" class="fa fa-plus"></a>
+						
 					</div>
 				</div>
 

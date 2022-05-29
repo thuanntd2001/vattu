@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/chinhanh/head.jsp" />
+<jsp:include page="/template/cn1/user/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/chinhanh/header.jsp" />
+	<jsp:include page="/template/cn1/user/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/chinhanh/sidebar.jsp" />
+	<jsp:include page="/template/cn1/user/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -35,13 +35,13 @@
 		<nav>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a
-					href="quanlykho/cn1/chinhanh.htm">Kho</a></li>
+					href="quanlykho/cn1/user.htm">Kho</a></li>
 				<li class="breadcrumb-item"><a
-					href="quanlydondathang/cn1/chinhanh.htm">Đơn hàng</a></li>
+					href="quanlydondathang/cn1/user.htm">Đơn hàng</a></li>
 				<li class="breadcrumb-item"><a
-					href="quanlyphieunhap/cn1/chinhanh.htm">Phiếu nhập</a></li>
+					href="quanlyphieunhap/cn1/user.htm">Phiếu nhập</a></li>
 				<li class="breadcrumb-item"><a
-					href="quanlychitietphieunhap/cn1/chinhanh.htm">Chi tiết phiếu
+					href="quanlychitietphieunhap/cn1/user.htm">Chi tiết phiếu
 						nhập</a></li>
 				<li class="breadcrumb-item active">Thêm chi tiết phiếu nhập</li>
 			</ol>
@@ -57,7 +57,7 @@
 
 
 					<!-- End Multi Columns Form -->
-					<form:form action="quanlychitietphieunhap/cn1/chinhanh/add.htm"
+					<form:form action="quanlychitietphieunhap/cn1/user/add.htm"
 						method="post" modelAttribute="ct" class="row g-3">
 						<div class="col-md-8">
 							<label for="inputEmail5" class="form-label">Tên VT</label> 
@@ -155,7 +155,7 @@
 	<!-- End #main -->
 
 	<!-- End #main -->
-	<jsp:include page="/template/cn1/chinhanh/footer.jsp" />
+	<jsp:include page="/template/cn1/user/footer.jsp" />
 
 
 </body>

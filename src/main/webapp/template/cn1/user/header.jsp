@@ -27,10 +27,7 @@
 			<li class="nav-item active"><a class="nav-link" href="#">
 					<span class="sr-only">(current)</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Chuyển chi nhánh</a></li>
-			<li class="nav-item"><a class="nav-link" href="xembaocao/cn1/user.htm">Xem báo
-					cáo</a></li>
-			<li class="nav-item"><a class="nav-link" href="taologin/cn1/user.htm">Tạo Login cho hệ thống</a></li>
+			
 		 
 		</ul>
 	</div>

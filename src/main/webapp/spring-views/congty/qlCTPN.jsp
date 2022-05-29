@@ -59,7 +59,7 @@
 									<th scope="col">tên VT</th>
 									<th scope="col">Số Lượng</th>
 									<th scope="col">Đơn giá</th>
-									<th scope="col">Thao tác</th>
+								
 								</tr>
 							</thead>
 							<tbody>
@@ -72,14 +72,13 @@
 										<td>${k.soLuong}</td>
 										<td>${k.donGia}VNĐ</td>
 
-										<td><a href="quanlychitietphieunhap/cn1/congty/xoa.htm?id=${k.phieuNhap.maPN}&&vt=${k.vatTu.maVT}" class="fa fa-times-circle"></a>
+									
 									</tr>
 								</c:forEach>
 
 							</tbody>
 						</table>
-						<a href="quanlychitietphieunhap/cn1/congty/add.htm"
-							class="fa fa-plus"></a>
+						
 					</div>
 				</div>
 

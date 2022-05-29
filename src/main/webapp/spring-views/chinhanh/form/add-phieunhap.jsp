@@ -31,14 +31,14 @@
 	  <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Nhân viên</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="Kho.html">Kho</a></li>
-          <li class="breadcrumb-item"><a href="Donhang.html">Đơn hàng</a></li>
-          <li class="breadcrumb-item active">Thêm đơn đặt hàng</li>
-        </ol>
-      </nav>
+      <h1>Đơn hàng</h1>
+		<nav>
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="quanlykho/cn1/chinhanh.htm">Kho</a></li>
+				<li class="breadcrumb-item"><a href="quanlyphieunhap/cn1/chinhanh.htm">Phiếu nhập</a></li>
+				<li class="breadcrumb-item active">Thêm phiếu nhập</li>
+			</ol>
+		</nav>
     </div><!-- End Page Title -->
 
     <section class="section">

@@ -48,13 +48,5 @@ public class XemBaoCaoController {
 		return "congty/Xembaocao";
 	}
 
-	// ==============================USER============================//
-	@RequestMapping(value = {  "user" }, method = RequestMethod.GET)
-	public String getNVU(ModelMap model) {
-		Sort sort = new Sort(Sort.Direction.ASC, "ten");
-
-		model.addAttribute("nvs", nvrepo.findAllNV());
-		return "user/Xembaocao";
-	}
-
+	
 }

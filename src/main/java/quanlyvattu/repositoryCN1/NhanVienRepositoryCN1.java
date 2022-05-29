@@ -26,5 +26,5 @@ public interface NhanVienRepositoryCN1 extends JpaRepository<NhanVienEntity, Int
 			"		@PASS = ?2,\n" + 
 			"		@USERNAME = ?3,\n" + 
 			"		@ROLE = ?4\n"   ,  nativeQuery = true)
-	int taoLogin(String lgName, String pass, String userName, String role);
+	void taoLogin(String lgName, String pass, String userName, String role);
 }

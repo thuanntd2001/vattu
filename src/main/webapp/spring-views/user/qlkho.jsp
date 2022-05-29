@@ -12,18 +12,18 @@
 
 <title>QLVT</title>
 <!-- ======= Head ======= -->
-<jsp:include page="/template/cn1/congty/head.jsp" />
+<jsp:include page="/template/cn1/user/head.jsp" />
 
 </head>
 <body>
 
 	<!-- ======= Header ======= -->
-	<jsp:include page="/template/cn1/congty/header.jsp" />
+	<jsp:include page="/template/cn1/user/header.jsp" />
 
 	<!-- End Header -->
 
 	<!-- ======= Sidebar ======= -->
-	<jsp:include page="/template/cn1/congty/sidebar.jsp" />
+	<jsp:include page="/template/cn1/user/sidebar.jsp" />
 
 	<!-- End Sidebar-->
 
@@ -32,12 +32,6 @@
 
 	<div class="pagetitle">
 		<h1>Kho</h1>
-		<nav>
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href=""quanlykho/cn1/congty.htm"">Kho</a></li>
-				<li class="breadcrumb-item active">Phiếu xuất</li>
-			</ol>
-		</nav>
 	</div>
 	<!-- End Page Title -->
 
@@ -46,47 +40,51 @@
 			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-body">
-
-						<!-- Bordered Table -->
-						<table class="table table-bordered">
+						<!-- Primary Color Bordered Table -->
+						<table class="table table-bordered border-primary">
 							<thead>
 								<tr>
-									<th scope="col">Mã PX</th>
-									<th scope="col">Ngày</th>
-									<th scope="col">Họ tên KH</th>
-									<th scope="col">Mã NV</th>
 									<th scope="col">Mã Kho</th>
+									<th scope="col">Tên Kho</th>
+									<th scope="col">Địa chỉ</th>
+									<th scope="col">Mã chi nhánh</th>
 									<th scope="col">Xem</th>
-								
+									
 								</tr>
 							</thead>
 							<tbody>
 
-								<c:forEach items="${ddhs }" var="k">
+
+								<c:forEach items="${ks }" var="k">
 									<tr>
 
-										<th scope="row">${k.maPX}</th>
-										<td>${k.ngay}</td>
-										<td>${k.hoTenKH}</td>
-										<td>${k.nhanVien.maNV}</td>
-										<td>${k.kho.maKho}</td>
-										<td><a href="quanlychitietphieuxuat/cn1/congty.htm?idpx=${k.maPX}" class="fa fa-eye"></a></td>
+										<th scope="row">${k.maKho}</th>
+										<td>${k.tenKho}</td>
+										<td>${k.diaChi}</td>
+										<td>${k.chiNhanh.maCN}</td>
+
+										<td><a
+											href="quanlydondathang/cn1/user.htm?idkho=${k.maKho}"
+											class="fa fa-file-text-o"> <br>Đơn đặt hàng
+										</a> <a href="quanlyphieuxuat/cn1/user.htm?idkho=${k.maKho}"
+											class="fa fa-outdent"><br>Phiếu xuất</a></td>
+
 										
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
-					
+						
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</section>
 
 	</main>
 	<!-- End #main -->
-	<jsp:include page="/template/cn1/congty/footer.jsp" />
+	<jsp:include page="/template/cn1/user/footer.jsp" />
+	<!-- End #main -->
 
 
 </body>

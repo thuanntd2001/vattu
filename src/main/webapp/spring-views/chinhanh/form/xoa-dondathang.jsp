@@ -49,7 +49,7 @@
 						${message} ${message}
 
 						<form
-							action="quanlychitietdondathang/cn1/chinhanh/xoa.htm?id=${id }"
+							action="quanlydondathang/cn1/chinhanh/xoa.htm?id=${id }"
 							method="post" class="row g-3">
 							<div class="col-md-12" style="">
 								<label for="inputEmail5" class="form-label">Bạn có đồng

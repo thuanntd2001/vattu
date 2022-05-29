@@ -58,7 +58,7 @@ ${message}
 									<th scope="col">Mã NV</th>
 									<th scope="col">Mã Kho</th>
 									<th scope="col">Xem</th>
-									<th scope="col">Thao tác</th>
+								
 								</tr>
 							</thead>
 							<tbody>
@@ -75,16 +75,12 @@ ${message}
 											class="fa fa-eye"><br>Chi Tiết DDH<br> </a> <a
 											href="quanlyphieunhap/cn1/congty.htm?idDDH=${k.maSoDDH}&&idkho=${k.kho.maKho}"
 											class="fa fa-indent"> <br>Xem phiếu nhập<br></a>
-										<td><a
-											href="quanlydondathang/cn1/congty/edit.htm?id=${k.maSoDDH}"
-											class="fa fa-pencil-square-o"></a> <a
-											href="quanlydondathang/cn1/congty/xoa.htm?id=${k.maSoDDH}"
-											class="fa fa-times-circle"></a></td>
+									
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
-						<a href="quanlydondathang/cn1/congty/add.htm" class="fa fa-plus"></a>
+					
 					</div>
 				</div>
 
