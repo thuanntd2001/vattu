@@ -100,7 +100,7 @@ public class QLDonDatHangControllerCN2 {
 			System.out.print("thêm đơn hàng thất bại");
 		}
 
-		return "redirect:/quanlydondathang/cn1/chinhanh/add.htm";
+		return "redirect:/quanlydondathang/cn2/chinhanh/add.htm";
 	}
 
 	@RequestMapping(value = "chinhanh/xoa", method = RequestMethod.GET)
@@ -128,7 +128,7 @@ public class QLDonDatHangControllerCN2 {
 			e.printStackTrace();
 			model.addAttribute("message", "xoá đơn hàng thất bại, chỉ có thể xoá đơn hàng trống");
 		}
-		return "redirect:/quanlykho/cn1/chinhanh.htm";
+		return "redirect:/quanlykho/cn2/chinhanh.htm";
 
 	}
 
@@ -146,7 +146,7 @@ public class QLDonDatHangControllerCN2 {
 
 		else {
 			System.out.print("không tồn tại dh");
-			return "redirect:quanlykho/cn1/chinhanh.htm";
+			return "redirect:quanlykho/cn2/chinhanh.htm";
 		}
 
 		return "chinhanh2/form/edit-dondathang";
@@ -174,7 +174,7 @@ public class QLDonDatHangControllerCN2 {
 			System.out.print("sửa DDH thành công");
 		}
 
-		return "redirect:/quanlydondathang/cn1/chinhanh.htm";
+		return "redirect:/quanlydondathang/cn2/chinhanh.htm";
 
 	}
 	// =================================CONGTY===================================//
@@ -261,7 +261,7 @@ public class QLDonDatHangControllerCN2 {
 			System.out.print("thêm đơn hàng thất bại");
 		}
 
-		return "redirect:/quanlydondathang/cn1/user/add.htm";
+		return "redirect:/quanlydondathang/cn2/user/add.htm";
 	}
 
 	@RequestMapping(value = "user/xoa", method = RequestMethod.GET)
@@ -289,7 +289,7 @@ public class QLDonDatHangControllerCN2 {
 			e.printStackTrace();
 			model.addAttribute("message", "xoá đơn hàng thất bại, chỉ có thể xoá đơn hàng trống");
 		}
-		return "redirect:/quanlykho/cn1/user.htm";
+		return "redirect:/quanlykho/cn2/user.htm";
 
 	}
 
@@ -307,7 +307,7 @@ public class QLDonDatHangControllerCN2 {
 
 		else {
 			System.out.print("không tồn tại dh");
-			return "redirect:quanlykho/cn1/user.htm";
+			return "redirect:quanlykho/cn2/user.htm";
 		}
 
 		return "user2/form/edit-dondathang";
@@ -335,7 +335,7 @@ public class QLDonDatHangControllerCN2 {
 			System.out.print("sửa DDH thành công");
 		}
 
-		return "redirect:/quanlydondathang/cn1/user.htm";
+		return "redirect:/quanlydondathang/cn2/user.htm";
 
 	}
 

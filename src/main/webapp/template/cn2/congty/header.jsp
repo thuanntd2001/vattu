@@ -27,7 +27,7 @@
 			<li class="nav-item active"><a class="nav-link" href="#">
 					<span class="sr-only">(current)</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Chuyển chi nhánh</a></li>
+			<li class="nav-item"><a class="nav-link" href="quanlynhanvien/cn1/congty.htm">Chuyển chi nhánh</a></li>
 			<li class="nav-item"><a class="nav-link" href="xembaocao/cn2/congty.htm">Xem báo
 					cáo</a></li>
 			<li class="nav-item"><a class="nav-link" href="taologin/cn2/congty.htm">Tạo Login cho hệ thống</a></li>

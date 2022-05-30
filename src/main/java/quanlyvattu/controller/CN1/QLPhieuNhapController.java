@@ -99,7 +99,7 @@ public class QLPhieuNhapController {
 			System.out.print("thêm đơn hàng thất bại");
 		}
 
-		return "redirect:/quanlyphieunhap/cn1/chinhanh.htm?idDDH=" + idDDH + "&&idkho=" + dh.getKho().getMaKho();
+		return "redirect:/quanlyphieunhap/cn1/chinhanh.htm?idDDH=" + idDDH + "&&idkho=" + idKho;
 	}
 
 	@RequestMapping(value = "chinhanh/xoa", method = RequestMethod.GET)
@@ -210,7 +210,7 @@ public class QLPhieuNhapController {
 			System.out.print("thêm đơn hàng thất bại");
 		}
 
-		return "redirect:/quanlyphieunhap/cn1/user.htm?idDDH=" + idDDH + "&&idkho=" + dh.getKho().getMaKho();
+		return "redirect:/quanlyphieunhap/cn1/user.htm?idDDH=" + idDDH + "&&idkho=" + idKho;
 	}
 
 	@RequestMapping(value = "user/xoa", method = RequestMethod.GET)

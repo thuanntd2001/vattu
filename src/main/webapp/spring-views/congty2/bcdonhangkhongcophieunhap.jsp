@@ -42,7 +42,7 @@
 							</strong>
 						</h3>
 						<h5 style="margin: 20px; text-align: center">
-							<b>Chi nhánh 1</b>
+							<b>Chi nhánh 2</b>
 						</h5>
 						<br> <br>
 						<p>
